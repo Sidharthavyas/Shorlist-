@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Shortlist Application Helper",
+  "version": "1.0.0",
+  "minimum_chrome_version": "114",
+  "description": "Preview and fill job application fields from your saved Shortlist resume profile.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {"default_popup": "popup.html", "default_title": "Shortlist Application Helper"},
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'"}
+}

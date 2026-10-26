@@ -1,0 +1,11 @@
+node_modules
+.git
+.wrangler
+.vercel
+work
+.dev.vars*
+.env*
+*.sqlite*
+apps/worker
+migrations
+seed.sql

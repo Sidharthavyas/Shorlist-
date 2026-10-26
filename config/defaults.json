@@ -1,0 +1,20 @@
+{
+  "maximum_experience": 2,
+  "minimum_match_score": 70,
+  "fetch_interval_minutes": 15,
+  "timezone": "Asia/Kolkata",
+  "location": { "remote_first": true, "worldwide_remote": true, "india_remote": true, "hybrid": false, "onsite": false, "unknown": "REVIEW_REQUIRED" },
+  "auto_generate_resume": false,
+  "notifications_enabled": false,
+  "follow_up_days": 7,
+  "preferred_roles": ["Software Development Engineer", "SDE", "Software Engineer", "Software Developer", "Backend Engineer", "Backend Developer", "Full Stack Engineer", "Full Stack Developer", "Frontend Engineer", "Frontend Developer", "Junior Developer", "Junior Software Engineer", "Associate Developer", "Associate Software Engineer", "Graduate Engineer", "Graduate Software Engineer", "New Grad Software Engineer", "Entry Level Software Engineer", "Web Developer", "Application Developer", "Platform Engineer", "API Developer", "Java Developer", "Spring Boot Developer", "Python Developer", "FastAPI Developer", "Node.js Developer", "React Developer", "AI Engineer", "Generative AI Engineer", "LLM Engineer", "AI Application Engineer", "RAG Engineer", "Applied AI Engineer", "Mobile Developer", "iOS Developer", "Swift Developer", "SwiftUI Developer"],
+  "excluded_title_terms": ["senior", "sr", "staff", "principal", "lead", "manager", "architect", "director", "head of", "vp", "sales engineer", "technical account manager", "customer support", "manual qa", "technical support"],
+  "preferred_technologies": {
+    "backend": ["Python", "FastAPI", "Node.js", "Java", "Spring", "Spring Boot", "REST APIs", "Microservices"],
+    "frontend": ["React", "JavaScript", "TypeScript", "HTML", "CSS"],
+    "mobile": ["Swift", "SwiftUI", "iOS"],
+    "database": ["SQL", "PostgreSQL", "MySQL", "SQLite", "MongoDB", "DynamoDB", "NoSQL"],
+    "infrastructure": ["Redis", "AWS", "Docker", "Cloud infrastructure", "APIs", "Distributed systems"],
+    "ai": ["LLM", "Generative AI", "RAG", "Embeddings", "Vector search", "AI APIs", "Prompt engineering", "AI application development", "Retrieval pipelines"]
+  }
+}

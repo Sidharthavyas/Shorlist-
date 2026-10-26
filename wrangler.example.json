@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "personal-job-search-os",
+  "main": "apps/worker/src/index.ts",
+  "compatibility_date": "2026-10-23",
+  "workers_dev": false,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./apps/web/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": true
+  },
+  "d1_databases": [{
+    "binding": "DB", "database_name": "job-search-os",
+    "database_id": "REPLACE_WITH_D1_UUID", "migrations_dir": "migrations"
+  }],
+  "r2_buckets": [{ "binding": "FILES", "bucket_name": "job-search-os-private" }],
+  "queues": {
+    "producers": [{ "binding": "TASKS", "queue": "job-search-os-tasks" }],
+    "consumers": [{
+      "queue": "job-search-os-tasks", "max_batch_size": 1,
+      "max_batch_timeout": 5, "max_retries": 5,
+      "dead_letter_queue": "job-search-os-dlq"
+    }]
+  },
+  "triggers": { "crons": ["*/15 * * * *"] },
+  "observability": { "enabled": true },
+  "vars": {
+    "APP_ENV": "production",
+    "APP_ORIGIN": "https://REPLACE_WITH_PRIVATE_DOMAIN",
+    "ACCESS_ISSUER": "https://REPLACE.cloudflareaccess.com",
+    "ACCESS_AUDIENCE": "REPLACE_WITH_ACCESS_AUD",
+    "FREEHIRE_BASE_URL": "https://freehire.me/api/v1"
+  }
+}

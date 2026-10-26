@@ -1,0 +1,22 @@
+import { zipSync, strToU8 } from 'fflate';
+import { datedHeading, rowStyle, runs, type ResumeContent, type TextRun } from './resume-layout';
+const xml=(s:string)=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+export function referenceDocx(content:ResumeContent){
+  const run=(r:TextRun)=>`<w:r><w:rPr>${r.bold?'<w:b/>':''}${r.italic?'<w:i/>':''}</w:rPr><w:t xml:space="preserve">${xml(r.text)}</w:t></w:r>`;
+  const p=(rs:TextRun[],style='Normal',extra='')=>`<w:p><w:pPr><w:pStyle w:val="${style}"/>${extra}</w:pPr>${rs.map(run).join('')}</w:p>`;
+  const paragraphs=[p(runs(content.name.toUpperCase(),true),'Title'),...(content.subtitle?[p(runs(content.subtitle,true),'Subtitle')]:[]),p(runs(content.contact),'Contact')];
+  for(const section of content.sections){
+    paragraphs.push(p(runs(section.title.toUpperCase(),true),'Heading1'));
+    for(const entry of section.lines){const lines=entry.split('\n').filter(Boolean);
+      lines.forEach((line,i)=>{const s=rowStyle(line,i,section.title);const date=datedHeading(line.replace(/\*\*/g,''));
+        if(date){const title=section.title==='Education'&&date[1].includes(' — ')?[...runs(date[1].split(' — ')[0],true),...runs(' — '+date[1].split(' — ').slice(1).join(' — '))]:runs(date[1],s.title);paragraphs.push(`<w:p><w:pPr><w:keepNext/><w:tabs><w:tab w:val="right" w:pos="10944"/></w:tabs></w:pPr>${title.map(run).join('')}<w:r><w:tab/></w:r>${runs(date[2],true).map(run).join('')}</w:p>`);}
+        else if(s.label)paragraphs.push(p([...runs(s.label[1],true),...runs(s.label[2])],/^Tech:/i.test(line)?'Tech':'Normal'));
+        else paragraphs.push(p(runs((s.bullet?'• ': '')+line.replace(/^[•●\-]\s*/,''),false,s.italic),'Normal',s.bullet?'<w:ind w:left="260" w:hanging="142"/>':''));
+      });
+    }
+  }
+  const document=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>${paragraphs.join('')}<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="600" w:right="648" w:bottom="648" w:left="648"/></w:sectPr></w:body></w:document>`;
+  const style=(id:string,size:number,props='',spacing='')=>`<w:style w:type="paragraph" w:styleId="${id}"><w:name w:val="${id}"/><w:basedOn w:val="Normal"/><w:pPr>${spacing}</w:pPr><w:rPr><w:sz w:val="${size}"/>${props}</w:rPr></w:style>`;
+  const styles=`<?xml version="1.0"?><w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Carlito" w:hAnsi="Carlito"/><w:sz w:val="20"/><w:color w:val="000000"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="0" w:line="229" w:lineRule="exact"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/></w:style>${style('Title',38,'<w:b/>','<w:jc w:val="center"/><w:spacing w:line="420" w:lineRule="exact" w:after="55"/>')}${style('Subtitle',21,'<w:b/>','<w:jc w:val="center"/><w:spacing w:after="25"/>')}${style('Contact',18,'','<w:jc w:val="center"/><w:spacing w:after="100"/>')}${style('Heading1',21,'<w:b/>','<w:keepNext/><w:spacing w:before="120" w:after="55"/><w:pBdr><w:bottom w:val="single" w:sz="6" w:space="1" w:color="000000"/></w:pBdr>')}${style('Tech',19)}</w:styles>`;
+  return zipSync({'[Content_Types].xml':strToU8('<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/></Types>'),'_rels/.rels':strToU8('<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>'),'word/document.xml':strToU8(document),'word/styles.xml':strToU8(styles),'word/_rels/document.xml.rels':strToU8('<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>')});
+}
