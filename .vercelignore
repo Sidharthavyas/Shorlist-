@@ -6,6 +6,5 @@ work
 .dev.vars*
 .env*
 *.sqlite*
-apps/worker
 migrations
 seed.sql
