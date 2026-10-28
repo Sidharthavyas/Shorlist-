@@ -1,5 +1,7 @@
 # Setup and deployment
 
+The current Vercel + MongoDB deployment is documented in [Vercel and MongoDB deployment](vercel.md). The Cloudflare-only instructions below describe the original alternative architecture; production currently uses MongoDB for private files and the owner session login.
+
 ## Local preview
 
 Use Node 24 and the locked package dependencies. Run `npm ci --cache ./work/npm-cache`, then `npm start`. The preview automatically creates isolated local sample data and serves the dashboard on port 5173 and API on 8787. It never seeds production. Stop a previous preview before restarting it.
@@ -56,3 +58,4 @@ npm run deploy
 The schedule is declared as a 15-minute Cron in Wrangler; a UI preference cannot reschedule infrastructure by itself. This environment successfully built the frontend and Worker and ran actual Workers tests, but Wrangler dry-run failed on its native esbuild file resolver. Run deployment in a normal developer terminal if that restriction persists. No live deployment has been performed.
 
 Before relying on production, verify Access owner/non-owner behavior, a bounded real FreeHire sync, rejection/review isolation, resume downloads, manual application tracking and controlled Telegram delivery. Validate Google connections separately. Configure D1 backup/recovery, private R2 retention, queue dead-letter monitoring and operational alerts in your account.
+

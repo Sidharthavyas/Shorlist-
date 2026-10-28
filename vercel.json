@@ -5,7 +5,8 @@
   "buildCommand": "npm run build",
   "outputDirectory": "apps/web/dist",
   "routes": [
-    { "src": "/api(?:/.*)?", "dest": "/api/unavailable" },
+    { "src": "/api/storage", "dest": "/api/storage" },
+    { "src": "/api(?:/.*)?", "dest": "/api/backend" },
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
   ]

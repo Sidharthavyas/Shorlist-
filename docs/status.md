@@ -1,6 +1,6 @@
 # Implementation status and operating limits
 
-The core application works locally. Production readiness still requires deployment, account configuration and live acceptance testing. The original architecture and API files preserve the design, not an assertion that every proposed feature is finished.
+The core application works locally and its owner-authenticated backend is deployed. Production file storage uses MongoDB Atlas through Vercel; network connectivity and live source/resume acceptance checks must pass before enabling the sync schedule. See vercel.md for the deployed architecture. The original architecture and API files preserve the design, not an assertion that every proposed feature is finished.
 
 ## Implemented contract differences
 
@@ -59,3 +59,4 @@ The packaged Shortlist Application Helper is an unpacked Manifest V3 Chrome/Edge
 Import the saved verified profile directly while the Shortlist dashboard is the active tab, or download the owner-authenticated `/api/v1/profile/autofill` JSON export and import that file. Edit derived name parts, location and education/current-role details before use. Profile and optional PDF/DOCX resume are stored in browser-local extension storage; no external autofill service or cross-device sync is used. The extension requests only activeTab, scripting and storage; it has no persistent host permissions or automatic content scripts. Packaged code is injected only on user action. Preview fields, deselect any unwanted suggestions, then fill. Existing answers, sensitive screening fields, consent boxes and submit controls are excluded. Optional resume attachment targets Resume/CV file fields. Undo preserves subsequent edits. Custom controls and inaccessible frames may need manual entry.
 
 Validation includes 12 DOM regression tests for cached background refresh, request races, polling refresh frequency, field classification, preserving answers, selects, native React-controlled input events, resume files, shadow roots/same-origin frames, undo and the permission manifest. An isolated actual-Chrome check with local fixtures also verified Review sync without loading flashes/focus loss and native form/file filling. The popup was rendered with mocked Chrome storage. These checks do not claim that the unpacked extension has been installed in the owner's browser or tested against every live ATS. The profile export is included in Worker integration tests.
+

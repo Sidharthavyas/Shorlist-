@@ -13,6 +13,8 @@ import { google, pollGmail, syncSheets } from './google';
 import type { NormalizedJob } from '../../../contracts/domain';
 import { queueCoverage, syncFeed, refreshPatternMatches } from './coverage';
 import { providers } from './providers';
+import { ownerSession } from './owner-session';
+import { storageEnv } from './private-files';
 
 export const app = new Hono<{Bindings:Env;Variables:{requestId:string}}>();
 const keys=new Map<string,ReturnType<typeof createRemoteJWKSet>>();
@@ -24,7 +26,10 @@ app.use('*',async(c,next)=>{
   const host=new URL(c.req.url).hostname;
   const local=c.env.APP_ENV==='local' && ['127.0.0.1','localhost','[::1]'].includes(host);
   let subject='local-owner', email='owner@example.test';
-  if(!local) {
+  const session=local?null:await ownerSession(c);
+  if(session instanceof Response)return session;
+  if(session){subject=session.subject;email=session.email;}
+  else if(!local) {
     if(c.env.APP_ENV!=='production' || !c.env.ACCESS_AUDIENCE || c.env.ACCESS_AUDIENCE.includes('REPLACE') || !c.env.OWNER_EMAIL) return c.json({error:{code:'AUTH_NOT_CONFIGURED',message:'Configure Cloudflare Access and owner identity.'}},503);
     try {
       let jwks=keys.get(c.env.ACCESS_ISSUER);
@@ -157,7 +162,8 @@ app.route('/api/v1',google);
 app.all('/api/*',c=>c.json({error:{code:'NOT_FOUND',message:'API route not found.'}},404));
 app.get('*',c=>c.env.ASSETS.fetch(c.req.raw));
 export default {
-  fetch:app.fetch,
-  async scheduled(_event:ScheduledController,env:Env,ctx:ExecutionContext) { ctx.waitUntil((async()=>{await initialize(env,'scheduled-owner',env.OWNER_EMAIL ?? 'owner@example.test');await expireStale(env);await dispatch(env);await queueCoverage(env);await refreshPatternMatches(env);for(const kind of ['SYNC_SOURCE','GMAIL_SYNC','SHEETS_SYNC','NOTIFICATIONS','VERIFY_JOBS'])await env.TASKS.send({kind});})()); },
-  async queue(batch:MessageBatch<{kind?:string;source_id?:string;task_id:string;entity_id:string;entity_revision:number;settings_revision:number}>,env:Env) {for(const message of batch.messages) {try{if(message.body.kind==='TAILOR_RESUME')await generateResume(env,message.body.task_id);else if(message.body.kind==='SYNC_FEED')await syncFeed(env,message.body.source_id??'');else if(message.body.kind==='REFRESH_MATCHES')await refreshPatternMatches(env);else if(message.body.kind==='SYNC_SOURCE')await sync(env);else if(message.body.kind==='GMAIL_SYNC')await pollGmail(env);else if(message.body.kind==='SHEETS_SYNC')await syncSheets(env);else if(message.body.kind==='NOTIFICATIONS')await deliverNotifications(env);else if(message.body.kind==='VERIFY_JOBS')await verifyAvailability(env);else await analyzeTask(env,message.body);message.ack();}catch{message.retry({delaySeconds:60});}}await dispatch(env);}
+  fetch:(request:Request,env:Env,ctx:ExecutionContext)=>app.fetch(request,storageEnv(env),ctx),
+  async scheduled(_event:ScheduledController,env:Env,ctx:ExecutionContext) { env=storageEnv(env);ctx.waitUntil((async()=>{await initialize(env,'scheduled-owner',env.OWNER_EMAIL ?? 'owner@example.test');await expireStale(env);await dispatch(env);await queueCoverage(env);await refreshPatternMatches(env);for(const kind of ['SYNC_SOURCE','GMAIL_SYNC','SHEETS_SYNC','NOTIFICATIONS','VERIFY_JOBS'])await env.TASKS.send({kind});})()); },
+  async queue(batch:MessageBatch<{kind?:string;source_id?:string;task_id:string;entity_id:string;entity_revision:number;settings_revision:number}>,env:Env) {env=storageEnv(env);for(const message of batch.messages) {try{if(message.body.kind==='TAILOR_RESUME')await generateResume(env,message.body.task_id);else if(message.body.kind==='SYNC_FEED')await syncFeed(env,message.body.source_id??'');else if(message.body.kind==='REFRESH_MATCHES')await refreshPatternMatches(env);else if(message.body.kind==='SYNC_SOURCE')await sync(env);else if(message.body.kind==='GMAIL_SYNC')await pollGmail(env);else if(message.body.kind==='SHEETS_SYNC')await syncSheets(env);else if(message.body.kind==='NOTIFICATIONS')await deliverNotifications(env);else if(message.body.kind==='VERIFY_JOBS')await verifyAvailability(env);else await analyzeTask(env,message.body);message.ack();}catch{message.retry({delaySeconds:60});}}await dispatch(env);}
 } satisfies ExportedHandler<Env,{kind?:string;source_id?:string;task_id:string;entity_id:string;entity_revision:number;settings_revision:number}>;
+

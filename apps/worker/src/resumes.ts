@@ -68,7 +68,7 @@ resumes.post('/profile/import-resume',async c=>{
 resumes.get('/resumes',async c=>c.json({data:(await c.env.DB.prepare('SELECT r.*,v.id version_id,v.version,v.state,v.pdf_key,v.docx_key,v.original_key,v.changes_json,j.company,j.title FROM resumes r JOIN resume_versions v ON v.resume_id=r.id LEFT JOIN jobs j ON j.id=r.job_id WHERE r.user_id=? AND r.deleted_at IS NULL ORDER BY r.created_at DESC').bind(OWNER).all()).results}));
 resumes.post('/profile/uploads',async c=>{
   const form=await c.req.formData(),file=form.get('file');
-  if(!(file instanceof File)||file.size>7*1024*1024||!file.size)return c.json({error:{code:'INVALID_FILE',message:'Upload a PDF or DOCX under 7 MB.'}},400);
+  if(!(file instanceof File)||file.size>3.5*1024*1024||!file.size)return c.json({error:{code:'INVALID_FILE',message:'Upload a PDF or DOCX under 3.5 MB.'}},400);
   const bytes=new Uint8Array(await file.arrayBuffer());const pdf=strFromU8(bytes.slice(0,5))==='%PDF-',docx=bytes[0]===0x50&&bytes[1]===0x4b&&file.name.toLowerCase().endsWith('.docx');
   if(!pdf&&!docx)return c.json({error:{code:'INVALID_FILE',message:'The file must be a PDF or DOCX.'}},400);
   const digest=await hash([...bytes].join(',')),exists=await c.env.DB.prepare('SELECT id FROM resume_versions WHERE user_id=? AND idempotency_key=?').bind(OWNER,`master:${digest}`).first();

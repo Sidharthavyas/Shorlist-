@@ -1,6 +1,6 @@
 # Shortlist — Personal Job Search OS
 
-Status: working local application with React and a Cloudflare Worker. The frontend is deployed on Vercel; the production backend and live acceptance checks are still pending. This is not yet a complete production-ready implementation of every feature in the original brief.
+Status: working local application with React and a Cloudflare Worker. The frontend and owner-authenticated backend are deployed; MongoDB storage connectivity and live job/resume acceptance checks must pass before full operation. This is not yet a complete production-ready implementation of every feature in the original brief.
 
 ## Run the application
 
@@ -72,5 +72,6 @@ The Chrome/Edge extension is in `extensions/shortlist-autofill`. Build/package w
 
 Frontend preview: https://shortlist-six-gold.vercel.app
 
-`vercel.json` configures the frontend build and SPA routes. The production backend still needs provisioning and authentication; until connected, API requests deliberately return HTTP 503. See [Vercel deployment](docs/vercel.md) before importing this repository.
+`vercel.json` configures the frontend, authenticated API proxy and private MongoDB storage endpoint. Cloudflare D1 and Queues run the backend. See [Vercel deployment](docs/vercel.md) before importing this repository.
+
 

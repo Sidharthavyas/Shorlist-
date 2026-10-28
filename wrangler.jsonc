@@ -1,30 +1,90 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "job-search-os",
-  "main": "apps/worker/src/index.ts",
+  "main": "work/worker-build/index.js",
   "compatibility_date": "2026-10-23",
-  "workers_dev": false,
+  "workers_dev": true,
   "preview_urls": false,
-  "assets": { "directory": "apps/web/dist", "binding": "ASSETS", "not_found_handling": "single-page-application", "run_worker_first": true },
-  "d1_databases": [{ "binding": "DB", "database_name": "job-search-os", "database_id": "REPLACE_WITH_D1_UUID", "migrations_dir": "migrations" }],
-  "r2_buckets": [{ "binding": "FILES", "bucket_name": "job-search-os-private" }],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "job-search-os",
+      "database_id": "c81a6127-89c3-4937-87b4-4aee54055d11",
+      "migrations_dir": "migrations"
+    }
+  ],
   "queues": {
-    "producers": [{ "binding": "TASKS", "queue": "job-search-os-tasks" }],
-    "consumers": [{ "queue": "job-search-os-tasks", "max_batch_size": 1, "max_batch_timeout": 5, "max_retries": 5, "dead_letter_queue": "job-search-os-dlq" }]
+    "producers": [
+      {
+        "binding": "TASKS",
+        "queue": "job-search-os-tasks"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "job-search-os-tasks",
+        "max_batch_size": 1,
+        "max_batch_timeout": 5,
+        "max_retries": 5,
+        "dead_letter_queue": "job-search-os-dlq"
+      }
+    ]
   },
-  "triggers": { "crons": ["*/15 * * * *"] },
-  "observability": { "enabled": true },
-  "vars": { "APP_ENV": "production", "APP_ORIGIN": "https://REPLACE_WITH_DOMAIN", "ACCESS_ISSUER": "https://REPLACE.cloudflareaccess.com", "ACCESS_AUDIENCE": "REPLACE_WITH_AUD" },
+  "triggers": {
+    "crons": []
+  },
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "APP_ENV": "production",
+    "APP_ORIGIN": "https://shortlist-six-gold.vercel.app",
+    "ACCESS_ISSUER": "",
+    "ACCESS_AUDIENCE": "",
+    "MONGO_STORAGE_URL": "https://shortlist-six-gold.vercel.app/api/storage"
+  },
   "env": {
     "local": {
       "name": "job-search-os-local",
-      "vars": { "APP_ENV": "local", "APP_ORIGIN": "http://127.0.0.1:5173", "ACCESS_ISSUER": "", "ACCESS_AUDIENCE": "" },
-      "d1_databases": [{ "binding": "DB", "database_name": "job-search-os", "database_id": "00000000-0000-0000-0000-000000000001", "migrations_dir": "migrations" }],
-      "r2_buckets": [{ "binding": "FILES", "bucket_name": "job-search-os-local" }],
+      "vars": {
+        "APP_ENV": "local",
+        "APP_ORIGIN": "http://127.0.0.1:5173",
+        "ACCESS_ISSUER": "",
+        "ACCESS_AUDIENCE": ""
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "job-search-os",
+          "database_id": "00000000-0000-0000-0000-000000000001",
+          "migrations_dir": "migrations"
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "FILES",
+          "bucket_name": "job-search-os-local"
+        }
+      ],
       "queues": {
-        "producers": [{ "binding": "TASKS", "queue": "job-search-os-local-tasks" }],
-        "consumers": [{ "queue": "job-search-os-local-tasks", "max_batch_size": 1, "max_retries": 3 }]
-      }
+        "producers": [
+          {
+            "binding": "TASKS",
+            "queue": "job-search-os-local-tasks"
+          }
+        ],
+        "consumers": [
+          {
+            "queue": "job-search-os-local-tasks",
+            "max_batch_size": 1,
+            "max_retries": 3
+          }
+        ]
+      },
+      "main": "apps/worker/src/index.ts",
+      "no_bundle": false
     }
-  }
+  },
+  "account_id": "7951b4e0a690a4ead21d091ed704d1e1",
+  "no_bundle": true
 }

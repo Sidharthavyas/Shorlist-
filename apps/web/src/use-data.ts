@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 export async function api<T=any>(path:string,init?:RequestInit):Promise<T>{
  const response=await fetch(`/api/v1${path}`,{...init,headers:{...(init?.body instanceof FormData?{}:{'Content-Type':'application/json'}),...init?.headers}});
- if(!response.ok){let message='The request failed.';try{const body=await response.json() as any;message=body.error?.message??message;if(body.error?.details?.length)message=body.error.details.map((issue:any)=>`${issue.path?.join('.')||'Input'}: ${issue.message}`).join('; ');}catch{}throw Error(message);}
+ if(!response.ok){let message='The request failed.';try{const body=await response.json() as any;if(body.error?.code==='AUTH_REQUIRED')window.location.assign('/api/auth/login');message=body.error?.message??message;if(body.error?.details?.length)message=body.error.details.map((issue:any)=>`${issue.path?.join('.')||'Input'}: ${issue.message}`).join('; ');}catch{}throw Error(message);}
  return response.json();
 }
 export function useData<T=any>(path:string){
