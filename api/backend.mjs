@@ -19,6 +19,7 @@ export default {
       const value=request.headers.get(name);if(value)headers.set(name,value);
     }
     headers.set('X-Shortlist-Proxy-Token',secret);
+    headers.set('Accept-Encoding','identity');
     try{
       const body=['GET','HEAD'].includes(request.method)?undefined:await request.arrayBuffer();
       if(body&&body.byteLength>4*1024*1024)return Response.json({error:{code:'TOO_LARGE',message:'Maximum hosted upload size is 4 MB.'}},{status:413});

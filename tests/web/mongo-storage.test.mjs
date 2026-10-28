@@ -32,7 +32,7 @@ test('Vercel proxy preserves raw uploads, cookies and redirects while stripping 
  try{
   globalThis.fetch=async(url,options)=>{
    assert.equal(String(url),'https://worker.example.test/api/v1/profile/uploads?x=1');
-   assert.equal(options.headers.get('X-Shortlist-Proxy-Token'),'server-only-proxy-secret');assert.equal(options.headers.get('Cf-Access-Jwt-Assertion'),null);assert.equal(options.headers.get('Cookie'),'session=private');
+   assert.equal(options.headers.get('X-Shortlist-Proxy-Token'),'server-only-proxy-secret');assert.equal(options.headers.get('Accept-Encoding'),'identity');assert.equal(options.headers.get('Cf-Access-Jwt-Assertion'),null);assert.equal(options.headers.get('Cookie'),'session=private');
    assert.deepEqual(new Uint8Array(options.body),new Uint8Array([0,255,1]));assert.equal(options.redirect,'manual');
    return new Response(null,{status:303,headers:{Location:'/','Set-Cookie':'test=owner; HttpOnly; Secure','Cache-Control':'public'}});
   };
