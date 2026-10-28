@@ -25,8 +25,14 @@ export default {
       const result=await fetch(upstream,{method:request.method,headers,body,redirect:'manual',signal:AbortSignal.timeout(55000)});
       const outgoing=new Headers(result.headers);outgoing.set('Cache-Control','private, no-store');
       for(const name of ['content-length','content-encoding','transfer-encoding','connection'])outgoing.delete(name);
-      if(result.ok&&incoming.pathname.startsWith('/api/v1/')&&request.headers.get('Cookie')&&context?.waitUntil)context.waitUntil(pumpWork(backend,secret));
-      return new Response(result.body,{status:result.status,headers:outgoing});
+      // Finish the upstream body before starting more Worker requests. A known
+      // length also lets clients finish reading while background work continues.
+      const empty=request.method==='HEAD'||[204,205,304].includes(result.status);
+      const bytes=empty?null:await result.arrayBuffer();
+      if(bytes)outgoing.set('Content-Length',String(bytes.byteLength));
+      const wakesWork=/^\/api\/v1\/(?:summary|sources(?:\/sync)?|tasks\/[^/]+|jobs\/[^/]+\/resume-tasks)$/.test(incoming.pathname);
+      if(result.ok&&wakesWork&&request.headers.get('Cookie')&&context?.waitUntil)context.waitUntil(pumpWork(backend,secret));
+      return new Response(bytes,{status:result.status,headers:outgoing});
     }catch{
       return Response.json({error:{code:'BACKEND_UNAVAILABLE',message:'The backend is temporarily unavailable. Please try again.'}},{status:502,headers:{'Cache-Control':'no-store'}});
     }

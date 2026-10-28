@@ -26,7 +26,17 @@ test('successful authenticated API responses wake work without blocking the resp
   return Response.json({data:{status:'ok'}});
  };
  try{
-  const response=await proxy.fetch(new Request('https://app.test/api/v1/health',{headers:{Cookie:'owner=session'}}),{waitUntil:promise=>{background=promise;}});
+  const response=await proxy.fetch(new Request('https://app.test/api/v1/summary',{headers:{Cookie:'owner=session'}}),{waitUntil:promise=>{background=promise;}});
   assert.equal(response.status,200);assert.ok(background);await background;assert.equal(drains,1);
+ }finally{globalThis.fetch=original;delete process.env.SHORTLIST_BACKEND_URL;delete process.env.DEPLOYMENT_PROXY_SECRET;}
+});
+
+test('file responses finish before background work and do not start a work pump',async()=>{
+ process.env.SHORTLIST_BACKEND_URL='https://worker.test';process.env.DEPLOYMENT_PROXY_SECRET='server-secret';
+ const original=globalThis.fetch;let scheduled=false;
+ globalThis.fetch=async()=>new Response(new Uint8Array([37,80,68,70]),{headers:{'Content-Type':'application/pdf','Content-Encoding':'gzip','Content-Length':'999'}});
+ try{
+  const response=await proxy.fetch(new Request('https://app.test/api/v1/resume-versions/fixture/files/pdf',{headers:{Cookie:'owner=session'}}),{waitUntil:()=>{scheduled=true;}});
+  assert.equal(scheduled,false);assert.equal(response.headers.get('Content-Encoding'),null);assert.equal(response.headers.get('Content-Length'),'4');assert.deepEqual(new Uint8Array(await response.arrayBuffer()),new Uint8Array([37,80,68,70]));
  }finally{globalThis.fetch=original;delete process.env.SHORTLIST_BACKEND_URL;delete process.env.DEPLOYMENT_PROXY_SECRET;}
 });
