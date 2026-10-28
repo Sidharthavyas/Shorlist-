@@ -55,7 +55,15 @@ try {
  const pdf=await mf.dispatchFetch(`http://localhost/api/v1/resume-versions/${version}/files/pdf`);assert.equal(pdf.status,200);const pdfBytes=await pdf.arrayBuffer();assert.equal(new TextDecoder().decode(pdfBytes.slice(0,5)),'%PDF-');pass('Generated PDF is stored in R2 and downloads');
  const docx=await mf.dispatchFetch(`http://localhost/api/v1/resume-versions/${version}/files/docx`);assert.equal(docx.status,200);assert.equal(new Uint8Array(await docx.arrayBuffer())[0],0x50);pass('Generated DOCX is stored in R2 and downloads');
  result=await request('/jobs/sample-1/resume-tasks','POST');assert.equal(result.data.task_id,taskId);pass('Repeated generation reuses the same profile/job version');
- result=await request('/jobs/sample-8/resume-tasks','POST');assert.equal(result.status,422);pass('Rejected job cannot generate an eligible resume');
+ await db.prepare("UPDATE jobs SET location_status='INCOMPATIBLE',location_reason='Fixture location mismatch',availability='CLOSED' WHERE id='sample-8'").run();
+ result=await request('/jobs/sample-8/resume-tasks','POST');assert.equal(result.status,202);const incompatibleTask=result.data.task_id;
+ for(let i=0;i<80;i++){task=await request(`/tasks/${incompatibleTask}`);if(['READY','FAILED'].includes(task.data.state))break;await new Promise(r=>setTimeout(r,100));}
+ assert.equal(task.data.state,'READY',JSON.stringify(task));pass('Owner can generate a resume for an incompatible, experience-rejected or closed job');
+ const incompatibleVersion=JSON.parse(task.data.result_json).resume_version_id;
+ for(const format of ['pdf','docx']){const file=await mf.dispatchFetch(`http://localhost/api/v1/resume-versions/${incompatibleVersion}/files/${format}`);assert.equal(file.status,200);const bytes=new Uint8Array(await file.arrayBuffer());assert.ok(format==='pdf'?new TextDecoder().decode(bytes.slice(0,5))==='%PDF-':bytes[0]===0x50);}pass('Incompatible-job resumes produce downloadable PDF and DOCX files');
+ const comparison=await request(`/resume-versions/${incompatibleVersion}/compare`);assert.equal(comparison.data.changes.fabricated_claims,0);assert.ok(!/Java|AWS/.test(JSON.stringify(comparison.data.content)));pass('Incompatible-job tailoring never adds missing skills or experience');
+ const unchanged=await request('/jobs/sample-8');assert.equal(unchanged.data.experience_status,'NOT_ELIGIBLE');assert.equal(unchanged.data.location_status,'INCOMPATIBLE');assert.equal(unchanged.data.availability,'CLOSED');pass('Manual resume generation preserves job eligibility and availability warnings');
+ result=await request('/jobs/missing-job/resume-tasks','POST');assert.equal(result.status,404);pass('Missing jobs cannot create resume tasks');
  const object=await (await mf.getR2Bucket('FILES')).get(resumes.data[0].pdf_key);assert.ok(object);pass('D1 resume metadata points to an existing private object');
  const form=new FormData();form.append('file',new File([pdfBytes],'master.pdf',{type:'application/pdf'}));
  const multipart=new Request('http://localhost',{method:'POST',body:form});

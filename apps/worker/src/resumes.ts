@@ -31,7 +31,7 @@ export async function generateResume(env:Env,taskId:string) {
   if(!task)return;
   try {
     const version=await env.DB.prepare('SELECT * FROM resume_versions WHERE idempotency_key=? AND user_id=?').bind(task.idempotency_key,OWNER).first<{id:string;profile_revision:number;job_revision:number}>();
-    const job=await env.DB.prepare('SELECT * FROM recommended_jobs WHERE id=? AND user_id=?').bind(task.entity_id,OWNER).first<{normalized_json:string;company:string;title:string;revision:number}>();
+    const job=await env.DB.prepare('SELECT * FROM jobs WHERE id=?').bind(task.entity_id).first<{normalized_json:string;company:string;title:string;revision:number}>();
     const p=await env.DB.prepare('SELECT * FROM profiles WHERE user_id=?').bind(OWNER).first<{data_json:string;revision:number}>();
     if(!job||!version||!p||p.revision!==version.profile_revision||job.revision!==version.job_revision)throw new Error('STALE_INPUT');
     const profile=JSON.parse(p.data_json) as Profile;const content=tailor(profile,JSON.parse(job.normalized_json).skills ?? []);
@@ -101,8 +101,10 @@ resumes.post('/profile/uploads',async c=>{
   return c.json({data:{id,resume_version_id:v,extracted_text:extracted,verification_required:true,message:pdf?'PDF stored. Enter and verify facts in your profile before tailoring.':'DOCX text extracted. Verify facts in your profile before tailoring.'}},201);
 });
 resumes.post('/jobs/:id/resume-tasks',async c=>{
-  const job=await c.env.DB.prepare('SELECT id,revision FROM recommended_jobs WHERE id=? AND user_id=?').bind(c.req.param('id'),OWNER).first<{id:string;revision:number}>();
-  if(!job)return c.json({error:{code:'INELIGIBLE',message:'Resume generation requires an open eligible compatible job.'}},422);
+  // Recommendation eligibility controls discovery, not owner-requested tailoring.
+  // The background renderer uses the same catalog lookup and revision checks.
+  const job=await c.env.DB.prepare('SELECT id,revision FROM jobs WHERE id=?').bind(c.req.param('id')).first<{id:string;revision:number}>();
+  if(!job)return c.json({error:{code:'NOT_FOUND',message:'Job not found.'}},404);
   const profile=await c.env.DB.prepare('SELECT data_json,revision FROM profiles WHERE user_id=?').bind(OWNER).first<{data_json:string;revision:number}>();
   try{tailor(JSON.parse(profile?.data_json ?? '{}'),[]);}catch{return c.json({error:{code:'PROFILE_INCOMPLETE',message:'Add your name, email and verified projects, experience, or achievements in Settings first.'}},422);}
   const key=`tailor:${job.id}:${job.revision}:${profile!.revision}:${RESUME_TEMPLATE}`;

@@ -61,3 +61,8 @@ Import the saved verified profile directly while the Shortlist dashboard is the 
 Validation includes 12 DOM regression tests for cached background refresh, request races, polling refresh frequency, field classification, preserving answers, selects, native React-controlled input events, resume files, shadow roots/same-origin frames, undo and the permission manifest. An isolated actual-Chrome check with local fixtures also verified Review sync without loading flashes/focus loss and native form/file filling. The popup was rendered with mocked Chrome storage. These checks do not claim that the unpacked extension has been installed in the owner's browser or tested against every live ATS. The profile export is included in Worker integration tests.
 
 
+
+## Manual resume generation
+
+The owner can generate a resume for any existing catalog job, including incompatible, uncertain, experience-rejected and closed jobs. Recommendation filters and job warnings are preserved. A complete verified profile and current profile/job revisions are still required; generated content only selects and reorders verified facts.
+
