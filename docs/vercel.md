@@ -37,9 +37,18 @@ npm run deploy:worker
 
 `scripts/deploy-cloudflare.mjs` uploads the prebuilt Worker via the official API, preserves existing secrets and configures its queue consumer and schedule. Authenticate Wrangler first or set CLOUDFLARE_API_TOKEN; its local ignored OAuth file is also supported. Production migrations must be applied before deployment. No sample seed is used in production.
 
-Hosted MongoDB writes, reads, deletes and private resume uploads/downloads have been verified. The Worker sync schedule runs every 15 minutes; individual providers retain their own backoff and polling intervals. Large JSON board caches are gzip-compressed before transport to stay within hosted request limits. FreeHire resumes through the queue in batches of 20. Verify real source sync, PDF/DOCX uploads, profile verification, generated resume downloads and owner/non-owner requests. Telegram and Google remain optional integrations requiring their own secrets.
+Hosted MongoDB writes, reads, deletes and private resume uploads/downloads have been verified. Discovery sweeps run every 15 minutes, with a minute-level heartbeat for durable background work; individual providers retain their own backoff and polling intervals. Large JSON board caches are gzip-compressed before transport to stay within hosted request limits. FreeHire resumes through the queue in batches of 20. Verify real source sync, PDF/DOCX uploads, profile verification, generated resume downloads and owner/non-owner requests. Telegram and Google remain optional integrations requiring their own secrets.
 
 Do not upload `work`, `.wrangler`, `.vercel`, `.dev.vars`, `.env`, raw resumes, local databases or login credentials to GitHub. The private URI input file is `work/mongodb-uri.txt`; it is never part of source deployments.
 
 
+
+
+## Queue quota recovery
+
+Cloudflare Queues write failures, including its daily free-tier limit, are persisted in D1 `durable_work` rather than returned as an application 500. A persisted circuit breaker avoids repeatedly calling the rejected native queue until its daily reset (or briefly after other queue failures). Work is coalesced by task/source identity, leased atomically, retried with bounded backoff and retained on failure. Owner-requested resumes have priority. An atomic outbox dispatch claim prevents concurrent consumers from publishing the same pending rows repeatedly.
+
+A minute-level Worker heartbeat drains fallback work even without an open browser. Source discovery sweeps remain every 15 minutes, with provider-specific polling intervals. While the owner uses the app, Vercel's response-lifecycle background hook pumps a bounded number of tasks through the transport-authenticated Worker drain endpoint. Browser requests to this internal endpoint are rejected. Existing pending outbox records are recovered; no production jobs, profiles or resumes are cleared.
+
+Apply `0004_durable_work.sql` before deploying this queue implementation. `npm run test:integration` includes quota rejection, coalescing, continuation, priority, lease, delayed retry and concurrent dispatch recovery checks. Historical errors from previous Worker versions remain visible in Cloudflare's selected metrics time range.
 

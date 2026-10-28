@@ -11,7 +11,7 @@ export async function syncFeed(env:Env,id:string){
   const feed={...JSON.parse(row.config_json),id:row.id,name:row.name} as Feed;
   if(!feed.provider)return {state:'NOT_CONFIGURED'};
   const t=now(),token=crypto.randomUUID();
-  const lease=await env.DB.prepare('UPDATE source_sync_state SET lease_token=?,lease_until=?,run_started_at=COALESCE(run_started_at,?) WHERE source_id=? AND (lease_until IS NULL OR lease_until<?) AND (next_retry_at IS NULL OR next_retry_at<=?) AND (cursor IS NOT NULL OR last_completed_at IS NULL OR last_completed_at<=?) RETURNING *').bind(token,new Date(Date.now()+120000).toISOString(),t,id,t,t,new Date(Date.now()-feed.interval*60000).toISOString()).first<{cursor:string|null;counters_json:string;run_started_at:string}>();
+  const lease=await env.DB.prepare('UPDATE source_sync_state SET lease_token=?,lease_until=?,queued_until=NULL,run_started_at=COALESCE(run_started_at,?) WHERE source_id=? AND (lease_until IS NULL OR lease_until<?) AND (next_retry_at IS NULL OR next_retry_at<=?) AND (cursor IS NOT NULL OR last_completed_at IS NULL OR last_completed_at<=?) RETURNING *').bind(token,new Date(Date.now()+120000).toISOString(),t,id,t,t,new Date(Date.now()-feed.interval*60000).toISOString()).first<{cursor:string|null;counters_json:string;run_started_at:string}>();
   if(!lease)return {state:'BUSY_OR_NOT_DUE'};
   const cursor:Cursor=lease.cursor?JSON.parse(lease.cursor):{offset:0,upstream:null};
   const counters=lease.cursor?JSON.parse(lease.counters_json):{fetched:0,stored:0,duplicates:0,invalid_records:0,skipped:0,pages:0};
@@ -50,9 +50,10 @@ export async function syncFeed(env:Env,id:string){
   }
 }
 export async function queueCoverage(env:Env){
-  const rows=await env.DB.prepare("SELECT s.id FROM job_sources s JOIN source_sync_state t ON t.source_id=s.id WHERE s.enabled=1 AND s.id<>'freehire' AND json_extract(s.config_json,'$.provider') IS NOT NULL AND (t.next_retry_at IS NULL OR t.next_retry_at<=?)").bind(now()).all<{id:string}>();
-  for(const row of rows.results)await env.TASKS.send({kind:'SYNC_FEED',source_id:row.id});
-  return rows.results.map(r=>r.id);
+  const t=now();
+  const rows=await env.DB.prepare("UPDATE source_sync_state SET queued_until=? WHERE source_id IN (SELECT s.id FROM job_sources s JOIN source_sync_state t ON t.source_id=s.id WHERE s.enabled=1 AND s.id<>'freehire' AND json_extract(s.config_json,'$.provider') IS NOT NULL AND (t.next_retry_at IS NULL OR t.next_retry_at<=?) AND (t.lease_until IS NULL OR t.lease_until<=?) AND (t.queued_until IS NULL OR t.queued_until<=?) AND (t.cursor IS NOT NULL OR t.last_completed_at IS NULL OR julianday(t.last_completed_at)<=julianday(?)-COALESCE(json_extract(s.config_json,'$.interval'),360)/1440.0)) RETURNING source_id").bind(new Date(Date.now()+120000).toISOString(),t,t,t,t).all<{source_id:string}>();
+  for(const row of rows.results)await env.TASKS.send({kind:'SYNC_FEED',source_id:row.source_id});
+  return rows.results.map(r=>r.source_id);
 }
 export async function refreshPatternMatches(env:Env){
   const config=await settings(env),profile=await env.DB.prepare('SELECT revision FROM profiles WHERE user_id=?').bind(OWNER).first<{revision:number}>();

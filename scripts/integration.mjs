@@ -26,7 +26,7 @@ async function request(path,method='GET',body,origin='http://127.0.0.1:5173') {
 }
 try {
  const db=await mf.getD1Database('DB');
- for(const file of ['migrations/0001_initial.sql','migrations/0002_runtime.sql','seed.sql'])await db.exec(readFileSync(file,'utf8').replace(/--[^\n]*/g,'').replace(/\r?\n/g,' '));
+ for(const file of ['migrations/0001_initial.sql','migrations/0002_runtime.sql','migrations/0004_durable_work.sql','seed.sql'])await db.exec(readFileSync(file,'utf8').replace(/--[^\n]*/g,'').replace(/\r?\n/g,' '));
  assert.equal((await request('/health')).status,200);pass('Worker runs under workerd with D1 and R2');
  const defaults=await mf.dispatchFetch('http://localhost/api/v1/jobs');assert.equal((await defaults.json()).data.length,0);pass('Fictional sample jobs are hidden by default');
  let result=await request('/jobs');assert.equal(result.data.length,6);assert.ok(result.data.every(j=>j.experience_status==='ELIGIBLE'));pass('Discover excludes ambiguous and rejected jobs');
@@ -81,3 +81,4 @@ try {
  const real=await mf.dispatchFetch('http://localhost/api/v1/jobs');const realJobs=await real.json();assert.equal(realJobs.data.length,8);assert.ok(realJobs.data.every(j=>j.is_sample===0));pass('Default Discover shows imported real-source records without demo rows');
  console.log(`${checks} Cloudflare runtime integration checks passed.`);
 } finally {await mf.dispose();}
+

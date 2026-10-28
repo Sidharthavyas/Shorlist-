@@ -14,7 +14,7 @@ let checks=0;const pass=name=>{checks++;console.log('PASS '+name);};
 const call=(path,options={})=>mf.dispatchFetch(origin+path,{redirect:'manual',...options,headers:{'X-Shortlist-Proxy-Token':secret,...options.headers}});
 const login=(password='fixture-password',from=origin)=>call('/api/auth/login',{method:'POST',headers:{Origin:from,'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({password}).toString()});
 try{
- const db=await mf.getD1Database('DB');for(const file of ['0001_initial.sql','0002_runtime.sql','0003_owner_session.sql'])await db.exec(readFileSync('migrations/'+file,'utf8').replace(/--[^\n]*/g,'').replace(/\r?\n/g,' '));
+ const db=await mf.getD1Database('DB');for(const file of ['0001_initial.sql','0002_runtime.sql','0003_owner_session.sql','0004_durable_work.sql'])await db.exec(readFileSync('migrations/'+file,'utf8').replace(/--[^\n]*/g,'').replace(/\r?\n/g,' '));
  assert.equal((await mf.dispatchFetch(origin+'/api/v1/health')).status,401);pass('direct Worker requests cannot bypass Vercel transport authentication');
  assert.equal((await call('/api/v1/health')).status,401);pass('transport authentication does not grant an owner session');
  const loginForm=await call('/api/auth/login');assert.equal(loginForm.status,200);assert.equal(loginForm.headers.get('Referrer-Policy'),'same-origin');pass('owner sign-in form preserves browser Origin without leaking cross-origin referrers');
@@ -39,6 +39,7 @@ try{
  assert.equal((await login()).status,429);pass('persistent login attempt limits survive individual requests');
  console.log(`${checks} owner session checks passed.`);
 }finally{await mf.dispose();}
+
 
 
 

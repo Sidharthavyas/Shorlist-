@@ -17,9 +17,11 @@ function compile(dir) {
 }
 for(const dir of ['apps/worker','contracts','tests'])compile(dir);
 cpSync('config',`${root}/config`,{recursive:true});
+if(process.argv.includes('--compile-only'))process.exit(0);
 if(process.argv.includes('--seed')) {
  const r=spawnSync(process.execPath,[`${root}/tests/make-seed.js`],{stdio:'inherit'});process.exit(r.status ?? 1);
 }
 const entries=readdirSync('tests').filter(x=>x.endsWith('.test.ts')).map(x=>`tests/${x}`);
 const r=spawnSync(process.execPath,['--test',...entries.map(x=>`${root}/${x.replace('.ts','.js')}`)],{stdio:'inherit'});
 process.exit(r.status ?? 1);
+

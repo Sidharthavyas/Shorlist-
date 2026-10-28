@@ -55,9 +55,10 @@ export async function saveJob(env:Env, job:NormalizedJob, config:{data:Settings;
   return {id,duplicate:false};
 }
 export async function dispatch(env:Env) {
-  const rows=await env.DB.prepare('SELECT * FROM outbox WHERE completed_at IS NULL AND available_at<=? AND (dispatched_at IS NULL OR dispatched_at<?) LIMIT 20').bind(now(),new Date(Date.now()-600000).toISOString()).all<{id:string;payload_json:string}>();
-  for (const row of rows.results) {
+  const token=crypto.randomUUID(),t=now();
+  const rows=await env.DB.prepare('UPDATE outbox SET dispatch_token=?,dispatch_until=? WHERE id IN (SELECT id FROM outbox WHERE completed_at IS NULL AND available_at<=? AND (dispatched_at IS NULL OR dispatched_at<?) AND (dispatch_until IS NULL OR dispatch_until<=?) LIMIT 20) RETURNING id,payload_json').bind(token,new Date(Date.now()+90000).toISOString(),t,new Date(Date.now()-600000).toISOString(),t).all<{id:string;payload_json:string}>();
+  try{for(const row of rows.results){
     await env.TASKS.send(JSON.parse(row.payload_json));
-    await env.DB.prepare('UPDATE outbox SET dispatched_at=?,attempts=attempts+1 WHERE id=?').bind(now(),row.id).run();
-  }
+    await env.DB.prepare('UPDATE outbox SET dispatched_at=?,attempts=attempts+1,dispatch_token=NULL,dispatch_until=NULL WHERE id=? AND dispatch_token=?').bind(now(),row.id,token).run();
+  }}finally{await env.DB.prepare('UPDATE outbox SET dispatch_token=NULL,dispatch_until=NULL WHERE dispatch_token=?').bind(token).run();}
 }

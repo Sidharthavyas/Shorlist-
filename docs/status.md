@@ -66,3 +66,8 @@ Validation includes 12 DOM regression tests for cached background refresh, reque
 
 The owner can generate a resume for any existing catalog job, including incompatible, uncertain, experience-rejected and closed jobs. Recommendation filters and job warnings are preserved. A complete verified profile and current profile/job revisions are still required; generated content only selects and reorders verified facts.
 
+
+## Queue recovery
+
+Cloudflare queue quota failures fall back to leased D1 work with resumable dispatch and resume-task priority. Concurrent outbox publishers claim rows atomically, and source scheduling skips feeds that are active, already queued or not due. A minute heartbeat and bounded Vercel background pump drain pending work; discovery retains its 15-minute cadence.
+

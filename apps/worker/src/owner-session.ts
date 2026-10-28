@@ -16,12 +16,15 @@ const loginPage=`<!doctype html><html lang="en"><meta charset="utf-8"><meta name
 
 // This mode is opt-in. Access JWT authentication remains available when no proxy
 // secret is configured. The transport secret never grants an owner session.
+export async function proxyAuthorized(request:Request,env:Env){
+  return !!env.DEPLOYMENT_PROXY_SECRET&&env.DEPLOYMENT_PROXY_SECRET.length>=32&&await equalSecret(request.headers.get('X-Shortlist-Proxy-Token')??'',env.DEPLOYMENT_PROXY_SECRET);
+}
 export async function ownerSession(c:Context<{Bindings:Env;Variables:{requestId:string}}>) {
   const env=c.env;
   if(!env.DEPLOYMENT_PROXY_SECRET)return null;
   if(env.APP_ENV!=='production'||!env.OWNER_EMAIL||!env.OWNER_SESSION_SECRET||env.OWNER_SESSION_SECRET.length<32||!env.OWNER_PASSWORD_HASH)
     return c.json({error:{code:'AUTH_NOT_CONFIGURED',message:'Owner authentication is not configured.'}},503);
-  if(!await equalSecret(c.req.header('X-Shortlist-Proxy-Token')??'',env.DEPLOYMENT_PROXY_SECRET))
+  if(!await proxyAuthorized(c.req.raw,env))
     return c.json({error:{code:'UNAUTHORIZED',message:'Use the Shortlist dashboard.'}},401);
   const path=new URL(c.req.url).pathname;
   if(!['GET','HEAD','OPTIONS'].includes(c.req.method)&&c.req.header('Origin')!==env.APP_ORIGIN)

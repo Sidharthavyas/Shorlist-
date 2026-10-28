@@ -15,13 +15,14 @@
     "typecheck": "tsc --noEmit",
     "test": "node scripts/test.mjs && node tests/schema.mjs && node scripts/web-tests.mjs",
     "seed:generate": "node scripts/test.mjs --seed",
-    "test:integration": "npm run build:worker && node scripts/integration.mjs && node scripts/coverage-test.mjs && node scripts/auth-test.mjs && node scripts/session-test.mjs",
+    "test:integration": "node scripts/test.mjs --compile-only && npm run build:worker && node scripts/integration.mjs && node scripts/coverage-test.mjs && node scripts/auth-test.mjs && node scripts/session-test.mjs && node scripts/durable-work-test.mjs",
     "db:migrate": "wrangler d1 migrations apply DB --local --env local",
     "db:seed": "wrangler d1 execute DB --local --env local --file seed.sql",
     "deploy": "npm run build && npm run build:worker && wrangler deploy",
     "check:deploy": "npm run build && npm run build:worker && wrangler deploy --dry-run --outdir work/deploy-check",
     "test:web": "node scripts/web-tests.mjs",
-    "deploy:worker": "npm run build:worker && node scripts/deploy-cloudflare.mjs"
+    "deploy:worker": "npm run build:worker && node scripts/deploy-cloudflare.mjs",
+    "test:unit": "node scripts/test.mjs"
   },
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",

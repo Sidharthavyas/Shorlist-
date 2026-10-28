@@ -11,7 +11,7 @@ const mf=new Miniflare(convertV4MiniflareOptions({modules:true,script:readFileSy
  serviceBindings:{ASSETS:()=>new Response('private assets')}
 }));
 try {
- const db=await mf.getD1Database('DB');for(const file of ['migrations/0001_initial.sql','migrations/0002_runtime.sql'])await db.exec(readFileSync(file,'utf8').replace(/--[^\n]*/g,'').replace(/\r?\n/g,' '));
+ const db=await mf.getD1Database('DB');for(const file of ['migrations/0001_initial.sql','migrations/0002_runtime.sql','migrations/0004_durable_work.sql'])await db.exec(readFileSync(file,'utf8').replace(/--[^\n]*/g,'').replace(/\r?\n/g,' '));
  async function jwt(email='owner@example.test',aud='test-audience',expiry='5m') {return new SignJWT({email}).setProtectedHeader({alg:'RS256',kid:'test-key'}).setSubject('access-owner').setIssuer(issuer).setAudience(aud).setIssuedAt().setExpirationTime(expiry).sign(privateKey);}
  const request=token=>mf.dispatchFetch('https://jobs.example.test/api/v1/health',{headers:token?{'Cf-Access-Jwt-Assertion':token}:{}});
  assert.equal((await request()).status,401);console.log('PASS production rejects missing Access assertion');
@@ -23,3 +23,4 @@ try {
  const asset=await mf.dispatchFetch('https://jobs.example.test/assets/app.js');assert.equal(asset.status,401);console.log('PASS static asset paths cannot bypass authentication');
  console.log('7 production authentication checks passed with a mocked Access JWKS.');
 } finally {await mf.dispose();}
+

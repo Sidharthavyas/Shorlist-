@@ -19,7 +19,7 @@ const mf=new Miniflare(convertV4MiniflareOptions({modules:true,script:readFileSy
 let checks=0;const pass=name=>{console.log('PASS '+name);checks++;};
 async function request(path,method='GET',body){const r=await mf.dispatchFetch('http://localhost/api/v1'+path,{method,headers:{Origin:'http://127.0.0.1:5173','Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});return {status:r.status,...await r.json()};}
 try{
- const db=await mf.getD1Database('DB');for(const f of ['migrations/0001_initial.sql','migrations/0002_runtime.sql'])await db.exec(readFileSync(f,'utf8').replace(/--[^\n]*/g,'').replace(/\r?\n/g,' '));
+ const db=await mf.getD1Database('DB');for(const f of ['migrations/0001_initial.sql','migrations/0002_runtime.sql','migrations/0004_durable_work.sql'])await db.exec(readFileSync(f,'utf8').replace(/--[^\n]*/g,'').replace(/\r?\n/g,' '));
  const sources=(await request('/sources')).data;assert.equal(sources.length,10);pass('All seven provider types initialize without a new database or migration');
  const enabled=['himalayas','jobicy','remotive','greenhouse:stripe','ashby:supabase','lever:palantir'];for(const s of sources)if(!enabled.includes(s.id))await request('/sources/'+encodeURIComponent(s.id),'PATCH',{enabled:false});
  await request('/profile','PUT',{revision:1,name:'Test Candidate',email:'candidate@example.test',headline:'Backend Engineer',skills:['Python','FastAPI'],education:[],experience:[],projects:['Built a Python API.'],verified_bullets:[]});
@@ -46,3 +46,4 @@ try{
  const cache=await (await mf.getR2Bucket('FILES')).list({prefix:'jobs/feeds/'});assert.equal(cache.objects.length,0);pass('Completed cached pages are cleaned up');
  console.log(checks+' multi-source Worker integration checks passed.');
 }finally{await mf.dispose();}
+
