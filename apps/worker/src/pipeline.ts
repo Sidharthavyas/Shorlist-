@@ -18,7 +18,9 @@ export async function sync(env:Env) {
   await env.DB.prepare("UPDATE source_sync_state SET window_start=?,run_started_at=COALESCE(run_started_at,?),last_error_code=NULL WHERE source_id='freehire' AND lease_token=?").bind(windowStart,t,token).run();
   try {
     let complete=false,backoff:string|null=null;
-    for(let page=0;page<3;page++) {
+    // One small page per invocation leaves room for object writes and queue
+    // publication within the free Worker's subrequest budget.
+    {
       const result=await fetchPage(env.FREEHIRE_API_KEY,offset,days);
       let pageInvalid=0;
       for(const raw of result.data) {
@@ -36,8 +38,7 @@ export async function sync(env:Env) {
       offset+=result.data.length;
       complete=offset>=result.meta.total || result.data.length===0;
       await env.DB.prepare("UPDATE source_sync_state SET cursor=?,counters_json=? WHERE source_id='freehire' AND lease_token=?").bind(String(offset),JSON.stringify({fetched:offset,last_batch_duplicates:duplicates,invalid_records:invalid,total:result.meta.total}),token).run();
-      if(result.rate_remaining===0){backoff=new Date(Math.max(Date.now()+60000,Number(result.rate_reset)*1000||0)).toISOString();break;}
-      if(complete) break;
+      if(result.rate_remaining===0)backoff=new Date(Math.max(Date.now()+60000,Number(result.rate_reset)*1000||0)).toISOString();
     }
     await env.DB.prepare("UPDATE source_sync_state SET cursor=?,last_completed_at=CASE WHEN ? THEN ? ELSE last_completed_at END,window_start=CASE WHEN ? THEN NULL ELSE window_start END,run_started_at=CASE WHEN ? THEN NULL ELSE run_started_at END,lease_token=NULL,lease_until=NULL,next_retry_at=NULL,last_error_code=NULL WHERE source_id='freehire' AND lease_token=?").bind(complete?null:String(offset),complete?1:0,lease.run_started_at ?? t,complete?1:0,complete?1:0,token).run();
     if(backoff)await env.DB.prepare("UPDATE source_sync_state SET next_retry_at=? WHERE source_id='freehire'").bind(backoff).run();
@@ -116,3 +117,4 @@ export async function verifyAvailability(env:Env) {
     const result=await response.json() as {data:unknown};await saveJob(env,normalize(result.data),config,false,result.data);
   }
 }
+

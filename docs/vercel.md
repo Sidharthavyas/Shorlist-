@@ -37,6 +37,7 @@ npm run deploy:worker
 
 `scripts/deploy-cloudflare.mjs` uploads the prebuilt Worker via the official API, preserves existing secrets and configures its queue consumer and schedule. Authenticate Wrangler first or set CLOUDFLARE_API_TOKEN; its local ignored OAuth file is also supported. Production migrations must be applied before deployment. No sample seed is used in production.
 
-The sync schedule is kept empty while production storage is disconnected. Once hosted MongoDB writes/reads work, set the cron in wrangler.jsonc to `*/15 * * * *` and redeploy the Worker. Verify real source sync, PDF/DOCX uploads, profile verification, generated resume downloads and owner/non-owner requests. Telegram and Google remain optional integrations requiring their own secrets.
+Hosted MongoDB writes, reads, deletes and private resume uploads/downloads have been verified. The Worker sync schedule runs every 15 minutes; individual providers retain their own backoff and polling intervals. Large JSON board caches are gzip-compressed before transport to stay within hosted request limits. FreeHire resumes through the queue in batches of 20. Verify real source sync, PDF/DOCX uploads, profile verification, generated resume downloads and owner/non-owner requests. Telegram and Google remain optional integrations requiring their own secrets.
 
 Do not upload `work`, `.wrangler`, `.vercel`, `.dev.vars`, `.env`, raw resumes, local databases or login credentials to GitHub. The private URI input file is `work/mongodb-uri.txt`; it is never part of source deployments.
+

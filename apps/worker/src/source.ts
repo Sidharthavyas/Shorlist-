@@ -35,9 +35,10 @@ export function normalize(raw: unknown, now = new Date().toISOString()): Normali
 export class UpstreamError extends Error { constructor(public status:number,public retryAfter:number) { super(`FreeHire returned ${status}`); } }
 export async function fetchPage(key: string|undefined, offset: number, days: number) {
   const url = new URL('https://freehire.me/api/v1/agent/jobs/search');
-  url.search = new URLSearchParams({open_within_days:String(days),limit:'50',offset:String(offset),category:'backend,frontend,fullstack,mobile',work_mode:'remote',experience_years_max:'2',experience_include_unspecified:'true'}).toString();
+  url.search = new URLSearchParams({open_within_days:String(days),limit:'20',offset:String(offset),category:'backend,frontend,fullstack,mobile',work_mode:'remote',experience_years_max:'2',experience_include_unspecified:'true'}).toString();
   const response = await fetch(url,{headers:key?{Authorization:`Bearer ${key}`}:{},signal:AbortSignal.timeout(20000)});
   if (!response.ok) throw new UpstreamError(response.status,Math.max(60,Number(response.headers.get('Retry-After'))||60));
   const page = z.object({data:z.array(z.unknown()),meta:z.object({total:z.number(),limit:z.number(),offset:z.number()})}).parse(await response.json());
   return {...page,rate_remaining:response.headers.has('X-RateLimit-Remaining')?Number(response.headers.get('X-RateLimit-Remaining')):null,rate_reset:response.headers.get('X-RateLimit-Reset')};
 }
+
