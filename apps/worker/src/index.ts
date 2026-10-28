@@ -20,7 +20,9 @@ export const app = new Hono<{Bindings:Env;Variables:{requestId:string}}>();
 const keys=new Map<string,ReturnType<typeof createRemoteJWKSet>>();
 app.use('*',async(c,next)=>{
   c.set('requestId',crypto.randomUUID());
-  c.header('X-Content-Type-Options','nosniff'); c.header('Referrer-Policy','no-referrer');
+  // Native same-origin form POSTs need their Origin header. no-referrer makes
+  // browsers send Origin: null, which correctly fails our mutation guard.
+  c.header('X-Content-Type-Options','nosniff'); c.header('Referrer-Policy','same-origin');
   c.header('Cache-Control','private, no-store'); c.header('X-Frame-Options','DENY');
   c.header('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'");
   const host=new URL(c.req.url).hostname;

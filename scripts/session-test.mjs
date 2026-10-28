@@ -17,7 +17,9 @@ try{
  const db=await mf.getD1Database('DB');for(const file of ['0001_initial.sql','0002_runtime.sql','0003_owner_session.sql'])await db.exec(readFileSync('migrations/'+file,'utf8').replace(/--[^\n]*/g,'').replace(/\r?\n/g,' '));
  assert.equal((await mf.dispatchFetch(origin+'/api/v1/health')).status,401);pass('direct Worker requests cannot bypass Vercel transport authentication');
  assert.equal((await call('/api/v1/health')).status,401);pass('transport authentication does not grant an owner session');
- assert.equal((await call('/api/auth/login')).status,200);pass('owner sign-in form is available through the proxy');
+ const loginForm=await call('/api/auth/login');assert.equal(loginForm.status,200);assert.equal(loginForm.headers.get('Referrer-Policy'),'same-origin');pass('owner sign-in form preserves browser Origin without leaking cross-origin referrers');
+ assert.equal((await login('fixture-password','null')).status,403);pass('opaque origins are rejected rather than bypassing login protection');
+ assert.equal((await call('/api/auth/login',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'password=fixture-password'})).status,403);pass('login without an Origin is rejected');
  assert.equal((await login('fixture-password','https://attacker.test')).status,403);pass('login rejects cross-site requests');
  assert.equal((await login('wrong-password')).status,401);pass('wrong owner password is rejected');
  const signedIn=await login();assert.equal(signedIn.status,303);const cookie=signedIn.headers.get('Set-Cookie');assert.match(cookie,/HttpOnly; Secure; SameSite=Strict/);pass('correct owner password establishes a secure session');
