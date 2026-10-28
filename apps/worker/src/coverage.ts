@@ -1,7 +1,7 @@
 import type { Env } from './env';
 import { dispatch, now, saveJob, settings } from './store';
 import { roleAllowed, MATCH_ENGINE } from './domain';
-import { OWNER } from './env';
+import { owner } from './env';
 import { fetchFeed, normalizeFeed, FeedError, type Feed } from './providers';
 
 type Cursor={pageKey?:string;offset:number;upstream:string|null;next?:string|null;};
@@ -51,14 +51,14 @@ export async function syncFeed(env:Env,id:string){
 }
 export async function queueCoverage(env:Env){
   const t=now();
-  const rows=await env.DB.prepare("UPDATE source_sync_state SET queued_until=? WHERE source_id IN (SELECT s.id FROM job_sources s JOIN source_sync_state t ON t.source_id=s.id WHERE s.enabled=1 AND s.id<>'freehire' AND json_extract(s.config_json,'$.provider') IS NOT NULL AND (t.next_retry_at IS NULL OR t.next_retry_at<=?) AND (t.lease_until IS NULL OR t.lease_until<=?) AND (t.queued_until IS NULL OR t.queued_until<=?) AND (t.cursor IS NOT NULL OR t.last_completed_at IS NULL OR julianday(t.last_completed_at)<=julianday(?)-COALESCE(json_extract(s.config_json,'$.interval'),360)/1440.0)) RETURNING source_id").bind(new Date(Date.now()+120000).toISOString(),t,t,t,t).all<{source_id:string}>();
+  const rows=await env.DB.prepare("UPDATE source_sync_state SET queued_until=? WHERE source_id IN (SELECT s.id FROM job_sources s JOIN source_sync_state t ON t.source_id=s.id WHERE s.enabled=1 AND s.id<>'freehire' AND json_extract(s.config_json,'$.provider') IS NOT NULL AND (t.next_retry_at IS NULL OR t.next_retry_at<=?) AND (t.lease_until IS NULL OR t.lease_until<=?) AND (t.queued_until IS NULL OR t.queued_until<=?) AND (t.cursor IS NOT NULL OR t.last_completed_at IS NULL OR julianday(t.last_completed_at)<=julianday(?)-COALESCE(json_extract(s.config_json,'$.interval'),360)/1440.0) ORDER BY COALESCE(t.last_completed_at,''),s.id LIMIT 12) RETURNING source_id").bind(new Date(Date.now()+120000).toISOString(),t,t,t,t).all<{source_id:string}>();
   for(const row of rows.results)await env.TASKS.send({kind:'SYNC_FEED',source_id:row.source_id});
   return rows.results.map(r=>r.source_id);
 }
 export async function refreshPatternMatches(env:Env){
-  const config=await settings(env),profile=await env.DB.prepare('SELECT revision FROM profiles WHERE user_id=?').bind(OWNER).first<{revision:number}>();
-  const rows=await env.DB.prepare("SELECT j.id,j.revision FROM jobs j LEFT JOIN job_matches m ON m.job_id=j.id AND m.user_id=? WHERE j.availability='OPEN' AND j.role_status='ELIGIBLE' AND j.experience_status='ELIGIBLE' AND j.location_status='COMPATIBLE' AND (m.engine_version IS NULL OR m.engine_version<>? OR m.profile_revision<>? OR m.job_revision<>j.revision OR m.settings_revision<>?) LIMIT 50").bind(OWNER,MATCH_ENGINE,profile?.revision??1,config.revision).all<{id:string;revision:number}>();
-  for(const row of rows.results){const id=crypto.randomUUID(),key=`match:${MATCH_ENGINE}:${row.id}:${row.revision}:${profile?.revision??1}:${config.revision}`,payload={kind:'ANALYZE_JOB',task_id:id,entity_id:row.id,entity_revision:row.revision,settings_revision:config.revision};await env.DB.batch([env.DB.prepare("INSERT OR IGNORE INTO tasks(id,user_id,kind,entity_id,entity_revision,idempotency_key,state,created_at,updated_at,settings_revision) VALUES(?,?,'ANALYZE_JOB',?,?,?,'PENDING',?,?,?)").bind(id,OWNER,row.id,row.revision,key,now(),now(),config.revision),env.DB.prepare('INSERT OR IGNORE INTO outbox(id,task_id,payload_json,available_at) SELECT ?,id,?,? FROM tasks WHERE id=?').bind(id,JSON.stringify(payload),now(),id)]);}
+  const config=await settings(env),profile=await env.DB.prepare('SELECT revision FROM profiles WHERE user_id=?').bind(owner(env)).first<{revision:number}>();
+  const rows=await env.DB.prepare("SELECT j.id,j.revision FROM jobs j LEFT JOIN job_matches m ON m.job_id=j.id AND m.user_id=? WHERE j.availability='OPEN' AND j.role_status='ELIGIBLE' AND j.experience_status='ELIGIBLE' AND j.location_status='COMPATIBLE' AND (m.engine_version IS NULL OR m.engine_version<>? OR m.profile_revision<>? OR m.job_revision<>j.revision OR m.settings_revision<>?) LIMIT 50").bind(owner(env),MATCH_ENGINE,profile?.revision??1,config.revision).all<{id:string;revision:number}>();
+  for(const row of rows.results){const id=crypto.randomUUID(),key=`match:${MATCH_ENGINE}:${row.id}:${row.revision}:${profile?.revision??1}:${config.revision}`,payload={kind:'ANALYZE_JOB',task_id:id,entity_id:row.id,entity_revision:row.revision,settings_revision:config.revision};await env.DB.batch([env.DB.prepare("INSERT OR IGNORE INTO tasks(id,user_id,kind,entity_id,entity_revision,idempotency_key,state,created_at,updated_at,settings_revision) VALUES(?,?,'ANALYZE_JOB',?,?,?,'PENDING',?,?,?)").bind(id,owner(env),row.id,row.revision,key,now(),now(),config.revision),env.DB.prepare('INSERT OR IGNORE INTO outbox(id,task_id,payload_json,available_at) SELECT ?,id,?,? FROM tasks WHERE id=?').bind(id,JSON.stringify(payload),now(),id)]);}
   await dispatch(env);
   if(rows.results.length===50)await env.TASKS.send({kind:'REFRESH_MATCHES'},{delaySeconds:10});
   return rows.results.length;

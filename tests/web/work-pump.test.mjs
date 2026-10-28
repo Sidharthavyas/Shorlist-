@@ -18,7 +18,7 @@ test('public proxy never exposes the internal drain endpoint',async()=>{
  finally{globalThis.fetch=original;delete process.env.SHORTLIST_BACKEND_URL;delete process.env.DEPLOYMENT_PROXY_SECRET;}
 });
 
-test('successful authenticated API responses wake work without blocking the response',async()=>{
+test('explicit sync mutations wake bounded work without blocking the response',async()=>{
  process.env.SHORTLIST_BACKEND_URL='https://worker.test';process.env.DEPLOYMENT_PROXY_SECRET='server-secret';
  const original=globalThis.fetch;let background,drains=0;
  globalThis.fetch=async url=>{
@@ -26,7 +26,7 @@ test('successful authenticated API responses wake work without blocking the resp
   return Response.json({data:{status:'ok'}});
  };
  try{
-  const response=await proxy.fetch(new Request('https://app.test/api/v1/summary',{headers:{Cookie:'owner=session'}}),{waitUntil:promise=>{background=promise;}});
+  const response=await proxy.fetch(new Request('https://app.test/api/v1/sources/sync',{method:'POST',headers:{Cookie:'owner=session'}}),{waitUntil:promise=>{background=promise;}});
   assert.equal(response.status,200);assert.ok(background);await background;assert.equal(drains,1);
  }finally{globalThis.fetch=original;delete process.env.SHORTLIST_BACKEND_URL;delete process.env.DEPLOYMENT_PROXY_SECRET;}
 });
@@ -40,3 +40,5 @@ test('file responses finish before background work and do not start a work pump'
   assert.equal(scheduled,false);assert.equal(response.headers.get('Content-Encoding'),null);assert.equal(response.headers.get('Content-Length'),'4');assert.deepEqual(new Uint8Array(await response.arrayBuffer()),new Uint8Array([37,80,68,70]));
  }finally{globalThis.fetch=original;delete process.env.SHORTLIST_BACKEND_URL;delete process.env.DEPLOYMENT_PROXY_SECRET;}
 });
+
+test('reading summary, sources and tasks never drains background work',async()=>{process.env.SHORTLIST_BACKEND_URL='https://worker.test';process.env.DEPLOYMENT_PROXY_SECRET='server-secret';const original=globalThis.fetch;let scheduled=0;globalThis.fetch=async()=>Response.json({data:{}});try{for(const path of ['summary','sources','tasks/fixture'])await proxy.fetch(new Request('https://app.test/api/v1/'+path,{headers:{Cookie:'owner=session'}}),{waitUntil:()=>{scheduled++;}});assert.equal(scheduled,0);}finally{globalThis.fetch=original;delete process.env.SHORTLIST_BACKEND_URL;delete process.env.DEPLOYMENT_PROXY_SECRET;}});

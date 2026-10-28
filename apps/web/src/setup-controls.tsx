@@ -9,11 +9,12 @@ export function SourceSyncButton({notice,refresh}:{notice:(message:string,error?
    const previous=await fetch('/api/v1/sources');
    if(!previous.ok)throw Error('Unable to read source status.');
    const baseline=((await previous.json()) as any).data;
-   const due=baseline.filter((s:any)=>s.enabled&&(s.cursor||!s.last_completed_at||Date.parse(s.last_completed_at)+(JSON.parse(s.config_json??'{}').interval??15)*60000<=Date.now())&&(!s.next_retry_at||Date.parse(s.next_retry_at)<=Date.now()));
+   const dueCandidates=baseline.filter((s:any)=>s.enabled&&(s.cursor||!s.last_completed_at||Date.parse(s.last_completed_at)+(JSON.parse(s.config_json??'{}').interval??15)*60000<=Date.now())&&(!s.next_retry_at||Date.parse(s.next_retry_at)<=Date.now()));
    const response=await fetch('/api/v1/sources/sync',{method:'POST'});
    const result=await response.json() as any;if(!response.ok)throw new Error(result.error?.message ?? 'Unable to start job sync.');
-   for(let attempt=0;attempt<100;attempt++){
-    await new Promise(resolve=>setTimeout(resolve,1500));
+   const queued=new Set(result.data?.sources??[]),due=dueCandidates.filter((s:any)=>queued.has(s.id));
+   for(let attempt=0;attempt<20;attempt++){
+    await new Promise(resolve=>setTimeout(resolve,10000));
     if(!mounted.current)return;
     const r=await fetch('/api/v1/sources');if(!r.ok)throw new Error('Unable to read sync progress.');
     const {data}=await r.json() as any;

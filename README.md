@@ -62,7 +62,7 @@ Future resume rendering must pass factual and PDF/DOCX compatibility tests in Wo
 
 ## More job sources
 
-After updating, restart with `npm run dev`, then click **Sync real jobs**. It now covers FreeHire, Himalayas, Jobicy, Remotive and the configured Greenhouse/Lever/Ashby company boards. Manage the company watchlist in **Settings → Integrations**. No new migration or paid API key is needed for these public feeds. Provider-specific intervals apply, so repeated clicks can legitimately fetch nothing new. Discover defaults to best-match sorting and supports a source filter. Match details show role patterns and verified skill overlap. See `docs/status.md` for operating limits and validation.
+After updating, restart with `npm run dev`, then click **Sync real jobs**. It now covers FreeHire, Himalayas, Jobicy, Remotive and the configured Greenhouse/Lever/Ashby company boards. Manage the company watchlist in **Settings → Integrations**. Apply migrations when upgrading production. No paid API key is needed for these public feeds. Provider-specific intervals apply, so repeated clicks can legitimately fetch nothing new. Discover defaults to best-match sorting and supports a source filter. Match details show role patterns and verified skill overlap. See `docs/status.md` for operating limits and validation.
 
 ## Application helper extension
 
@@ -76,3 +76,19 @@ Frontend preview: https://shortlist-six-gold.vercel.app
 
 
 
+
+
+## Company coverage
+
+The company directory retains all 470 supplied companies. Public feeds verified on 28 October 2026 connect 79 of those companies through 83 company boards; Arbeitnow and Remote OK add two broader public feeds. Existing boards remain available. Settings → Integrations includes company search, platform search, connection status, sync controls and official careers links. Custom and blocked portals are clearly marked for manual checks and do not count as automatic job coverage. A public source check does not certify every employer or guarantee a suitable vacancy.
+
+New adapters cover Workday, SmartRecruiters (PUBLIC postings only), Workable, Arbeitnow and Remote OK. Workday and SmartRecruiters fetch full descriptions before matching, continue all engineer/developer/automation query pages, and process ten details per page. Location and experience checks remain conservative. Sources refresh every 6–12 hours, with due sources dispatched in batches of twelve per sweep to respect free-tier limits. Initial ingestion finishes in the background and can take time.
+
+Apply `migrations/0005_company_sources.sql` before deploying this release. The migration preserves disabled-source preferences; local preview upgrades automatically. Catalog evidence is in `config/company-coverage.json` and verified mappings in `config/company-feeds.json`. To recheck the public sites locally, run `node scripts/test.mjs --compile-only` then `node scripts/discover-companies.mjs`. Cached discovery/probe results live in ignored `work/`; remove those specific JSON files if a full fresh check is needed. Review regenerated mappings before applying an updated migration. Source attribution links are retained for Arbeitnow and Remote OK.
+
+
+## Personal accounts and database operation
+
+Share the website and let each person create an account at `/api/auth/signup`. They receive a private profile, preferences, resume library and application tracker. The existing owner remains the administrator for shared sources. MongoDB stores account credentials; D1 stores workspace data and shared jobs. New-account secrets are server-only Vercel variables, and the Worker enables `MULTI_USER`. Email verification and email password recovery are not configured.
+
+The 28 October database read incident, code findings, indexes, polling reductions, reset handling and account-isolation tests are documented in [read-budget-and-accounts.md](docs/read-budget-and-accounts.md). Discovery resumes at the configured reset time; do not remove the pause merely to retry a blocked database. The first successful initialization automatically applies the pending workspace/index schema. No paid plan is required or activated by this release.

@@ -1,0 +1,3455 @@
+[
+  {
+    "id": "company-001",
+    "checkedAt": "2026-10-28T06:45:54.618Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-002",
+    "checkedAt": "2026-10-28T06:45:54.714Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workable:infosys-consulting-europe",
+      "workable:infosys-singaporeand-australia"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-003",
+    "checkedAt": "2026-10-28T06:45:54.716Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-004",
+    "checkedAt": "2026-10-28T06:45:54.717Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-005",
+    "checkedAt": "2026-10-28T06:45:54.717Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-006",
+    "checkedAt": "2026-10-28T06:45:54.718Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-007",
+    "checkedAt": "2026-10-28T06:45:54.976Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-008",
+    "checkedAt": "2026-10-28T06:45:55.002Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-009",
+    "checkedAt": "2026-10-28T06:45:55.022Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-010",
+    "checkedAt": "2026-10-28T06:45:55.037Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-011",
+    "checkedAt": "2026-10-28T06:45:55.387Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-012",
+    "checkedAt": "2026-10-28T06:45:55.434Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-013",
+    "checkedAt": "2026-10-28T06:45:55.580Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-014",
+    "checkedAt": "2026-10-28T06:45:55.718Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-015",
+    "checkedAt": "2026-10-28T06:45:55.763Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-016",
+    "checkedAt": "2026-10-28T06:45:55.906Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-017",
+    "checkedAt": "2026-10-28T06:45:55.921Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-018",
+    "checkedAt": "2026-10-28T06:45:56.145Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-019",
+    "checkedAt": "2026-10-28T06:45:56.412Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-020",
+    "checkedAt": "2026-10-28T06:45:56.603Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-021",
+    "checkedAt": "2026-10-28T06:45:56.749Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-022",
+    "checkedAt": "2026-10-28T06:45:56.772Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-023",
+    "checkedAt": "2026-10-28T06:45:56.907Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-024",
+    "checkedAt": "2026-10-28T06:45:57.139Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-025",
+    "checkedAt": "2026-10-28T06:45:58.338Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-026",
+    "checkedAt": "2026-10-28T06:45:58.355Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-027",
+    "checkedAt": "2026-10-28T06:45:58.787Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-028",
+    "checkedAt": "2026-10-28T06:45:58.827Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-029",
+    "checkedAt": "2026-10-28T06:45:58.907Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-030",
+    "checkedAt": "2026-10-28T06:45:59.093Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-031",
+    "checkedAt": "2026-10-28T06:45:59.193Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-032",
+    "checkedAt": "2026-10-28T06:45:59.270Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-033",
+    "checkedAt": "2026-10-28T06:45:59.322Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-034",
+    "checkedAt": "2026-10-28T06:45:59.369Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-035",
+    "checkedAt": "2026-10-28T06:45:59.626Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-036",
+    "checkedAt": "2026-10-28T06:45:59.699Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-037",
+    "checkedAt": "2026-10-28T06:45:59.898Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-038",
+    "checkedAt": "2026-10-28T06:45:59.936Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-039",
+    "checkedAt": "2026-10-28T06:45:59.954Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:razorpaysoftwareprivatelimited"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-040",
+    "checkedAt": "2026-10-28T06:46:00.053Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-041",
+    "checkedAt": "2026-10-28T06:46:00.068Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-042",
+    "checkedAt": "2026-10-28T06:46:00.136Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-043",
+    "checkedAt": "2026-10-28T06:46:00.251Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-044",
+    "checkedAt": "2026-10-28T06:46:00.257Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-045",
+    "checkedAt": "2026-10-28T06:46:00.320Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-046",
+    "checkedAt": "2026-10-28T06:46:00.501Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-047",
+    "checkedAt": "2026-10-28T06:46:00.563Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:groww"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-048",
+    "checkedAt": "2026-10-28T06:46:00.582Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-049",
+    "checkedAt": "2026-10-28T06:46:00.715Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-050",
+    "checkedAt": "2026-10-28T06:46:00.768Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-051",
+    "checkedAt": "2026-10-28T06:46:00.772Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-052",
+    "checkedAt": "2026-10-28T06:46:00.859Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-053",
+    "checkedAt": "2026-10-28T06:46:00.891Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-054",
+    "checkedAt": "2026-10-28T06:46:00.973Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-055",
+    "checkedAt": "2026-10-28T06:46:01.012Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-056",
+    "checkedAt": "2026-10-28T06:46:01.078Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-057",
+    "checkedAt": "2026-10-28T06:46:01.140Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-058",
+    "checkedAt": "2026-10-28T06:46:01.146Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-059",
+    "checkedAt": "2026-10-28T06:46:01.267Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-060",
+    "checkedAt": "2026-10-28T06:46:01.424Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-061",
+    "checkedAt": "2026-10-28T06:46:01.460Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "lever:epifi"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-062",
+    "checkedAt": "2026-10-28T06:46:01.484Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-063",
+    "checkedAt": "2026-10-28T06:46:01.565Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-064",
+    "checkedAt": "2026-10-28T06:46:01.572Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-065",
+    "checkedAt": "2026-10-28T06:46:01.627Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-066",
+    "checkedAt": "2026-10-28T06:46:01.665Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-067",
+    "checkedAt": "2026-10-28T06:46:01.713Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-068",
+    "checkedAt": "2026-10-28T06:46:01.723Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-069",
+    "checkedAt": "2026-10-28T06:46:01.741Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "INVALID_REDIRECT"
+  },
+  {
+    "id": "company-070",
+    "checkedAt": "2026-10-28T06:46:01.745Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-071",
+    "checkedAt": "2026-10-28T06:46:01.749Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-072",
+    "checkedAt": "2026-10-28T06:46:01.827Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-073",
+    "checkedAt": "2026-10-28T06:46:01.968Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-074",
+    "checkedAt": "2026-10-28T06:46:01.985Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-075",
+    "checkedAt": "2026-10-28T06:46:02.029Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-076",
+    "checkedAt": "2026-10-28T06:46:02.088Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-077",
+    "checkedAt": "2026-10-28T06:46:02.109Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-078",
+    "checkedAt": "2026-10-28T06:46:02.196Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-079",
+    "checkedAt": "2026-10-28T06:46:02.278Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-080",
+    "checkedAt": "2026-10-28T06:46:02.293Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-081",
+    "checkedAt": "2026-10-28T06:46:02.492Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-082",
+    "checkedAt": "2026-10-28T06:46:02.510Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-083",
+    "checkedAt": "2026-10-28T06:46:02.586Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-084",
+    "checkedAt": "2026-10-28T06:46:02.648Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-085",
+    "checkedAt": "2026-10-28T06:46:02.652Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-086",
+    "checkedAt": "2026-10-28T06:46:02.746Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-087",
+    "checkedAt": "2026-10-28T06:46:02.954Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-088",
+    "checkedAt": "2026-10-28T06:46:03.005Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-089",
+    "checkedAt": "2026-10-28T06:46:03.052Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-090",
+    "checkedAt": "2026-10-28T06:46:03.123Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-091",
+    "checkedAt": "2026-10-28T06:46:03.196Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-092",
+    "checkedAt": "2026-10-28T06:46:03.448Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-093",
+    "checkedAt": "2026-10-28T06:46:03.764Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-094",
+    "checkedAt": "2026-10-28T06:46:03.768Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-095",
+    "checkedAt": "2026-10-28T06:46:03.782Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-096",
+    "checkedAt": "2026-10-28T06:46:03.788Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-097",
+    "checkedAt": "2026-10-28T06:46:04.106Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-098",
+    "checkedAt": "2026-10-28T06:46:04.282Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-099",
+    "checkedAt": "2026-10-28T06:46:04.303Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-100",
+    "checkedAt": "2026-10-28T06:46:04.313Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-101",
+    "checkedAt": "2026-10-28T06:46:04.329Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-102",
+    "checkedAt": "2026-10-28T06:46:04.423Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-103",
+    "checkedAt": "2026-10-28T06:46:04.628Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-104",
+    "checkedAt": "2026-10-28T06:46:05.353Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-105",
+    "checkedAt": "2026-10-28T06:46:05.644Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-106",
+    "checkedAt": "2026-10-28T06:46:05.766Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-107",
+    "checkedAt": "2026-10-28T06:46:05.998Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-108",
+    "checkedAt": "2026-10-28T06:46:06.447Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-109",
+    "checkedAt": "2026-10-28T06:46:06.655Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-110",
+    "checkedAt": "2026-10-28T06:46:06.733Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-111",
+    "checkedAt": "2026-10-28T06:46:06.775Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-112",
+    "checkedAt": "2026-10-28T06:46:06.818Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-113",
+    "checkedAt": "2026-10-28T06:46:06.998Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-114",
+    "checkedAt": "2026-10-28T06:46:07.082Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-115",
+    "checkedAt": "2026-10-28T06:46:07.223Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-116",
+    "checkedAt": "2026-10-28T06:46:07.338Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-117",
+    "checkedAt": "2026-10-28T06:46:07.646Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-118",
+    "checkedAt": "2026-10-28T06:46:09.334Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-119",
+    "checkedAt": "2026-10-28T06:46:09.494Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-120",
+    "checkedAt": "2026-10-28T06:46:09.707Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-121",
+    "checkedAt": "2026-10-28T06:46:09.885Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-122",
+    "checkedAt": "2026-10-28T06:46:10.129Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-123",
+    "checkedAt": "2026-10-28T06:46:10.381Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-124",
+    "checkedAt": "2026-10-28T06:46:10.584Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-125",
+    "checkedAt": "2026-10-28T06:46:11.209Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:intel:External"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-126",
+    "checkedAt": "2026-10-28T06:46:11.605Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-127",
+    "checkedAt": "2026-10-28T06:46:11.658Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-128",
+    "checkedAt": "2026-10-28T06:46:11.671Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-129",
+    "checkedAt": "2026-10-28T06:46:12.165Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-130",
+    "checkedAt": "2026-10-28T06:46:12.183Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-131",
+    "checkedAt": "2026-10-28T06:46:12.456Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-132",
+    "checkedAt": "2026-10-28T06:46:12.473Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:hpe:Jobsathpe"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-133",
+    "checkedAt": "2026-10-28T06:46:12.859Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-134",
+    "checkedAt": "2026-10-28T06:46:12.921Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:workday:Workday"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-135",
+    "checkedAt": "2026-10-28T06:46:12.984Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-136",
+    "checkedAt": "2026-10-28T06:46:14.579Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-137",
+    "checkedAt": "2026-10-28T06:46:14.876Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "lever:palantir"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-138",
+    "checkedAt": "2026-10-28T06:46:14.953Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-139",
+    "checkedAt": "2026-10-28T06:46:14.970Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-140",
+    "checkedAt": "2026-10-28T06:46:15.322Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-141",
+    "checkedAt": "2026-10-28T06:46:15.432Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-142",
+    "checkedAt": "2026-10-28T06:46:16.128Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-143",
+    "checkedAt": "2026-10-28T06:46:16.323Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-144",
+    "checkedAt": "2026-10-28T06:46:16.414Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-145",
+    "checkedAt": "2026-10-28T06:46:16.441Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-146",
+    "checkedAt": "2026-10-28T06:46:16.448Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-147",
+    "checkedAt": "2026-10-28T06:46:16.850Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-148",
+    "checkedAt": "2026-10-28T06:46:16.943Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_429"
+  },
+  {
+    "id": "company-149",
+    "checkedAt": "2026-10-28T06:46:16.965Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_429"
+  },
+  {
+    "id": "company-150",
+    "checkedAt": "2026-10-28T06:46:17.064Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-151",
+    "checkedAt": "2026-10-28T06:46:17.219Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-152",
+    "checkedAt": "2026-10-28T06:46:17.459Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-153",
+    "checkedAt": "2026-10-28T06:46:17.784Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-154",
+    "checkedAt": "2026-10-28T06:46:18.132Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:notion"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-155",
+    "checkedAt": "2026-10-28T06:46:18.345Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:figma"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-156",
+    "checkedAt": "2026-10-28T06:46:18.590Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:salesforce:Slack"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-157",
+    "checkedAt": "2026-10-28T06:46:19.115Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-158",
+    "checkedAt": "2026-10-28T06:46:19.903Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-159",
+    "checkedAt": "2026-10-28T06:46:20.086Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-160",
+    "checkedAt": "2026-10-28T06:46:20.184Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-161",
+    "checkedAt": "2026-10-28T06:46:20.247Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-162",
+    "checkedAt": "2026-10-28T06:46:20.591Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-163",
+    "checkedAt": "2026-10-28T06:46:20.717Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-164",
+    "checkedAt": "2026-10-28T06:46:20.837Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-165",
+    "checkedAt": "2026-10-28T06:46:20.888Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-166",
+    "checkedAt": "2026-10-28T06:46:21.049Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-167",
+    "checkedAt": "2026-10-28T06:46:21.126Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:plaid"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-168",
+    "checkedAt": "2026-10-28T06:46:21.211Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-169",
+    "checkedAt": "2026-10-28T06:46:21.499Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:visa:Visa"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-170",
+    "checkedAt": "2026-10-28T06:46:21.911Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:mastercard:CorporateCareers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-171",
+    "checkedAt": "2026-10-28T06:46:22.082Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-172",
+    "checkedAt": "2026-10-28T06:46:22.366Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:capitalone:Capital_One"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-173",
+    "checkedAt": "2026-10-28T06:46:22.760Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-174",
+    "checkedAt": "2026-10-28T06:46:22.942Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-175",
+    "checkedAt": "2026-10-28T06:46:23.118Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-176",
+    "checkedAt": "2026-10-28T06:46:23.142Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:ghr:lateral-us"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-177",
+    "checkedAt": "2026-10-28T06:46:23.456Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-178",
+    "checkedAt": "2026-10-28T06:46:23.514Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-179",
+    "checkedAt": "2026-10-28T06:46:23.796Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-180",
+    "checkedAt": "2026-10-28T06:46:23.864Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-181",
+    "checkedAt": "2026-10-28T06:46:23.922Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-182",
+    "checkedAt": "2026-10-28T06:46:23.973Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:nasdaq:Global_External_Site"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-183",
+    "checkedAt": "2026-10-28T06:46:24.070Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:spgi:SPGI_Careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-184",
+    "checkedAt": "2026-10-28T06:46:24.620Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-185",
+    "checkedAt": "2026-10-28T06:46:24.734Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-186",
+    "checkedAt": "2026-10-28T06:46:25.087Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-187",
+    "checkedAt": "2026-10-28T06:46:25.710Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-188",
+    "checkedAt": "2026-10-28T06:46:26.065Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-189",
+    "checkedAt": "2026-10-28T06:46:26.092Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-190",
+    "checkedAt": "2026-10-28T06:46:26.294Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:expedia:search"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-191",
+    "checkedAt": "2026-10-28T06:46:26.524Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:tripadvisor"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-192",
+    "checkedAt": "2026-10-28T06:46:26.540Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-193",
+    "checkedAt": "2026-10-28T06:46:26.638Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-194",
+    "checkedAt": "2026-10-28T06:46:26.946Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-195",
+    "checkedAt": "2026-10-28T06:46:27.020Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-196",
+    "checkedAt": "2026-10-28T06:46:27.305Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-197",
+    "checkedAt": "2026-10-28T06:46:27.775Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-198",
+    "checkedAt": "2026-10-28T06:46:27.844Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-199",
+    "checkedAt": "2026-10-28T06:46:28.620Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:reddit"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-200",
+    "checkedAt": "2026-10-28T06:46:28.929Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-201",
+    "checkedAt": "2026-10-28T06:46:29.039Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-202",
+    "checkedAt": "2026-10-28T06:46:29.142Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-203",
+    "checkedAt": "2026-10-28T06:46:29.375Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-204",
+    "checkedAt": "2026-10-28T06:46:29.428Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-205",
+    "checkedAt": "2026-10-28T06:46:29.526Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-206",
+    "checkedAt": "2026-10-28T06:46:29.656Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:unitytech:Unity"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-207",
+    "checkedAt": "2026-10-28T06:46:29.851Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-208",
+    "checkedAt": "2026-10-28T06:46:29.905Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-209",
+    "checkedAt": "2026-10-28T06:46:30.050Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:crowdstrike:crowdstrikecareers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-210",
+    "checkedAt": "2026-10-28T06:46:30.352Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:paloaltonetworks:panwexternalcareers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-211",
+    "checkedAt": "2026-10-28T06:46:30.418Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-212",
+    "checkedAt": "2026-10-28T06:46:30.495Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-213",
+    "checkedAt": "2026-10-28T06:46:30.708Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-214",
+    "checkedAt": "2026-10-28T06:46:30.720Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-215",
+    "checkedAt": "2026-10-28T06:46:30.896Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-216",
+    "checkedAt": "2026-10-28T06:46:31.205Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-217",
+    "checkedAt": "2026-10-28T06:46:31.354Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-218",
+    "checkedAt": "2026-10-28T06:46:31.896Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:vercel"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-219",
+    "checkedAt": "2026-10-28T06:46:32.199Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:netlify"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-220",
+    "checkedAt": "2026-10-28T06:46:32.274Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-221",
+    "checkedAt": "2026-10-28T06:46:32.286Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:redhat:jobs"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-222",
+    "checkedAt": "2026-10-28T06:46:32.398Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-223",
+    "checkedAt": "2026-10-28T06:46:32.436Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-224",
+    "checkedAt": "2026-10-28T06:46:32.664Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-225",
+    "checkedAt": "2026-10-28T06:46:32.691Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:micron:External"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-226",
+    "checkedAt": "2026-10-28T06:46:33.039Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "smartrecruiters:WesternDigital"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-227",
+    "checkedAt": "2026-10-28T06:46:33.314Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-228",
+    "checkedAt": "2026-10-28T06:46:33.482Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "INVALID_REDIRECT"
+  },
+  {
+    "id": "company-229",
+    "checkedAt": "2026-10-28T06:46:33.542Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:kla:Search"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-230",
+    "checkedAt": "2026-10-28T06:46:33.770Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-231",
+    "checkedAt": "2026-10-28T06:46:33.843Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-232",
+    "checkedAt": "2026-10-28T06:46:33.915Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-233",
+    "checkedAt": "2026-10-28T06:46:33.924Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-234",
+    "checkedAt": "2026-10-28T06:46:34.344Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:canonical"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-235",
+    "checkedAt": "2026-10-28T06:46:34.547Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:darktrace:DarktaceExternal"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-236",
+    "checkedAt": "2026-10-28T06:46:34.746Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "lever:sophos"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-237",
+    "checkedAt": "2026-10-28T06:46:34.875Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-238",
+    "checkedAt": "2026-10-28T06:46:34.983Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:thought-machine"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-239",
+    "checkedAt": "2026-10-28T06:46:35.111Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-240",
+    "checkedAt": "2026-10-28T06:46:35.393Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:monzo"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-241",
+    "checkedAt": "2026-10-28T06:46:35.466Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-242",
+    "checkedAt": "2026-10-28T06:46:35.746Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-243",
+    "checkedAt": "2026-10-28T06:46:35.997Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-244",
+    "checkedAt": "2026-10-28T06:46:36.156Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:gocardless"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-245",
+    "checkedAt": "2026-10-28T06:46:36.399Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "lever:zopa"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-246",
+    "checkedAt": "2026-10-28T06:46:36.503Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:oaknorth"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-247",
+    "checkedAt": "2026-10-28T06:46:36.788Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:tide"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-248",
+    "checkedAt": "2026-10-28T06:46:36.797Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:fundingcircle"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-249",
+    "checkedAt": "2026-10-28T06:46:36.970Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:ig:EXT_IG"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-250",
+    "checkedAt": "2026-10-28T06:46:37.135Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:cmcmarkets:CMC_Markets_Careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-251",
+    "checkedAt": "2026-10-28T06:46:37.305Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:lseg:Careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-252",
+    "checkedAt": "2026-10-28T06:46:37.536Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-253",
+    "checkedAt": "2026-10-28T06:46:37.548Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-254",
+    "checkedAt": "2026-10-28T06:46:37.557Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:lbg:LBG_Careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-255",
+    "checkedAt": "2026-10-28T06:46:37.632Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-256",
+    "checkedAt": "2026-10-28T06:46:37.709Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-257",
+    "checkedAt": "2026-10-28T06:46:37.808Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-258",
+    "checkedAt": "2026-10-28T06:46:37.872Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-259",
+    "checkedAt": "2026-10-28T06:46:38.073Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-260",
+    "checkedAt": "2026-10-28T06:46:38.357Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-261",
+    "checkedAt": "2026-10-28T06:46:38.744Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-262",
+    "checkedAt": "2026-10-28T06:46:38.901Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-263",
+    "checkedAt": "2026-10-28T06:46:39.529Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-264",
+    "checkedAt": "2026-10-28T06:46:39.903Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:mangroup"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-265",
+    "checkedAt": "2026-10-28T06:46:40.808Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-266",
+    "checkedAt": "2026-10-28T06:46:41.213Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-267",
+    "checkedAt": "2026-10-28T06:46:41.243Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-268",
+    "checkedAt": "2026-10-28T06:46:41.392Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-269",
+    "checkedAt": "2026-10-28T06:46:41.814Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-270",
+    "checkedAt": "2026-10-28T06:46:42.002Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-271",
+    "checkedAt": "2026-10-28T06:46:42.607Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-272",
+    "checkedAt": "2026-10-28T06:46:42.793Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-273",
+    "checkedAt": "2026-10-28T06:46:42.983Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-274",
+    "checkedAt": "2026-10-28T06:46:43.111Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-275",
+    "checkedAt": "2026-10-28T06:46:43.354Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-276",
+    "checkedAt": "2026-10-28T06:46:44.216Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:relx:ElsevierJobs"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-277",
+    "checkedAt": "2026-10-28T06:46:44.435Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-278",
+    "checkedAt": "2026-10-28T06:46:44.453Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-279",
+    "checkedAt": "2026-10-28T06:46:44.543Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-280",
+    "checkedAt": "2026-10-28T06:46:44.588Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-281",
+    "checkedAt": "2026-10-28T06:46:45.496Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-282",
+    "checkedAt": "2026-10-28T06:46:45.962Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-283",
+    "checkedAt": "2026-10-28T06:46:46.000Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-284",
+    "checkedAt": "2026-10-28T06:46:46.057Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-285",
+    "checkedAt": "2026-10-28T06:46:46.213Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-286",
+    "checkedAt": "2026-10-28T06:46:46.334Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-287",
+    "checkedAt": "2026-10-28T06:46:46.611Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-288",
+    "checkedAt": "2026-10-28T06:46:46.737Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:ocadogroup"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-289",
+    "checkedAt": "2026-10-28T06:46:46.891Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-290",
+    "checkedAt": "2026-10-28T06:46:47.490Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-291",
+    "checkedAt": "2026-10-28T06:46:47.716Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-292",
+    "checkedAt": "2026-10-28T06:46:48.142Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-293",
+    "checkedAt": "2026-10-28T06:46:48.164Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:autotrader"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-294",
+    "checkedAt": "2026-10-28T06:46:48.168Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-295",
+    "checkedAt": "2026-10-28T06:46:48.488Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-296",
+    "checkedAt": "2026-10-28T06:46:48.631Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workable:futureplc"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-297",
+    "checkedAt": "2026-10-28T06:46:48.780Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-298",
+    "checkedAt": "2026-10-28T06:46:48.797Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-299",
+    "checkedAt": "2026-10-28T06:46:48.989Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-300",
+    "checkedAt": "2026-10-28T06:46:49.298Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-301",
+    "checkedAt": "2026-10-28T06:46:49.878Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-302",
+    "checkedAt": "2026-10-28T06:46:50.079Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-303",
+    "checkedAt": "2026-10-28T06:46:50.240Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-304",
+    "checkedAt": "2026-10-28T06:46:50.649Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-305",
+    "checkedAt": "2026-10-28T06:46:50.679Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-306",
+    "checkedAt": "2026-10-28T06:46:50.943Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:jlp:JLPjobs_careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-307",
+    "checkedAt": "2026-10-28T06:46:52.218Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-308",
+    "checkedAt": "2026-10-28T06:46:52.393Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-309",
+    "checkedAt": "2026-10-28T06:46:52.878Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-310",
+    "checkedAt": "2026-10-28T06:46:52.934Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-311",
+    "checkedAt": "2026-10-28T06:46:52.963Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-312",
+    "checkedAt": "2026-10-28T06:46:53.571Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-313",
+    "checkedAt": "2026-10-28T06:46:54.004Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-314",
+    "checkedAt": "2026-10-28T06:46:54.167Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-315",
+    "checkedAt": "2026-10-28T06:46:54.254Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-316",
+    "checkedAt": "2026-10-28T06:46:54.422Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-317",
+    "checkedAt": "2026-10-28T06:46:54.442Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-318",
+    "checkedAt": "2026-10-28T06:46:54.474Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-319",
+    "checkedAt": "2026-10-28T06:46:54.502Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-320",
+    "checkedAt": "2026-10-28T06:46:54.724Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-321",
+    "checkedAt": "2026-10-28T06:46:54.779Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:unilever:Unilever_Experienced_Professionals"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-322",
+    "checkedAt": "2026-10-28T06:46:55.302Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:diageo:Diageo_Careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-323",
+    "checkedAt": "2026-10-28T06:46:55.363Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-324",
+    "checkedAt": "2026-10-28T06:46:55.576Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:ocadogroup"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-325",
+    "checkedAt": "2026-10-28T06:46:55.908Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-326",
+    "checkedAt": "2026-10-28T06:46:56.243Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-327",
+    "checkedAt": "2026-10-28T06:46:56.349Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-328",
+    "checkedAt": "2026-10-28T06:46:56.551Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-329",
+    "checkedAt": "2026-10-28T06:46:56.591Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-330",
+    "checkedAt": "2026-10-28T06:46:56.761Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-331",
+    "checkedAt": "2026-10-28T06:46:57.352Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-332",
+    "checkedAt": "2026-10-28T06:46:57.373Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:paddle"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-333",
+    "checkedAt": "2026-10-28T06:46:57.385Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "lever:matillion"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-334",
+    "checkedAt": "2026-10-28T06:46:57.594Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-335",
+    "checkedAt": "2026-10-28T06:46:57.770Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-336",
+    "checkedAt": "2026-10-28T06:46:57.819Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-337",
+    "checkedAt": "2026-10-28T06:46:57.898Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-338",
+    "checkedAt": "2026-10-28T06:46:58.012Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:wayve"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-339",
+    "checkedAt": "2026-10-28T06:46:58.406Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-340",
+    "checkedAt": "2026-10-28T06:46:58.443Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-341",
+    "checkedAt": "2026-10-28T06:46:58.463Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-342",
+    "checkedAt": "2026-10-28T06:46:58.525Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:cambridgeconsultantslimited"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-343",
+    "checkedAt": "2026-10-28T06:46:58.533Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-344",
+    "checkedAt": "2026-10-28T06:46:58.825Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-345",
+    "checkedAt": "2026-10-28T06:46:58.941Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-346",
+    "checkedAt": "2026-10-28T06:46:59.320Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-347",
+    "checkedAt": "2026-10-28T06:47:00.089Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-348",
+    "checkedAt": "2026-10-28T06:47:00.151Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-349",
+    "checkedAt": "2026-10-28T06:47:00.823Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-350",
+    "checkedAt": "2026-10-28T06:47:01.156Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-351",
+    "checkedAt": "2026-10-28T06:47:01.510Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-352",
+    "checkedAt": "2026-10-28T06:47:01.998Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-353",
+    "checkedAt": "2026-10-28T06:47:02.759Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-354",
+    "checkedAt": "2026-10-28T06:47:02.833Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-355",
+    "checkedAt": "2026-10-28T06:47:02.916Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-356",
+    "checkedAt": "2026-10-28T06:47:03.293Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-357",
+    "checkedAt": "2026-10-28T06:47:03.303Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:n26"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-358",
+    "checkedAt": "2026-10-28T06:47:03.513Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_429"
+  },
+  {
+    "id": "company-359",
+    "checkedAt": "2026-10-28T06:47:03.631Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:DeepL"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-360",
+    "checkedAt": "2026-10-28T06:47:04.714Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-361",
+    "checkedAt": "2026-10-28T06:47:04.820Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-362",
+    "checkedAt": "2026-10-28T06:47:04.958Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-363",
+    "checkedAt": "2026-10-28T06:47:05.199Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-364",
+    "checkedAt": "2026-10-28T06:47:05.321Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-365",
+    "checkedAt": "2026-10-28T06:47:05.359Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-366",
+    "checkedAt": "2026-10-28T06:47:06.530Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-367",
+    "checkedAt": "2026-10-28T06:47:06.827Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-368",
+    "checkedAt": "2026-10-28T06:47:06.832Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-369",
+    "checkedAt": "2026-10-28T06:47:07.222Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-370",
+    "checkedAt": "2026-10-28T06:47:07.416Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-371",
+    "checkedAt": "2026-10-28T06:47:07.656Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-372",
+    "checkedAt": "2026-10-28T06:47:08.285Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "smartrecruiters:SopraSteria1"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-373",
+    "checkedAt": "2026-10-28T06:47:08.998Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-374",
+    "checkedAt": "2026-10-28T06:47:09.225Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-375",
+    "checkedAt": "2026-10-28T06:47:09.246Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-376",
+    "checkedAt": "2026-10-28T06:47:09.575Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-377",
+    "checkedAt": "2026-10-28T06:47:09.761Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-378",
+    "checkedAt": "2026-10-28T06:47:09.845Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-379",
+    "checkedAt": "2026-10-28T06:47:09.895Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-380",
+    "checkedAt": "2026-10-28T06:47:09.964Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:ag:Airbus"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-381",
+    "checkedAt": "2026-10-28T06:47:10.053Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-382",
+    "checkedAt": "2026-10-28T06:47:10.097Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-383",
+    "checkedAt": "2026-10-28T06:47:10.332Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-384",
+    "checkedAt": "2026-10-28T06:47:10.922Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-385",
+    "checkedAt": "2026-10-28T06:47:10.983Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-386",
+    "checkedAt": "2026-10-28T06:47:11.103Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-387",
+    "checkedAt": "2026-10-28T06:47:11.658Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-388",
+    "checkedAt": "2026-10-28T06:47:11.992Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:nxp:careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-389",
+    "checkedAt": "2026-10-28T06:47:12.221Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "TOO_MANY_REDIRECTS"
+  },
+  {
+    "id": "company-390",
+    "checkedAt": "2026-10-28T06:47:12.242Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-391",
+    "checkedAt": "2026-10-28T06:47:12.246Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-392",
+    "checkedAt": "2026-10-28T06:47:12.876Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-393",
+    "checkedAt": "2026-10-28T06:47:14.282Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-394",
+    "checkedAt": "2026-10-28T06:47:14.362Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-395",
+    "checkedAt": "2026-10-28T06:47:14.386Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-396",
+    "checkedAt": "2026-10-28T06:47:14.409Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-397",
+    "checkedAt": "2026-10-28T06:47:15.166Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-398",
+    "checkedAt": "2026-10-28T06:47:16.235Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-399",
+    "checkedAt": "2026-10-28T06:47:16.398Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:kone:Careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-400",
+    "checkedAt": "2026-10-28T06:47:16.498Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-401",
+    "checkedAt": "2026-10-28T06:47:16.528Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-402",
+    "checkedAt": "2026-10-28T06:47:16.655Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "INVALID_REDIRECT"
+  },
+  {
+    "id": "company-403",
+    "checkedAt": "2026-10-28T06:47:16.984Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:swisscom:SwisscomExternalCareers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-404",
+    "checkedAt": "2026-10-28T06:47:17.948Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-405",
+    "checkedAt": "2026-10-28T06:47:17.986Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-406",
+    "checkedAt": "2026-10-28T06:47:18.090Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:roche:roche-ext"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-407",
+    "checkedAt": "2026-10-28T06:47:18.306Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-408",
+    "checkedAt": "2026-10-28T06:47:18.530Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-409",
+    "checkedAt": "2026-10-28T06:47:18.654Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-410",
+    "checkedAt": "2026-10-28T06:47:19.045Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-411",
+    "checkedAt": "2026-10-28T06:47:19.523Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:thomsonreuters:External_Career_Site"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-412",
+    "checkedAt": "2026-10-28T06:47:20.063Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-413",
+    "checkedAt": "2026-10-28T06:47:20.123Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:1password"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-414",
+    "checkedAt": "2026-10-28T06:47:20.236Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:wealthsimple"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-415",
+    "checkedAt": "2026-10-28T06:47:20.242Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:cohere"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-416",
+    "checkedAt": "2026-10-28T06:47:20.287Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "INVALID_REDIRECT"
+  },
+  {
+    "id": "company-417",
+    "checkedAt": "2026-10-28T06:47:20.718Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-418",
+    "checkedAt": "2026-10-28T06:47:21.010Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-419",
+    "checkedAt": "2026-10-28T06:47:21.072Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "lever:pointclickcare"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-420",
+    "checkedAt": "2026-10-28T06:47:21.380Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-421",
+    "checkedAt": "2026-10-28T06:47:21.561Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-422",
+    "checkedAt": "2026-10-28T06:47:22.040Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-423",
+    "checkedAt": "2026-10-28T06:47:22.899Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-424",
+    "checkedAt": "2026-10-28T06:47:23.100Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-425",
+    "checkedAt": "2026-10-28T06:47:23.352Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:telstra:Telstra_Careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-426",
+    "checkedAt": "2026-10-28T06:47:24.098Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:cba:CommBank_Careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-427",
+    "checkedAt": "2026-10-28T06:47:24.698Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-428",
+    "checkedAt": "2026-10-28T06:47:24.741Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-429",
+    "checkedAt": "2026-10-28T06:47:25.239Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-430",
+    "checkedAt": "2026-10-28T06:47:25.575Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-431",
+    "checkedAt": "2026-10-28T06:47:25.666Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-432",
+    "checkedAt": "2026-10-28T06:47:25.694Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:sonyglobal:Sony_Europe_Careers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-433",
+    "checkedAt": "2026-10-28T06:47:26.632Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:rakuten:RakutenEurope",
+      "workday:rakuten:RakutenTV",
+      "workday:rakuten:RakutenVikiSingapore",
+      "workday:rakuten:Kobo",
+      "workday:rakuten:RakutenAsia"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-434",
+    "checkedAt": "2026-10-28T06:47:26.837Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-435",
+    "checkedAt": "2026-10-28T06:47:26.916Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_429"
+  },
+  {
+    "id": "company-436",
+    "checkedAt": "2026-10-28T06:47:26.925Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-437",
+    "checkedAt": "2026-10-28T06:47:26.972Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:nttglobaldatacenters:External"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-438",
+    "checkedAt": "2026-10-28T06:47:27.369Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-439",
+    "checkedAt": "2026-10-28T06:47:28.013Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "INVALID_REDIRECT"
+  },
+  {
+    "id": "company-440",
+    "checkedAt": "2026-10-28T06:47:28.267Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-441",
+    "checkedAt": "2026-10-28T06:47:28.689Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_404"
+  },
+  {
+    "id": "company-442",
+    "checkedAt": "2026-10-28T06:47:29.053Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-443",
+    "checkedAt": "2026-10-28T06:47:29.085Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-444",
+    "checkedAt": "2026-10-28T06:47:29.255Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-445",
+    "checkedAt": "2026-10-28T06:47:29.595Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-446",
+    "checkedAt": "2026-10-28T06:47:29.888Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-447",
+    "checkedAt": "2026-10-28T06:47:30.329Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-448",
+    "checkedAt": "2026-10-28T06:47:30.952Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-449",
+    "checkedAt": "2026-10-28T06:47:31.073Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-450",
+    "checkedAt": "2026-10-28T06:47:32.757Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "FETCH_FAILED"
+  },
+  {
+    "id": "company-451",
+    "checkedAt": "2026-10-28T06:47:32.914Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-452",
+    "checkedAt": "2026-10-28T06:47:33.079Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-453",
+    "checkedAt": "2026-10-28T06:47:33.748Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-454",
+    "checkedAt": "2026-10-28T06:47:34.454Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "INVALID_REDIRECT"
+  },
+  {
+    "id": "company-455",
+    "checkedAt": "2026-10-28T06:47:34.582Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-456",
+    "checkedAt": "2026-10-28T06:47:38.246Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-457",
+    "checkedAt": "2026-10-28T06:47:38.898Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-458",
+    "checkedAt": "2026-10-28T06:47:39.089Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "workday:sggovterp:PublicServiceCareers"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-459",
+    "checkedAt": "2026-10-28T06:47:40.100Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-460",
+    "checkedAt": "2026-10-28T06:47:40.164Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-461",
+    "checkedAt": "2026-10-28T06:47:40.301Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-462",
+    "checkedAt": "2026-10-28T06:47:41.485Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-463",
+    "checkedAt": "2026-10-28T06:47:42.465Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "greenhouse:nice"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-464",
+    "checkedAt": "2026-10-28T06:47:42.643Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "lever:mobileye"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-465",
+    "checkedAt": "2026-10-28T06:47:42.665Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-466",
+    "checkedAt": "2026-10-28T06:47:43.155Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  },
+  {
+    "id": "company-467",
+    "checkedAt": "2026-10-28T06:47:43.344Z",
+    "status": "CONNECTED",
+    "sourceIds": [
+      "ashby:nubank"
+    ],
+    "note": "Public feed verified"
+  },
+  {
+    "id": "company-468",
+    "checkedAt": "2026-10-28T06:47:44.001Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-469",
+    "checkedAt": "2026-10-28T06:47:44.684Z",
+    "status": "BLOCKED",
+    "sourceIds": [],
+    "note": "HTTP_403"
+  },
+  {
+    "id": "company-470",
+    "checkedAt": "2026-10-28T06:47:44.710Z",
+    "status": "MANUAL",
+    "sourceIds": [],
+    "note": "Custom careers portal; automatic sync not available"
+  }
+]

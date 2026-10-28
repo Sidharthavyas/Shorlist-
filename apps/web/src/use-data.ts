@@ -8,6 +8,7 @@ export async function api<T=any>(path:string,init?:RequestInit):Promise<T>{
 export function useData<T=any>(path:string){
  const [state,setState]=useState<{path:string;data:T|null;error:string;refreshError:string;refreshing:boolean}>({path,data:null,error:'',refreshError:'',refreshing:false});
  const [version,setVersion]=useState(0);
+ useEffect(()=>{if(state.error||state.refreshError||!(state.data as any)?.meta?.personalizing||document.visibilityState!=='visible')return;const timer=setTimeout(()=>setVersion(x=>x+1),15000);return()=>clearTimeout(timer);},[state.data,state.error,state.refreshError,version]);
  useEffect(()=>{
   const controller=new AbortController();let active=true;
   setState(old=>old.path===path?{...old,error:'',refreshError:'',refreshing:old.data!==null}:{path,data:null,error:'',refreshError:'',refreshing:false});

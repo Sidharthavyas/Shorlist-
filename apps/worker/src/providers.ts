@@ -1,10 +1,11 @@
 import { z } from 'zod';
 import type { NormalizedJob } from '../../../contracts/domain';
 import { plain, safeUrl, skills } from './domain';
+import { fetchPublicBoard } from './public-boards';
 
-export const providers=['himalayas','jobicy','remotive','greenhouse','lever','ashby'] as const;
+export const providers=['himalayas','jobicy','remotive','greenhouse','lever','ashby','workday','smartrecruiters','workable','arbeitnow','remoteok'] as const;
 export type Provider=typeof providers[number];
-export interface Feed {id:string;name:string;provider:Provider;board?:string;company?:string;interval:number;}
+export interface Feed {id:string;name:string;provider:Provider;board?:string;company?:string;host?:string;site?:string;url?:string;interval:number;}
 export const INITIAL_FEEDS:Feed[]=[
   {id:'himalayas',name:'Himalayas',provider:'himalayas',interval:1440},
   {id:'jobicy',name:'Jobicy',provider:'jobicy',interval:360},
@@ -42,8 +43,8 @@ export function normalizeFeed(feed:Feed,raw:unknown,discovered=new Date().toISOS
     id=String(z.union([z.string().min(1),z.number()]).parse(r.id));title=required(r,'jobTitle');company=required(r,'companyName');description=required(r,'jobDescription');jobUrl=applyUrl=required(r,'url');posted=date(r.pubDate);seniority=text(r,'jobLevel');employment=list(r,'jobType').join(', ');geo=geography(required(r,'jobGeo'),true);
   }else if(feed.provider==='remotive'){
     id=String(z.union([z.string().min(1),z.number()]).parse(r.id));title=required(r,'title');company=required(r,'company_name');description=required(r,'description');jobUrl=applyUrl=required(r,'url');posted=date(r.publication_date);employment=text(r,'job_type');geo=geography(text(r,'candidate_required_location'),true);
-  }else if(feed.provider==='greenhouse'){
-    id=String(z.union([z.string().min(1),z.number()]).parse(r.id));title=required(r,'title');description=required(r,'content');jobUrl=applyUrl=required(r,'absolute_url');posted=date(r.first_published??r.updated_at);geo=geography(text(object(r.location),'name'),false);
+  }else if(['greenhouse','workday','smartrecruiters','workable','arbeitnow','remoteok'].includes(feed.provider)){
+    id=String(z.union([z.string().min(1),z.number()]).parse(r.id));title=required(r,'title');description=required(r,'content');jobUrl=applyUrl=required(r,'absolute_url');posted=date(r.posted??r.first_published??r.updated_at);geo=geography(text(object(r.location),'name'),r.remote===true);company=text(r,'company',company);
   }else if(feed.provider==='lever'){
     id=required(r,'id');title=required(r,'text');const categories=object(r.categories??{});
     const lists=z.array(z.object({text:z.string(),content:z.string()})).parse(r.lists??[]);
@@ -59,6 +60,9 @@ export function normalizeFeed(feed:Feed,raw:unknown,discovered=new Date().toISOS
 }
 export async function fetchFeed(feed:Feed,cursor:string|null):Promise<{jobs:unknown[];next:string|null}>{
   if(feed.board&&!/^[a-zA-Z0-9_-]{1,100}$/.test(feed.board))throw new FeedError('INVALID_BOARD');
+  if(['workday','smartrecruiters','workable','arbeitnow','remoteok'].includes(feed.provider)){
+    try{return await fetchPublicBoard(feed,cursor);}catch(error){throw new FeedError(error instanceof Error&&/^UPSTREAM_\d+$/.test(error.message)?error.message:'SOURCE_CONTRACT_OR_FETCH_ERROR');}
+  }
   let url:URL;
   if(feed.provider==='himalayas'){
     const position=cursor?z.object({query:z.number().int().min(0).max(2),page:z.number().int().min(1)}).parse(JSON.parse(cursor)):{query:0,page:1};
@@ -67,7 +71,7 @@ export async function fetchFeed(feed:Feed,cursor:string|null):Promise<{jobs:unkn
   else if(feed.provider==='jobicy'){url=new URL('https://jobicy.com/api/jobs');url.searchParams.set('industry','engineering');url.searchParams.set('count','100');if(cursor)url.searchParams.set('cursor',cursor);}
   else if(feed.provider==='remotive')url=new URL('https://remotive.com/api/remote-jobs?category=software-dev');
   else if(feed.provider==='greenhouse')url=new URL(`https://boards-api.greenhouse.io/v1/boards/${feed.board}/jobs?content=true`);
-  else if(feed.provider==='lever')url=new URL(`https://api.lever.co/v0/postings/${feed.board}?mode=json&limit=100&skip=${Number(cursor)||0}`);
+  else if(feed.provider==='lever')url=new URL(`https://${feed.host==='api.eu.lever.co'?feed.host:'api.lever.co'}/v0/postings/${feed.board}?mode=json&limit=100&skip=${Number(cursor)||0}`);
   else url=new URL(`https://api.ashbyhq.com/posting-api/job-board/${feed.board}`);
   const response=await fetch(url,{headers:{Accept:'application/json'},signal:AbortSignal.timeout(20000)});
   if(!response.ok){const retry=response.headers.get('Retry-After');const delay=Number(retry)||Math.ceil((Date.parse(retry??'')-Date.now())/1000)||300;throw new FeedError(`UPSTREAM_${response.status}`,Math.max(60,delay));}

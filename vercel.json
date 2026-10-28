@@ -4,11 +4,30 @@
   "installCommand": "npm ci",
   "buildCommand": "npm run build",
   "outputDirectory": "apps/web/dist",
-  "functions": { "api/backend.mjs": { "maxDuration": 120 } },
+  "functions": {
+    "api/backend.mjs": {
+      "maxDuration": 120
+    }
+  },
   "routes": [
-    { "src": "/api/storage", "dest": "/api/storage" },
-    { "src": "/api(?:/.*)?", "dest": "/api/backend" },
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+    {
+      "src": "/api/storage",
+      "dest": "/api/storage"
+    },
+    {
+      "src": "/api/auth/(?:login|signup|logout|session)",
+      "dest": "/api/accounts"
+    },
+    {
+      "src": "/api(?:/.*)?",
+      "dest": "/api/backend"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
   ]
 }

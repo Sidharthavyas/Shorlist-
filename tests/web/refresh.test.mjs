@@ -29,8 +29,8 @@ test('filter changes abort stale requests and ignore late responses',async()=>{
 });
 test('sync progress polling refreshes the workspace only once on completion',async()=>{
  const originalFetch=globalThis.fetch,originalTimeout=globalThis.setTimeout;let polls=0,refreshes=0;const notices=[];
- globalThis.setTimeout=(fn,delay,...args)=>originalTimeout(fn,delay===1500?0:delay,...args);
- globalThis.fetch=async(_url,options)=>({ok:true,json:async()=>options?.method==='POST'?{data:{state:'QUEUED'}}:{data:[{id:'freehire',source_id:'freehire',enabled:1,config_json:'{}',last_completed_at:++polls>3?'2026-10-26T12:00:00Z':null,lease_token:polls>1&&polls<4?'running':null}]}});
+ globalThis.setTimeout=(fn,delay,...args)=>originalTimeout(fn,delay===10000?0:delay,...args);
+ globalThis.fetch=async(_url,options)=>({ok:true,json:async()=>options?.method==='POST'?{data:{state:'QUEUED',sources:['freehire']}}:{data:[{id:'freehire',source_id:'freehire',enabled:1,config_json:'{}',last_completed_at:++polls>3?'2026-10-26T12:00:00Z':null,lease_token:polls>1&&polls<4?'running':null}]}});
  const host=document.createElement('div');document.body.append(host);const root=createRoot(host);
  try{await act(async()=>root.render(h(SourceSyncButton,{notice:message=>notices.push(message),refresh:()=>refreshes++})));await act(async()=>{host.querySelector('button').click();await new Promise(resolve=>originalTimeout(resolve,80));});assert.ok(polls>=4);assert.equal(refreshes,1);assert.equal(notices.length,1);
  }finally{await act(async()=>root.unmount());host.remove();globalThis.fetch=originalFetch;globalThis.setTimeout=originalTimeout;}

@@ -1,0 +1,14 @@
+import {DatabaseSync} from 'node:sqlite';
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const db=new DatabaseSync(':memory:');
+for(const f of ['0001_initial','0002_runtime','0004_durable_work'])db.exec(readFileSync('migrations/'+f+'.sql','utf8'));
+const query="SELECT id FROM outbox WHERE completed_at IS NULL AND available_at<=? AND (dispatched_at IS NULL OR dispatched_at<?) AND (dispatch_until IS NULL OR dispatch_until<=?) LIMIT 20";
+const plan=()=>db.prepare('EXPLAIN QUERY PLAN '+query).all('2026-10-29','2026-10-28','2026-10-29').map(r=>r.detail).join(' ');
+assert.match(plan(),/SCAN outbox/);
+db.exec(readFileSync('migrations/0006_read_budget.sql','utf8'));
+assert.match(plan(),/USING INDEX outbox_open_work/);
+console.log('PASS dispatcher changes from scanning historical outbox rows to an indexed search of unfinished work');
+const auth=readFileSync('api/backend.mjs','utf8');assert.ok(auth.includes("request.method==='POST'"));
+const sourceUI=readFileSync('apps/web/src/source-manager.tsx','utf8');assert.ok(!sourceUI.includes('setInterval('));
+console.log('PASS source settings have no idle polling loop and page reads cannot wake queue processing');

@@ -31,7 +31,8 @@ export default {
       const empty=request.method==='HEAD'||[204,205,304].includes(result.status);
       const bytes=empty?null:await result.arrayBuffer();
       if(bytes)outgoing.set('Content-Length',String(bytes.byteLength));
-      const wakesWork=/^\/api\/v1\/(?:summary|sources(?:\/sync)?|tasks\/[^/]+|jobs\/[^/]+\/resume-tasks)$/.test(incoming.pathname);
+      // Reading a page must never fan out into database scans and queue drains.
+      const wakesWork=request.method==='POST'&&/^\/api\/v1\/(?:sources(?:\/[^/]+)?\/sync|jobs\/[^/]+\/resume-tasks)$/.test(incoming.pathname);
       if(result.ok&&wakesWork&&request.headers.get('Cookie')&&context?.waitUntil)context.waitUntil(pumpWork(backend,secret));
       return new Response(bytes,{status:result.status,headers:outgoing});
     }catch{

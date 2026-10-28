@@ -1,5 +1,5 @@
 import type { Env } from './env';
-import { OWNER } from './env';
+import { owner, OWNER } from './env';
 import { fetchPage, normalize, UpstreamError } from './source';
 import { dispatch, now, saveJob, settings } from './store';
 import { match, MATCH_ENGINE } from './domain';
@@ -64,13 +64,13 @@ export async function analyzeTask(env:Env, input: {task_id:string;entity_id:stri
       await env.DB.batch([env.DB.prepare("UPDATE tasks SET state='STALE',updated_at=? WHERE id=? AND lease_token=?").bind(now(),input.task_id,token),env.DB.prepare('UPDATE outbox SET completed_at=? WHERE task_id=?').bind(now(),input.task_id)]);return;
     }
     const job=JSON.parse(row.normalized_json) as NormalizedJob;
-    const profile=await env.DB.prepare('SELECT revision,data_json FROM profiles WHERE user_id=?').bind(OWNER).first<{revision:number;data_json:string}>();
+    const profile=await env.DB.prepare('SELECT revision,data_json FROM profiles WHERE user_id=?').bind(owner(env)).first<{revision:number;data_json:string}>();
     const facts=JSON.parse(profile?.data_json ?? '{}');
     const score=match(job,(facts.skills ?? []) as string[],config.data,[facts.headline,facts.professional_summary,...(facts.experience??[]),...(facts.projects??[])].filter(Boolean).join(' '));
     const statements:D1PreparedStatement[]=[];
-    if(score) statements.push(env.DB.prepare('INSERT INTO job_matches(user_id,job_id,score,breakdown_json,analysis_json,profile_revision,settings_revision,job_revision,engine_version,created_at) VALUES(?,?,?,?,?,?,?,?,?,?) ON CONFLICT(user_id,job_id) DO UPDATE SET score=excluded.score,breakdown_json=excluded.breakdown_json,analysis_json=excluded.analysis_json,profile_revision=excluded.profile_revision,settings_revision=excluded.settings_revision,job_revision=excluded.job_revision,engine_version=excluded.engine_version,created_at=excluded.created_at').bind(OWNER,input.entity_id,score.score,JSON.stringify(score.breakdown),JSON.stringify(score),profile?.revision ?? 1,config.revision,row.revision,MATCH_ENGINE,now()));
+    if(score) statements.push(env.DB.prepare('INSERT INTO job_matches(user_id,job_id,score,breakdown_json,analysis_json,profile_revision,settings_revision,job_revision,engine_version,created_at) VALUES(?,?,?,?,?,?,?,?,?,?) ON CONFLICT(user_id,job_id) DO UPDATE SET score=excluded.score,breakdown_json=excluded.breakdown_json,analysis_json=excluded.analysis_json,profile_revision=excluded.profile_revision,settings_revision=excluded.settings_revision,job_revision=excluded.job_revision,engine_version=excluded.engine_version,created_at=excluded.created_at').bind(owner(env),input.entity_id,score.score,JSON.stringify(score.breakdown),JSON.stringify(score),profile?.revision ?? 1,config.revision,row.revision,MATCH_ENGINE,now()));
     statements.push(env.DB.prepare("UPDATE tasks SET state='READY',updated_at=?,lease_until=NULL WHERE id=? AND lease_token=?").bind(now(),input.task_id,token),env.DB.prepare('UPDATE outbox SET completed_at=? WHERE task_id=?').bind(now(),input.task_id));
-    if(score && score.score>=config.data.minimum_match_score && !row.is_sample && config.data.notifications_enabled) statements.push(env.DB.prepare("INSERT OR IGNORE INTO notifications(id,user_id,job_id,channel,event_key,state,created_at) VALUES(?,?,?,'TELEGRAM',?,'PENDING',?)").bind(crypto.randomUUID(),OWNER,input.entity_id,`new:${input.entity_id}`,now()));
+    if(score && score.score>=config.data.minimum_match_score && !row.is_sample && config.data.notifications_enabled) statements.push(env.DB.prepare("INSERT OR IGNORE INTO notifications(id,user_id,job_id,channel,event_key,state,created_at) VALUES(?,?,?,'TELEGRAM',?,'PENDING',?)").bind(crypto.randomUUID(),owner(env),input.entity_id,`new:${input.entity_id}`,now()));
     await env.FILES.put(`jobs/snapshots/${job.source}/${input.entity_id}-${row.revision}.json`,JSON.stringify(job),{httpMetadata:{contentType:'application/json'}});
     await env.DB.batch(statements);
     if(score && score.score>=config.data.minimum_match_score && !row.is_sample && config.data.notifications_enabled) await deliverNotifications(env);
@@ -79,17 +79,18 @@ export async function analyzeTask(env:Env, input: {task_id:string;entity_id:stri
   }
 }
 export async function deliverNotifications(env:Env) {
+  if(owner(env)!==OWNER)return;
   if(!env.TELEGRAM_BOT_TOKEN || !env.TELEGRAM_CHAT_ID) return;
   const config=await settings(env);if(!config.data.notifications_enabled)return;
-  const intents=await env.DB.prepare("SELECT id,job_id,application_id FROM notifications WHERE state IN ('PENDING','FAILED') AND attempts<5 AND user_id=? LIMIT 10").bind(OWNER).all<{id:string;job_id:string|null;application_id:string|null}>();
+  const intents=await env.DB.prepare("SELECT id,job_id,application_id FROM notifications WHERE state IN ('PENDING','FAILED') AND attempts<5 AND user_id=? LIMIT 10").bind(owner(env)).all<{id:string;job_id:string|null;application_id:string|null}>();
   for(const intent of intents.results) {
   const id=intent.id;
   let text:string;
   if(intent.application_id) {
-    const app=await env.DB.prepare('SELECT a.status,j.company,j.title FROM applications a JOIN jobs j ON j.id=a.job_id WHERE a.id=? AND a.user_id=?').bind(intent.application_id,OWNER).first<{status:string;company:string;title:string}>();
+    const app=await env.DB.prepare('SELECT a.status,j.company,j.title FROM applications a JOIN jobs j ON j.id=a.job_id WHERE a.id=? AND a.user_id=?').bind(intent.application_id,owner(env)).first<{status:string;company:string;title:string}>();
     if(!app)continue;text=`APPLICATION UPDATE\n\n${app.company}\n${app.title}\nStatus: ${app.status}\n\n${env.APP_ORIGIN}/applications`;
   } else {
-    const job=await env.DB.prepare('SELECT * FROM recommended_jobs WHERE user_id=? AND id=? AND match_score>=?').bind(OWNER,intent.job_id,config.data.minimum_match_score).first<{company:string;title:string;remote_type:string;experience_min:number;experience_max:number;match_score:number}>();
+    const job=await env.DB.prepare('SELECT * FROM recommended_jobs WHERE user_id=? AND id=? AND match_score>=?').bind(owner(env),intent.job_id,config.data.minimum_match_score).first<{company:string;title:string;remote_type:string;experience_min:number;experience_max:number;match_score:number}>();
     if(!job)continue;
     text=`${job.match_score}% MATCH\n\n${job.company}\n${job.title}\nExperience: ${job.experience_min}–${job.experience_max} years\n${job.remote_type}\n\n${env.APP_ORIGIN}/jobs/${intent.job_id}`;
   }

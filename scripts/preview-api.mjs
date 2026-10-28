@@ -28,4 +28,9 @@ if(!(await db.prepare("SELECT name FROM sqlite_master WHERE name='users'").first
 }
 const outboxColumns=await db.prepare('PRAGMA table_info(outbox)').all();
 if(!outboxColumns.results.some(column=>column.name==='dispatch_token'))await db.exec(readFileSync('migrations/0004_durable_work.sql','utf8').replace(/--[^\n]*/g,'').replace(/\r?\n/g,' '));
+await db.exec('CREATE TABLE IF NOT EXISTS preview_migrations(name TEXT PRIMARY KEY)');
+if(!await db.prepare("SELECT name FROM preview_migrations WHERE name='0005_company_sources'").first()){
+ await db.exec(readFileSync('migrations/0005_company_sources.sql','utf8').replace(/^--[^\n]*/gm,'').replace(/\r?\n/g,' '));
+ await db.prepare("INSERT INTO preview_migrations VALUES('0005_company_sources')").run();
+}
 process.on('SIGINT',async()=>{await mf.dispose();process.exit(0);});

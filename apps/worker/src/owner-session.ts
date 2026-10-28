@@ -50,13 +50,15 @@ export async function ownerSession(c:Context<{Bindings:Env;Variables:{requestId:
   const token=c.req.header('Cookie')?.split(';').map(value=>value.trim()).find(value=>value.startsWith(cookieName+'='))?.slice(cookieName.length+1)??'';
   try{
     const {payload}=await jwtVerify(token,sessionKey(env),{algorithms:['HS256'],issuer:'shortlist-owner',audience:'shortlist-api'});
-    if(payload.sub!=='primary-owner'||payload.email!==env.OWNER_EMAIL)throw Error('Invalid owner');
+    const admin=payload.sub==='primary-owner'&&payload.email===env.OWNER_EMAIL;
+    const member=env.MULTI_USER==='enabled'&&payload.member===true&&/^account_[a-f0-9-]{36}$/.test(payload.sub??'')&&typeof payload.email==='string';
+    if(!admin&&!member)throw Error('Invalid account');
     if(path==='/api/auth/logout'){
       if(c.req.method!=='POST')return c.text('Method not allowed',405);
       c.header('Set-Cookie',`${cookieName}=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0`);
       return c.redirect('/api/auth/login',303);
     }
-    return {subject:payload.sub,email:env.OWNER_EMAIL};
+    return {subject:payload.sub!,email:payload.email as string};
   }catch{
     if(c.req.method==='GET'&&c.req.header('Accept')?.includes('text/html'))return c.redirect('/api/auth/login',303);
     return c.json({error:{code:'AUTH_REQUIRED',message:'Sign in to your private Shortlist workspace.'}},401);

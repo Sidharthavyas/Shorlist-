@@ -32,7 +32,7 @@
   },
   "triggers": {
     "crons": [
-      "* * * * *"
+      "*/5 * * * *"
     ]
   },
   "observability": {
@@ -43,7 +43,10 @@
     "APP_ORIGIN": "https://shortlist-six-gold.vercel.app",
     "ACCESS_ISSUER": "",
     "ACCESS_AUDIENCE": "",
-    "MONGO_STORAGE_URL": "https://shortlist-six-gold.vercel.app/api/storage"
+    "MONGO_STORAGE_URL": "https://shortlist-six-gold.vercel.app/api/storage",
+    "MULTI_USER": "enabled",
+    "DISCOVERY_PAUSED": "true",
+    "DISCOVERY_RESUME_AT": "2026-10-29T00:00:00Z"
   },
   "env": {
     "local": {

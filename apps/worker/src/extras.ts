@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import type { Env } from './env';
-import { OWNER } from './env';
+import { owner } from './env';
 import { settings, saveJob, dispatch, now } from './store';
 import { safeUrl, skills, experience, location, roleAllowed } from './domain';
 import type { NormalizedJob } from '../../../contracts/domain';
@@ -23,16 +23,16 @@ extras.post('/jobs/:id/corrections',async c=>{
   const config=await settings(c.env),e=experience(corrected,config.data.maximum_experience,config.data),l=location(corrected,config.data);
   if(e.classification==='NOT_ELIGIBLE')return c.json({error:{code:'HARD_GATE',message:'The original mandatory requirements still exceed the hard gate.'}},422);
   const updated=await c.env.DB.batch([
-    c.env.DB.prepare('INSERT INTO audit_events(id,user_id,entity_type,entity_id,actor,reason,before_json,after_json,created_at) VALUES(?,?,?,?,?,?,?,?,?)').bind(crypto.randomUUID(),OWNER,'job',c.req.param('id'),'owner',input.reason,row.normalized_json,JSON.stringify(corrected),now()),
+    c.env.DB.prepare('INSERT INTO audit_events(id,user_id,entity_type,entity_id,actor,reason,before_json,after_json,created_at) VALUES(?,?,?,?,?,?,?,?,?)').bind(crypto.randomUUID(),owner(c.env),'job',c.req.param('id'),'owner',input.reason,row.normalized_json,JSON.stringify(corrected),now()),
     c.env.DB.prepare('UPDATE jobs SET normalized_json=?,experience_min=?,experience_max=?,experience_status=?,location_status=?,location_reason=?,role_status=?,revision=revision+1,decision_settings_revision=?,updated_at=? WHERE id=? AND revision=? RETURNING id').bind(JSON.stringify(corrected),e.min_years,e.max_years,e.classification,l.status,l.reason,roleAllowed(corrected.title,config.data)?'ELIGIBLE':'NOT_ELIGIBLE',config.revision,now(),c.req.param('id'),input.revision)
   ]);
   return c.json({data:{updated:updated[1].results.length>0,classification:e.classification}});
 });
-extras.get('/notifications',async c=>c.json({data:(await c.env.DB.prepare('SELECT id,job_id,channel,state,created_at,last_error_code FROM notifications WHERE user_id=? ORDER BY created_at DESC LIMIT 100').bind(OWNER).all()).results}));
-extras.get('/follow-ups',async c=>c.json({data:(await c.env.DB.prepare(`SELECT a.*,j.company,j.title FROM applications a JOIN jobs j ON j.id=a.job_id WHERE a.user_id=? AND a.status NOT IN ('OFFER','REJECTED','WITHDRAWN','CLOSED') AND a.applied_at IS NOT NULL AND COALESCE(a.next_follow_up_at,datetime(COALESCE(a.last_response_at,a.applied_at),'+7 days'))<=? ORDER BY a.applied_at`).bind(OWNER,now()).all()).results}));
+extras.get('/notifications',async c=>c.json({data:(await c.env.DB.prepare('SELECT id,job_id,channel,state,created_at,last_error_code FROM notifications WHERE user_id=? ORDER BY created_at DESC LIMIT 100').bind(owner(c.env)).all()).results}));
+extras.get('/follow-ups',async c=>c.json({data:(await c.env.DB.prepare(`SELECT a.*,j.company,j.title FROM applications a JOIN jobs j ON j.id=a.job_id WHERE a.user_id=? AND a.status NOT IN ('OFFER','REJECTED','WITHDRAWN','CLOSED') AND a.applied_at IS NOT NULL AND COALESCE(a.next_follow_up_at,datetime(COALESCE(a.last_response_at,a.applied_at),'+7 days'))<=? ORDER BY a.applied_at`).bind(owner(c.env),now()).all()).results}));
 extras.post('/applications/:id/follow-up-draft',async c=>{
-  const a=await c.env.DB.prepare('SELECT j.company,j.title,a.applied_at FROM applications a JOIN jobs j ON j.id=a.job_id WHERE a.id=? AND a.user_id=?').bind(c.req.param('id'),OWNER).first<{company:string;title:string;applied_at:string}>();
+  const a=await c.env.DB.prepare('SELECT j.company,j.title,a.applied_at FROM applications a JOIN jobs j ON j.id=a.job_id WHERE a.id=? AND a.user_id=?').bind(c.req.param('id'),owner(c.env)).first<{company:string;title:string;applied_at:string}>();
   if(!a)return c.json({error:{code:'NOT_FOUND',message:'Application not found.'}},404);
-  const p=await c.env.DB.prepare('SELECT data_json FROM profiles WHERE user_id=?').bind(OWNER).first<{data_json:string}>();
+  const p=await c.env.DB.prepare('SELECT data_json FROM profiles WHERE user_id=?').bind(owner(c.env)).first<{data_json:string}>();
   return c.json({data:{draft:`Hello,\n\nI’m following up on my application for the ${a.title} position at ${a.company}${a.applied_at?` submitted on ${a.applied_at.slice(0,10)}`:''}. I remain interested in the opportunity and would appreciate any updates you can share about the hiring process.\n\nThank you for your time and consideration.\n\nBest regards,\n${JSON.parse(p?.data_json ?? '{}').name || '[Your name]'}`,sent:false}});
 });

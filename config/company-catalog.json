@@ -1,0 +1,3292 @@
+[
+  {
+    "id": "company-001",
+    "name": "Tata Consultancy Services",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://www.tcs.com/careers"
+  },
+  {
+    "id": "company-002",
+    "name": "Infosys",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://www.infosys.com/careers/"
+  },
+  {
+    "id": "company-003",
+    "name": "Wipro",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://careers.wipro.com/"
+  },
+  {
+    "id": "company-004",
+    "name": "HCLTech",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://careers.hcltech.com/"
+  },
+  {
+    "id": "company-005",
+    "name": "Tech Mahindra",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://www.techmahindra.com/careers/"
+  },
+  {
+    "id": "company-006",
+    "name": "LTIMindtree",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://careers.ltimindtree.com/"
+  },
+  {
+    "id": "company-007",
+    "name": "L&T Technology Services",
+    "base": "India",
+    "sector": "Engineering R&D",
+    "url": "https://www.ltts.com/careers"
+  },
+  {
+    "id": "company-008",
+    "name": "Persistent Systems",
+    "base": "India",
+    "sector": "Software / IT Services",
+    "url": "https://careers.persistent.com/"
+  },
+  {
+    "id": "company-009",
+    "name": "Mphasis",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://careers.mphasis.com/home.html"
+  },
+  {
+    "id": "company-010",
+    "name": "Coforge",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://careers.coforge.com/"
+  },
+  {
+    "id": "company-011",
+    "name": "Hexaware Technologies",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://hexaware.com/careers/"
+  },
+  {
+    "id": "company-012",
+    "name": "Birlasoft",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://www.birlasoft.com/careers"
+  },
+  {
+    "id": "company-013",
+    "name": "Zensar Technologies",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://www.zensar.com/careers"
+  },
+  {
+    "id": "company-014",
+    "name": "KPIT Technologies",
+    "base": "India",
+    "sector": "Automotive Software",
+    "url": "https://www.kpit.com/careers/"
+  },
+  {
+    "id": "company-015",
+    "name": "Cyient",
+    "base": "India",
+    "sector": "Engineering / Technology",
+    "url": "https://www.cyient.com/careers"
+  },
+  {
+    "id": "company-016",
+    "name": "Sonata Software",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://www.sonata-software.com/careers"
+  },
+  {
+    "id": "company-017",
+    "name": "Happiest Minds",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://www.happiestminds.com/careers/"
+  },
+  {
+    "id": "company-018",
+    "name": "Tata Elxsi",
+    "base": "India",
+    "sector": "Design / Engineering Tech",
+    "url": "https://www.tataelxsi.com/careers"
+  },
+  {
+    "id": "company-019",
+    "name": "Sasken Technologies",
+    "base": "India",
+    "sector": "Product Engineering",
+    "url": "https://careers.sasken.com/tb/saskenjobs/"
+  },
+  {
+    "id": "company-020",
+    "name": "Newgen Software",
+    "base": "India",
+    "sector": "Enterprise Software",
+    "url": "https://newgensoft.com/company/careers/"
+  },
+  {
+    "id": "company-021",
+    "name": "Intellect Design Arena",
+    "base": "India",
+    "sector": "Fintech Software",
+    "url": "https://www.intellectdesign.com/careers/"
+  },
+  {
+    "id": "company-022",
+    "name": "Ramco Systems",
+    "base": "India",
+    "sector": "Enterprise Software",
+    "url": "https://www.ramco.com/careers/"
+  },
+  {
+    "id": "company-023",
+    "name": "3i Infotech",
+    "base": "India",
+    "sector": "IT Services",
+    "url": "https://www.3i-infotech.com/careers/"
+  },
+  {
+    "id": "company-024",
+    "name": "Nucleus Software",
+    "base": "India",
+    "sector": "Fintech Software",
+    "url": "https://www.nucleussoftware.com/careers"
+  },
+  {
+    "id": "company-025",
+    "name": "RateGain",
+    "base": "India",
+    "sector": "Travel SaaS",
+    "url": "https://rategain-talent.freshteam.com/jobs"
+  },
+  {
+    "id": "company-026",
+    "name": "Tanla Platforms",
+    "base": "India",
+    "sector": "Cloud Communications",
+    "url": "https://www.tanla.com/careers"
+  },
+  {
+    "id": "company-027",
+    "name": "Affle",
+    "base": "India",
+    "sector": "AdTech",
+    "url": "https://affle.com/career"
+  },
+  {
+    "id": "company-028",
+    "name": "MapmyIndia / CE Info Systems",
+    "base": "India",
+    "sector": "Maps / Location Tech",
+    "url": "https://www.mapmyindia.com/careers/"
+  },
+  {
+    "id": "company-029",
+    "name": "Tejas Networks",
+    "base": "India",
+    "sector": "Telecom Technology",
+    "url": "https://www.tejasnetworks.com/careers/"
+  },
+  {
+    "id": "company-030",
+    "name": "STL - Sterlite Technologies",
+    "base": "India",
+    "sector": "Digital Networks",
+    "url": "https://stl.tech/life/"
+  },
+  {
+    "id": "company-031",
+    "name": "Subex",
+    "base": "India",
+    "sector": "Telecom Analytics",
+    "url": "https://www.subex.com/careers/"
+  },
+  {
+    "id": "company-032",
+    "name": "Sify Technologies",
+    "base": "India",
+    "sector": "Cloud / Data Centers",
+    "url": "https://www.sifytechnologies.com/careers/"
+  },
+  {
+    "id": "company-033",
+    "name": "Tata Communications",
+    "base": "India",
+    "sector": "Telecom / Cloud",
+    "url": "https://jobs.tatacommunications.com/"
+  },
+  {
+    "id": "company-034",
+    "name": "Reliance Jio",
+    "base": "India",
+    "sector": "Telecom / Digital",
+    "url": "https://careers.jio.com/"
+  },
+  {
+    "id": "company-035",
+    "name": "Bharti Airtel",
+    "base": "India",
+    "sector": "Telecom / Digital",
+    "url": "https://www.airtel.in/careers/"
+  },
+  {
+    "id": "company-036",
+    "name": "Vodafone Idea",
+    "base": "India",
+    "sector": "Telecom / Digital",
+    "url": "https://www.myvi.in/careers"
+  },
+  {
+    "id": "company-037",
+    "name": "Reliance Industries",
+    "base": "India",
+    "sector": "Conglomerate / Digital",
+    "url": "https://careers.ril.com/"
+  },
+  {
+    "id": "company-038",
+    "name": "Zoho",
+    "base": "India",
+    "sector": "SaaS",
+    "url": "https://www.zoho.com/careers/"
+  },
+  {
+    "id": "company-039",
+    "name": "Razorpay",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://razorpay.com/careers/"
+  },
+  {
+    "id": "company-040",
+    "name": "PhonePe",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://www.phonepe.com/careers/"
+  },
+  {
+    "id": "company-041",
+    "name": "Paytm Payments",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://www.paytmpayments.com/careers"
+  },
+  {
+    "id": "company-042",
+    "name": "Flipkart",
+    "base": "India",
+    "sector": "E-commerce",
+    "url": "https://www.flipkartcareers.com/"
+  },
+  {
+    "id": "company-043",
+    "name": "Swiggy",
+    "base": "India",
+    "sector": "Consumer Tech",
+    "url": "https://careers.swiggy.in/"
+  },
+  {
+    "id": "company-044",
+    "name": "Zomato",
+    "base": "India",
+    "sector": "Consumer Tech",
+    "url": "https://www.zomato.com/careers"
+  },
+  {
+    "id": "company-045",
+    "name": "Meesho",
+    "base": "India",
+    "sector": "E-commerce",
+    "url": "https://www.meesho.io/jobs"
+  },
+  {
+    "id": "company-046",
+    "name": "CRED",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://careers.cred.club/"
+  },
+  {
+    "id": "company-047",
+    "name": "Groww",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://groww.in/careers"
+  },
+  {
+    "id": "company-048",
+    "name": "Zerodha",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://zerodha.com/careers"
+  },
+  {
+    "id": "company-049",
+    "name": "Upstox",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://jobs.upstox.com/"
+  },
+  {
+    "id": "company-050",
+    "name": "Angel One",
+    "base": "India",
+    "sector": "Fintech / Broking",
+    "url": "https://www.angelone.in/careers"
+  },
+  {
+    "id": "company-051",
+    "name": "PB Fintech",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://www.pbfintech.in/careers/"
+  },
+  {
+    "id": "company-052",
+    "name": "Policybazaar",
+    "base": "India",
+    "sector": "Insurtech",
+    "url": "https://www.policybazaar.com/careers/"
+  },
+  {
+    "id": "company-053",
+    "name": "Cashfree Payments",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://www.cashfree.com/careers/"
+  },
+  {
+    "id": "company-054",
+    "name": "BharatPe",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://bharatpe.com/careers/"
+  },
+  {
+    "id": "company-055",
+    "name": "Juspay",
+    "base": "India",
+    "sector": "Payments Tech",
+    "url": "https://juspay.in/careers"
+  },
+  {
+    "id": "company-056",
+    "name": "Perfios",
+    "base": "India",
+    "sector": "Fintech SaaS",
+    "url": "https://www.perfios.com/careers/"
+  },
+  {
+    "id": "company-057",
+    "name": "Signzy",
+    "base": "India",
+    "sector": "Fintech / RegTech",
+    "url": "https://www.signzy.com/careers/"
+  },
+  {
+    "id": "company-058",
+    "name": "HyperVerge",
+    "base": "India",
+    "sector": "AI / Identity",
+    "url": "https://hyperverge.co/careers/"
+  },
+  {
+    "id": "company-059",
+    "name": "Navi",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://navi.com/careers"
+  },
+  {
+    "id": "company-060",
+    "name": "Niyo",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://goniyo.com/careers/"
+  },
+  {
+    "id": "company-061",
+    "name": "Fi Money",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://fi.money/careers"
+  },
+  {
+    "id": "company-062",
+    "name": "Open Financial Technologies",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://open.money/careers/"
+  },
+  {
+    "id": "company-063",
+    "name": "Yubi",
+    "base": "India",
+    "sector": "Fintech",
+    "url": "https://www.go-yubi.com/careers/"
+  },
+  {
+    "id": "company-064",
+    "name": "Delhivery",
+    "base": "India",
+    "sector": "Logistics Tech",
+    "url": "https://www.delhivery.com/careers"
+  },
+  {
+    "id": "company-065",
+    "name": "IndiaMART",
+    "base": "India",
+    "sector": "B2B Marketplace",
+    "url": "https://careers.indiamart.com/"
+  },
+  {
+    "id": "company-066",
+    "name": "Info Edge",
+    "base": "India",
+    "sector": "Internet / HR Tech",
+    "url": "https://www.infoedge.in/careers"
+  },
+  {
+    "id": "company-067",
+    "name": "Justdial",
+    "base": "India",
+    "sector": "Local Search / Internet",
+    "url": "https://www.justdial.com/cms/career-opportunities"
+  },
+  {
+    "id": "company-068",
+    "name": "MakeMyTrip",
+    "base": "India",
+    "sector": "Travel Tech",
+    "url": "https://careers.makemytrip.com/"
+  },
+  {
+    "id": "company-069",
+    "name": "OYO",
+    "base": "India",
+    "sector": "Hospitality Tech",
+    "url": "https://www.oyorooms.com/careers/"
+  },
+  {
+    "id": "company-070",
+    "name": "Dream Sports",
+    "base": "India",
+    "sector": "Sports Tech",
+    "url": "https://careers.dreamsports.group/"
+  },
+  {
+    "id": "company-071",
+    "name": "Unacademy",
+    "base": "India",
+    "sector": "EdTech",
+    "url": "https://unacademy.com/careers"
+  },
+  {
+    "id": "company-072",
+    "name": "PhysicsWallah",
+    "base": "India",
+    "sector": "EdTech",
+    "url": "https://www.pw.live/careers"
+  },
+  {
+    "id": "company-073",
+    "name": "Simplilearn",
+    "base": "India",
+    "sector": "EdTech",
+    "url": "https://www.simplilearn.com/careers"
+  },
+  {
+    "id": "company-074",
+    "name": "upGrad",
+    "base": "India",
+    "sector": "EdTech",
+    "url": "https://www.upgrad.com/careers/"
+  },
+  {
+    "id": "company-075",
+    "name": "Scaler",
+    "base": "India",
+    "sector": "EdTech",
+    "url": "https://www.scaler.com/careers/"
+  },
+  {
+    "id": "company-076",
+    "name": "Vedantu",
+    "base": "India",
+    "sector": "EdTech",
+    "url": "https://www.vedantu.com/careers"
+  },
+  {
+    "id": "company-077",
+    "name": "Urban Company",
+    "base": "India",
+    "sector": "Consumer Services Tech",
+    "url": "https://careers.urbancompany.com/"
+  },
+  {
+    "id": "company-078",
+    "name": "NoBroker",
+    "base": "India",
+    "sector": "PropTech",
+    "url": "https://www.nobroker.in/careers"
+  },
+  {
+    "id": "company-079",
+    "name": "CarDekho",
+    "base": "India",
+    "sector": "AutoTech",
+    "url": "https://careers.cardekho.com/"
+  },
+  {
+    "id": "company-080",
+    "name": "Moglix",
+    "base": "India",
+    "sector": "B2B Commerce",
+    "url": "https://www.moglix.com/careers"
+  },
+  {
+    "id": "company-081",
+    "name": "Shiprocket",
+    "base": "India",
+    "sector": "Logistics Tech",
+    "url": "https://www.shiprocket.in/careers/"
+  },
+  {
+    "id": "company-082",
+    "name": "Porter",
+    "base": "India",
+    "sector": "Logistics Tech",
+    "url": "https://porter.in/careers"
+  },
+  {
+    "id": "company-083",
+    "name": "Ather Energy",
+    "base": "India",
+    "sector": "EV / Technology",
+    "url": "https://www.atherenergy.com/careers"
+  },
+  {
+    "id": "company-084",
+    "name": "Ola Electric",
+    "base": "India",
+    "sector": "EV / Technology",
+    "url": "https://www.olaelectric.com/careers"
+  },
+  {
+    "id": "company-085",
+    "name": "Myntra",
+    "base": "India",
+    "sector": "E-commerce / Fashion Tech",
+    "url": "https://careers.myntra.com/"
+  },
+  {
+    "id": "company-086",
+    "name": "Practo",
+    "base": "India",
+    "sector": "HealthTech",
+    "url": "https://www.practo.com/company/careers"
+  },
+  {
+    "id": "company-087",
+    "name": "MediBuddy",
+    "base": "India",
+    "sector": "HealthTech",
+    "url": "https://www.medibuddy.in/careers/"
+  },
+  {
+    "id": "company-088",
+    "name": "InMobi",
+    "base": "India",
+    "sector": "AdTech",
+    "url": "https://www.inmobi.com/company/careers/"
+  },
+  {
+    "id": "company-089",
+    "name": "LeadSquared",
+    "base": "India",
+    "sector": "SaaS",
+    "url": "https://www.leadsquared.com/careers/"
+  },
+  {
+    "id": "company-090",
+    "name": "Darwinbox",
+    "base": "India",
+    "sector": "HR Tech",
+    "url": "https://darwinbox.com/careers"
+  },
+  {
+    "id": "company-091",
+    "name": "HDFC Bank",
+    "base": "India",
+    "sector": "Banking / Technology",
+    "url": "https://www.hdfcbank.com/personal/about-us/careers"
+  },
+  {
+    "id": "company-092",
+    "name": "ICICI Bank",
+    "base": "India",
+    "sector": "Banking / Technology",
+    "url": "https://www.icicicareers.com/"
+  },
+  {
+    "id": "company-093",
+    "name": "Axis Bank",
+    "base": "India",
+    "sector": "Banking / Technology",
+    "url": "https://www.axisbank.com/careers"
+  },
+  {
+    "id": "company-094",
+    "name": "Kotak Mahindra Bank",
+    "base": "India",
+    "sector": "Banking / Technology",
+    "url": "https://www.kotak.com/en/about-us/careers.html"
+  },
+  {
+    "id": "company-095",
+    "name": "State Bank of India",
+    "base": "India",
+    "sector": "Banking / Technology",
+    "url": "https://sbi.co.in/web/careers"
+  },
+  {
+    "id": "company-096",
+    "name": "Bajaj Finserv",
+    "base": "India",
+    "sector": "Financial Services / Technology",
+    "url": "https://www.bajajfinserv.in/careers"
+  },
+  {
+    "id": "company-097",
+    "name": "National Payments Corporation of India",
+    "base": "India",
+    "sector": "Payments Infrastructure",
+    "url": "https://www.npci.org.in/careers"
+  },
+  {
+    "id": "company-098",
+    "name": "National Stock Exchange of India",
+    "base": "India",
+    "sector": "Capital Markets / Technology",
+    "url": "https://www.nseindia.com/careers-at-nse"
+  },
+  {
+    "id": "company-099",
+    "name": "BSE",
+    "base": "India",
+    "sector": "Capital Markets / Technology",
+    "url": "https://www.bseindia.com/careers.html"
+  },
+  {
+    "id": "company-100",
+    "name": "MCX",
+    "base": "India",
+    "sector": "Exchange / Technology",
+    "url": "https://www.mcxindia.com/careers"
+  },
+  {
+    "id": "company-101",
+    "name": "NSDL",
+    "base": "India",
+    "sector": "Market Infrastructure / Technology",
+    "url": "https://nsdl.co.in/careers.php"
+  },
+  {
+    "id": "company-102",
+    "name": "Tata Motors",
+    "base": "India",
+    "sector": "Automotive / Technology",
+    "url": "https://www.tatamotors.com/careers/"
+  },
+  {
+    "id": "company-103",
+    "name": "Mahindra & Mahindra",
+    "base": "India",
+    "sector": "Automotive / Technology",
+    "url": "https://jobs.mahindracareers.com/"
+  },
+  {
+    "id": "company-104",
+    "name": "Larsen & Toubro",
+    "base": "India",
+    "sector": "Engineering / Digital",
+    "url": "https://www.larsentoubro.com/corporate/careers/"
+  },
+  {
+    "id": "company-105",
+    "name": "Tata Steel",
+    "base": "India",
+    "sector": "Industrial / Digital",
+    "url": "https://www.tatasteel.com/careers/"
+  },
+  {
+    "id": "company-106",
+    "name": "Adani Group",
+    "base": "India",
+    "sector": "Infrastructure / Digital",
+    "url": "https://careers.adani.com/"
+  },
+  {
+    "id": "company-107",
+    "name": "JSW Group",
+    "base": "India",
+    "sector": "Industrial / Digital",
+    "url": "https://www.jsw.in/careers"
+  },
+  {
+    "id": "company-108",
+    "name": "Asian Paints",
+    "base": "India",
+    "sector": "Consumer / Digital",
+    "url": "https://careers.asianpaints.com/"
+  },
+  {
+    "id": "company-109",
+    "name": "Maruti Suzuki",
+    "base": "India",
+    "sector": "Automotive / Technology",
+    "url": "https://www.marutisuzuki.com/corporate/careers"
+  },
+  {
+    "id": "company-110",
+    "name": "Hero MotoCorp",
+    "base": "India",
+    "sector": "Automotive / Technology",
+    "url": "https://www.heromotocorp.com/en-in/company/careers/"
+  },
+  {
+    "id": "company-111",
+    "name": "Tata Power",
+    "base": "India",
+    "sector": "Energy / Digital",
+    "url": "https://www.tatapower.com/careers"
+  },
+  {
+    "id": "company-112",
+    "name": "Aditya Birla Group",
+    "base": "India",
+    "sector": "Conglomerate / Digital",
+    "url": "https://careers.adityabirla.com/"
+  },
+  {
+    "id": "company-113",
+    "name": "Titan Company",
+    "base": "India",
+    "sector": "Retail / Digital",
+    "url": "https://www.titancompany.in/careers"
+  },
+  {
+    "id": "company-114",
+    "name": "Google",
+    "base": "United States",
+    "sector": "Internet / AI",
+    "url": "https://www.google.com/about/careers/applications/"
+  },
+  {
+    "id": "company-115",
+    "name": "Microsoft",
+    "base": "United States",
+    "sector": "Software / Cloud",
+    "url": "https://careers.microsoft.com/"
+  },
+  {
+    "id": "company-116",
+    "name": "Amazon",
+    "base": "United States",
+    "sector": "Cloud / E-commerce",
+    "url": "https://www.amazon.jobs/"
+  },
+  {
+    "id": "company-117",
+    "name": "Apple",
+    "base": "United States",
+    "sector": "Consumer Technology",
+    "url": "https://www.apple.com/careers/us/"
+  },
+  {
+    "id": "company-118",
+    "name": "Meta",
+    "base": "United States",
+    "sector": "Internet / AI",
+    "url": "https://www.metacareers.com/"
+  },
+  {
+    "id": "company-119",
+    "name": "Netflix",
+    "base": "United States",
+    "sector": "Streaming Technology",
+    "url": "https://jobs.netflix.com/"
+  },
+  {
+    "id": "company-120",
+    "name": "NVIDIA",
+    "base": "United States",
+    "sector": "Semiconductors / AI",
+    "url": "https://www.nvidia.com/en-us/about-nvidia/careers/"
+  },
+  {
+    "id": "company-121",
+    "name": "Adobe",
+    "base": "United States",
+    "sector": "Software",
+    "url": "https://www.adobe.com/careers.html"
+  },
+  {
+    "id": "company-122",
+    "name": "Salesforce",
+    "base": "United States",
+    "sector": "SaaS / CRM",
+    "url": "https://careers.salesforce.com/"
+  },
+  {
+    "id": "company-123",
+    "name": "Oracle",
+    "base": "United States",
+    "sector": "Enterprise Software / Cloud",
+    "url": "https://www.oracle.com/careers/"
+  },
+  {
+    "id": "company-124",
+    "name": "IBM",
+    "base": "United States",
+    "sector": "Enterprise Technology",
+    "url": "https://www.ibm.com/careers"
+  },
+  {
+    "id": "company-125",
+    "name": "Intel",
+    "base": "United States",
+    "sector": "Semiconductors",
+    "url": "https://jobs.intel.com/"
+  },
+  {
+    "id": "company-126",
+    "name": "Cisco",
+    "base": "United States",
+    "sector": "Networking / Security",
+    "url": "https://careers.cisco.com/"
+  },
+  {
+    "id": "company-127",
+    "name": "Qualcomm",
+    "base": "United States",
+    "sector": "Semiconductors / Wireless",
+    "url": "https://careers.qualcomm.com/"
+  },
+  {
+    "id": "company-128",
+    "name": "AMD",
+    "base": "United States",
+    "sector": "Semiconductors",
+    "url": "https://careers.amd.com/"
+  },
+  {
+    "id": "company-129",
+    "name": "Broadcom",
+    "base": "United States",
+    "sector": "Semiconductors / Software",
+    "url": "https://careers.broadcom.com/"
+  },
+  {
+    "id": "company-130",
+    "name": "Dell Technologies",
+    "base": "United States",
+    "sector": "Enterprise Hardware / Cloud",
+    "url": "https://jobs.dell.com/"
+  },
+  {
+    "id": "company-131",
+    "name": "HP Inc.",
+    "base": "United States",
+    "sector": "Hardware / Software",
+    "url": "https://jobs.hp.com/"
+  },
+  {
+    "id": "company-132",
+    "name": "Hewlett Packard Enterprise",
+    "base": "United States",
+    "sector": "Enterprise Technology",
+    "url": "https://careers.hpe.com/"
+  },
+  {
+    "id": "company-133",
+    "name": "ServiceNow",
+    "base": "United States",
+    "sector": "Enterprise SaaS",
+    "url": "https://careers.servicenow.com/"
+  },
+  {
+    "id": "company-134",
+    "name": "Workday",
+    "base": "United States",
+    "sector": "Enterprise SaaS",
+    "url": "https://www.workday.com/en-us/company/careers/overview.html"
+  },
+  {
+    "id": "company-135",
+    "name": "Snowflake",
+    "base": "United States",
+    "sector": "Cloud Data",
+    "url": "https://careers.snowflake.com/"
+  },
+  {
+    "id": "company-136",
+    "name": "Databricks",
+    "base": "United States",
+    "sector": "Data / AI",
+    "url": "https://www.databricks.com/company/careers"
+  },
+  {
+    "id": "company-137",
+    "name": "Palantir",
+    "base": "United States",
+    "sector": "Data / AI",
+    "url": "https://www.palantir.com/careers/"
+  },
+  {
+    "id": "company-138",
+    "name": "Cloudflare",
+    "base": "United States",
+    "sector": "Cloud / Security",
+    "url": "https://www.cloudflare.com/careers/"
+  },
+  {
+    "id": "company-139",
+    "name": "Datadog",
+    "base": "United States",
+    "sector": "Cloud Monitoring",
+    "url": "https://careers.datadoghq.com/"
+  },
+  {
+    "id": "company-140",
+    "name": "Twilio",
+    "base": "United States",
+    "sector": "Cloud Communications",
+    "url": "https://www.twilio.com/en-us/company/jobs"
+  },
+  {
+    "id": "company-141",
+    "name": "Okta",
+    "base": "United States",
+    "sector": "Identity / Security",
+    "url": "https://www.okta.com/company/careers/"
+  },
+  {
+    "id": "company-142",
+    "name": "Dropbox",
+    "base": "United States",
+    "sector": "Cloud Software",
+    "url": "https://jobs.dropbox.com/"
+  },
+  {
+    "id": "company-143",
+    "name": "Box",
+    "base": "United States",
+    "sector": "Cloud Content",
+    "url": "https://careers.box.com/"
+  },
+  {
+    "id": "company-144",
+    "name": "HubSpot",
+    "base": "United States",
+    "sector": "SaaS / CRM",
+    "url": "https://www.hubspot.com/careers"
+  },
+  {
+    "id": "company-145",
+    "name": "Zoom",
+    "base": "United States",
+    "sector": "Communications Software",
+    "url": "https://careers.zoom.us/"
+  },
+  {
+    "id": "company-146",
+    "name": "DocuSign",
+    "base": "United States",
+    "sector": "SaaS",
+    "url": "https://careers.docusign.com/"
+  },
+  {
+    "id": "company-147",
+    "name": "MongoDB",
+    "base": "United States",
+    "sector": "Database / Cloud",
+    "url": "https://www.mongodb.com/company/careers"
+  },
+  {
+    "id": "company-148",
+    "name": "Confluent",
+    "base": "United States",
+    "sector": "Data Infrastructure",
+    "url": "https://www.confluent.io/careers/"
+  },
+  {
+    "id": "company-149",
+    "name": "HashiCorp",
+    "base": "United States",
+    "sector": "Cloud Infrastructure",
+    "url": "https://www.hashicorp.com/en/careers"
+  },
+  {
+    "id": "company-150",
+    "name": "GitHub",
+    "base": "United States",
+    "sector": "Developer Platform",
+    "url": "https://www.github.careers/careers-home"
+  },
+  {
+    "id": "company-151",
+    "name": "GitLab",
+    "base": "United States",
+    "sector": "Developer Platform",
+    "url": "https://about.gitlab.com/jobs/"
+  },
+  {
+    "id": "company-152",
+    "name": "Atlassian",
+    "base": "United States",
+    "sector": "Collaboration Software",
+    "url": "https://www.atlassian.com/company/careers"
+  },
+  {
+    "id": "company-153",
+    "name": "Asana",
+    "base": "United States",
+    "sector": "Productivity SaaS",
+    "url": "https://asana.com/jobs"
+  },
+  {
+    "id": "company-154",
+    "name": "Notion",
+    "base": "United States",
+    "sector": "Productivity Software",
+    "url": "https://www.notion.so/careers"
+  },
+  {
+    "id": "company-155",
+    "name": "Figma",
+    "base": "United States",
+    "sector": "Design Software",
+    "url": "https://www.figma.com/careers/"
+  },
+  {
+    "id": "company-156",
+    "name": "Slack",
+    "base": "United States",
+    "sector": "Collaboration Software",
+    "url": "https://slack.com/careers"
+  },
+  {
+    "id": "company-157",
+    "name": "Stripe",
+    "base": "United States",
+    "sector": "Fintech",
+    "url": "https://stripe.com/jobs"
+  },
+  {
+    "id": "company-158",
+    "name": "PayPal",
+    "base": "United States",
+    "sector": "Fintech",
+    "url": "https://careers.pypl.com/"
+  },
+  {
+    "id": "company-159",
+    "name": "Block",
+    "base": "United States",
+    "sector": "Fintech",
+    "url": "https://block.xyz/careers"
+  },
+  {
+    "id": "company-160",
+    "name": "Coinbase",
+    "base": "United States",
+    "sector": "Crypto / Fintech",
+    "url": "https://www.coinbase.com/careers"
+  },
+  {
+    "id": "company-161",
+    "name": "Robinhood",
+    "base": "United States",
+    "sector": "Fintech",
+    "url": "https://careers.robinhood.com/"
+  },
+  {
+    "id": "company-162",
+    "name": "Affirm",
+    "base": "United States",
+    "sector": "Fintech",
+    "url": "https://www.affirm.com/careers"
+  },
+  {
+    "id": "company-163",
+    "name": "Brex",
+    "base": "United States",
+    "sector": "Fintech",
+    "url": "https://www.brex.com/careers"
+  },
+  {
+    "id": "company-164",
+    "name": "Chime",
+    "base": "United States",
+    "sector": "Fintech",
+    "url": "https://careers.chime.com/"
+  },
+  {
+    "id": "company-165",
+    "name": "SoFi",
+    "base": "United States",
+    "sector": "Fintech",
+    "url": "https://www.sofi.com/careers/"
+  },
+  {
+    "id": "company-166",
+    "name": "Intuit",
+    "base": "United States",
+    "sector": "Fintech Software",
+    "url": "https://www.intuit.com/careers/"
+  },
+  {
+    "id": "company-167",
+    "name": "Plaid",
+    "base": "United States",
+    "sector": "Fintech Infrastructure",
+    "url": "https://plaid.com/careers/"
+  },
+  {
+    "id": "company-168",
+    "name": "Marqeta",
+    "base": "United States",
+    "sector": "Payments Tech",
+    "url": "https://www.marqeta.com/company/careers"
+  },
+  {
+    "id": "company-169",
+    "name": "Visa",
+    "base": "United States",
+    "sector": "Payments Technology",
+    "url": "https://corporate.visa.com/en/careers.html"
+  },
+  {
+    "id": "company-170",
+    "name": "Mastercard",
+    "base": "United States",
+    "sector": "Payments Technology",
+    "url": "https://careers.mastercard.com/"
+  },
+  {
+    "id": "company-171",
+    "name": "American Express",
+    "base": "United States",
+    "sector": "Financial Services / Tech",
+    "url": "https://www.americanexpress.com/en-us/careers/"
+  },
+  {
+    "id": "company-172",
+    "name": "Capital One",
+    "base": "United States",
+    "sector": "Banking / Technology",
+    "url": "https://www.capitalonecareers.com/"
+  },
+  {
+    "id": "company-173",
+    "name": "JPMorgan Chase",
+    "base": "United States",
+    "sector": "Banking / Technology",
+    "url": "https://careers.jpmorgan.com/"
+  },
+  {
+    "id": "company-174",
+    "name": "Goldman Sachs",
+    "base": "United States",
+    "sector": "Finance / Technology",
+    "url": "https://www.goldmansachs.com/careers/"
+  },
+  {
+    "id": "company-175",
+    "name": "Morgan Stanley",
+    "base": "United States",
+    "sector": "Finance / Technology",
+    "url": "https://www.morganstanley.com/careers"
+  },
+  {
+    "id": "company-176",
+    "name": "Bank of America",
+    "base": "United States",
+    "sector": "Banking / Technology",
+    "url": "https://careers.bankofamerica.com/"
+  },
+  {
+    "id": "company-177",
+    "name": "Wells Fargo",
+    "base": "United States",
+    "sector": "Banking / Technology",
+    "url": "https://www.wellsfargojobs.com/"
+  },
+  {
+    "id": "company-178",
+    "name": "BlackRock",
+    "base": "United States",
+    "sector": "Asset Management / Tech",
+    "url": "https://careers.blackrock.com/"
+  },
+  {
+    "id": "company-179",
+    "name": "Bloomberg",
+    "base": "United States",
+    "sector": "Financial Technology",
+    "url": "https://www.bloomberg.com/company/careers/"
+  },
+  {
+    "id": "company-180",
+    "name": "Fidelity Investments",
+    "base": "United States",
+    "sector": "Financial Technology",
+    "url": "https://jobs.fidelity.com/"
+  },
+  {
+    "id": "company-181",
+    "name": "Charles Schwab",
+    "base": "United States",
+    "sector": "Financial Technology",
+    "url": "https://www.schwabjobs.com/"
+  },
+  {
+    "id": "company-182",
+    "name": "Nasdaq",
+    "base": "United States",
+    "sector": "Capital Markets Tech",
+    "url": "https://www.nasdaq.com/about/careers"
+  },
+  {
+    "id": "company-183",
+    "name": "S&P Global",
+    "base": "United States",
+    "sector": "Financial Data / Tech",
+    "url": "https://careers.spglobal.com/"
+  },
+  {
+    "id": "company-184",
+    "name": "Moody's",
+    "base": "United States",
+    "sector": "Financial Data / Tech",
+    "url": "https://careers.moodys.com/"
+  },
+  {
+    "id": "company-185",
+    "name": "Uber",
+    "base": "United States",
+    "sector": "Mobility Tech",
+    "url": "https://www.uber.com/us/en/careers/"
+  },
+  {
+    "id": "company-186",
+    "name": "Lyft",
+    "base": "United States",
+    "sector": "Mobility Tech",
+    "url": "https://www.lyft.com/careers"
+  },
+  {
+    "id": "company-187",
+    "name": "Airbnb",
+    "base": "United States",
+    "sector": "Travel Tech",
+    "url": "https://careers.airbnb.com/"
+  },
+  {
+    "id": "company-188",
+    "name": "DoorDash",
+    "base": "United States",
+    "sector": "Delivery Tech",
+    "url": "https://careersatdoordash.com/"
+  },
+  {
+    "id": "company-189",
+    "name": "Instacart",
+    "base": "United States",
+    "sector": "Grocery Tech",
+    "url": "https://instacart.careers/"
+  },
+  {
+    "id": "company-190",
+    "name": "Expedia Group",
+    "base": "United States",
+    "sector": "Travel Tech",
+    "url": "https://careers.expediagroup.com/"
+  },
+  {
+    "id": "company-191",
+    "name": "Tripadvisor",
+    "base": "United States",
+    "sector": "Travel Tech",
+    "url": "https://careers.tripadvisor.com/"
+  },
+  {
+    "id": "company-192",
+    "name": "Booking Holdings",
+    "base": "United States",
+    "sector": "Travel Tech",
+    "url": "https://www.bookingholdings.com/careers/"
+  },
+  {
+    "id": "company-193",
+    "name": "eBay",
+    "base": "United States",
+    "sector": "E-commerce",
+    "url": "https://jobs.ebayinc.com/"
+  },
+  {
+    "id": "company-194",
+    "name": "Etsy",
+    "base": "United States",
+    "sector": "E-commerce",
+    "url": "https://careers.etsy.com/"
+  },
+  {
+    "id": "company-195",
+    "name": "Wayfair",
+    "base": "United States",
+    "sector": "E-commerce",
+    "url": "https://www.wayfair.com/careers"
+  },
+  {
+    "id": "company-196",
+    "name": "Chewy",
+    "base": "United States",
+    "sector": "E-commerce / Pet Tech",
+    "url": "https://careers.chewy.com/"
+  },
+  {
+    "id": "company-197",
+    "name": "Pinterest",
+    "base": "United States",
+    "sector": "Internet",
+    "url": "https://www.pinterestcareers.com/"
+  },
+  {
+    "id": "company-198",
+    "name": "Snap",
+    "base": "United States",
+    "sector": "Internet / AR",
+    "url": "https://careers.snap.com/"
+  },
+  {
+    "id": "company-199",
+    "name": "Reddit",
+    "base": "United States",
+    "sector": "Internet",
+    "url": "https://www.redditinc.com/careers"
+  },
+  {
+    "id": "company-200",
+    "name": "Discord",
+    "base": "United States",
+    "sector": "Communications",
+    "url": "https://discord.com/careers"
+  },
+  {
+    "id": "company-201",
+    "name": "Roblox",
+    "base": "United States",
+    "sector": "Gaming / Platform",
+    "url": "https://careers.roblox.com/"
+  },
+  {
+    "id": "company-202",
+    "name": "Electronic Arts",
+    "base": "United States",
+    "sector": "Gaming",
+    "url": "https://www.ea.com/careers"
+  },
+  {
+    "id": "company-203",
+    "name": "Take-Two Interactive",
+    "base": "United States",
+    "sector": "Gaming",
+    "url": "https://careers.take2games.com/"
+  },
+  {
+    "id": "company-204",
+    "name": "Riot Games",
+    "base": "United States",
+    "sector": "Gaming",
+    "url": "https://www.riotgames.com/en/work-with-us"
+  },
+  {
+    "id": "company-205",
+    "name": "Epic Games",
+    "base": "United States",
+    "sector": "Gaming / Engine",
+    "url": "https://www.epicgames.com/site/en-US/careers"
+  },
+  {
+    "id": "company-206",
+    "name": "Unity",
+    "base": "United States",
+    "sector": "Game Engine",
+    "url": "https://careers.unity.com/"
+  },
+  {
+    "id": "company-207",
+    "name": "Autodesk",
+    "base": "United States",
+    "sector": "Design Software",
+    "url": "https://www.autodesk.com/careers"
+  },
+  {
+    "id": "company-208",
+    "name": "Intuit Mailchimp",
+    "base": "United States",
+    "sector": "SaaS / Marketing",
+    "url": "https://www.intuit.com/careers/"
+  },
+  {
+    "id": "company-209",
+    "name": "CrowdStrike",
+    "base": "United States",
+    "sector": "Cybersecurity",
+    "url": "https://www.crowdstrike.com/en-us/careers/"
+  },
+  {
+    "id": "company-210",
+    "name": "Palo Alto Networks",
+    "base": "United States",
+    "sector": "Cybersecurity",
+    "url": "https://jobs.paloaltonetworks.com/"
+  },
+  {
+    "id": "company-211",
+    "name": "Fortinet",
+    "base": "United States",
+    "sector": "Cybersecurity",
+    "url": "https://www.fortinet.com/corporate/careers"
+  },
+  {
+    "id": "company-212",
+    "name": "Zscaler",
+    "base": "United States",
+    "sector": "Cybersecurity",
+    "url": "https://www.zscaler.com/careers"
+  },
+  {
+    "id": "company-213",
+    "name": "SentinelOne",
+    "base": "United States",
+    "sector": "Cybersecurity",
+    "url": "https://www.sentinelone.com/jobs/"
+  },
+  {
+    "id": "company-214",
+    "name": "Rapid7",
+    "base": "United States",
+    "sector": "Cybersecurity",
+    "url": "https://careers.rapid7.com/"
+  },
+  {
+    "id": "company-215",
+    "name": "Akamai",
+    "base": "United States",
+    "sector": "Cloud / Security",
+    "url": "https://www.akamai.com/careers"
+  },
+  {
+    "id": "company-216",
+    "name": "Fastly",
+    "base": "United States",
+    "sector": "Edge Cloud",
+    "url": "https://www.fastly.com/about/careers"
+  },
+  {
+    "id": "company-217",
+    "name": "DigitalOcean",
+    "base": "United States",
+    "sector": "Cloud",
+    "url": "https://www.digitalocean.com/careers"
+  },
+  {
+    "id": "company-218",
+    "name": "Vercel",
+    "base": "United States",
+    "sector": "Developer Cloud",
+    "url": "https://vercel.com/careers"
+  },
+  {
+    "id": "company-219",
+    "name": "Netlify",
+    "base": "United States",
+    "sector": "Developer Cloud",
+    "url": "https://www.netlify.com/careers/"
+  },
+  {
+    "id": "company-220",
+    "name": "Elastic",
+    "base": "United States",
+    "sector": "Search / Cloud",
+    "url": "https://www.elastic.co/about/careers"
+  },
+  {
+    "id": "company-221",
+    "name": "Red Hat",
+    "base": "United States",
+    "sector": "Open Source / Cloud",
+    "url": "https://www.redhat.com/en/jobs"
+  },
+  {
+    "id": "company-222",
+    "name": "Nutanix",
+    "base": "United States",
+    "sector": "Cloud Infrastructure",
+    "url": "https://www.nutanix.com/company/careers"
+  },
+  {
+    "id": "company-223",
+    "name": "Pure Storage",
+    "base": "United States",
+    "sector": "Data Storage",
+    "url": "https://www.purestorage.com/company/careers.html"
+  },
+  {
+    "id": "company-224",
+    "name": "NetApp",
+    "base": "United States",
+    "sector": "Data Storage",
+    "url": "https://careers.netapp.com/"
+  },
+  {
+    "id": "company-225",
+    "name": "Micron Technology",
+    "base": "United States",
+    "sector": "Semiconductors",
+    "url": "https://careers.micron.com/"
+  },
+  {
+    "id": "company-226",
+    "name": "Western Digital",
+    "base": "United States",
+    "sector": "Data Storage",
+    "url": "https://jobs.westerndigital.com/"
+  },
+  {
+    "id": "company-227",
+    "name": "Applied Materials",
+    "base": "United States",
+    "sector": "Semiconductor Equipment",
+    "url": "https://www.appliedmaterials.com/us/en/careers.html"
+  },
+  {
+    "id": "company-228",
+    "name": "Lam Research",
+    "base": "United States",
+    "sector": "Semiconductor Equipment",
+    "url": "https://www.lamresearch.com/careers/"
+  },
+  {
+    "id": "company-229",
+    "name": "KLA",
+    "base": "United States",
+    "sector": "Semiconductor Equipment",
+    "url": "https://www.kla.com/careers"
+  },
+  {
+    "id": "company-230",
+    "name": "Synopsys",
+    "base": "United States",
+    "sector": "EDA Software",
+    "url": "https://careers.synopsys.com/"
+  },
+  {
+    "id": "company-231",
+    "name": "Cadence Design Systems",
+    "base": "United States",
+    "sector": "EDA Software",
+    "url": "https://www.cadence.com/en_US/home/company/careers.html"
+  },
+  {
+    "id": "company-232",
+    "name": "Arm",
+    "base": "United Kingdom",
+    "sector": "Semiconductors / IP",
+    "url": "https://careers.arm.com/"
+  },
+  {
+    "id": "company-233",
+    "name": "Sage",
+    "base": "United Kingdom",
+    "sector": "Business Software",
+    "url": "https://www.sage.com/en-gb/company/careers/"
+  },
+  {
+    "id": "company-234",
+    "name": "Canonical",
+    "base": "United Kingdom",
+    "sector": "Open Source / Cloud",
+    "url": "https://canonical.com/careers"
+  },
+  {
+    "id": "company-235",
+    "name": "Darktrace",
+    "base": "United Kingdom",
+    "sector": "Cybersecurity / AI",
+    "url": "https://darktrace.com/careers"
+  },
+  {
+    "id": "company-236",
+    "name": "Sophos",
+    "base": "United Kingdom",
+    "sector": "Cybersecurity",
+    "url": "https://www.sophos.com/en-us/company/careers"
+  },
+  {
+    "id": "company-237",
+    "name": "Quantexa",
+    "base": "United Kingdom",
+    "sector": "Data / AI",
+    "url": "https://www.quantexa.com/careers/"
+  },
+  {
+    "id": "company-238",
+    "name": "Thought Machine",
+    "base": "United Kingdom",
+    "sector": "Fintech Software",
+    "url": "https://www.thoughtmachine.net/careers"
+  },
+  {
+    "id": "company-239",
+    "name": "Revolut",
+    "base": "United Kingdom",
+    "sector": "Fintech",
+    "url": "https://www.revolut.com/careers/"
+  },
+  {
+    "id": "company-240",
+    "name": "Monzo",
+    "base": "United Kingdom",
+    "sector": "Fintech",
+    "url": "https://monzo.com/careers/"
+  },
+  {
+    "id": "company-241",
+    "name": "Starling Bank",
+    "base": "United Kingdom",
+    "sector": "Fintech / Banking",
+    "url": "https://www.starlingbank.com/careers/"
+  },
+  {
+    "id": "company-242",
+    "name": "Wise",
+    "base": "United Kingdom",
+    "sector": "Fintech",
+    "url": "https://www.wise.jobs/"
+  },
+  {
+    "id": "company-243",
+    "name": "Checkout.com",
+    "base": "United Kingdom",
+    "sector": "Payments",
+    "url": "https://www.checkout.com/careers"
+  },
+  {
+    "id": "company-244",
+    "name": "GoCardless",
+    "base": "United Kingdom",
+    "sector": "Payments",
+    "url": "https://gocardless.com/about/careers/"
+  },
+  {
+    "id": "company-245",
+    "name": "Zopa",
+    "base": "United Kingdom",
+    "sector": "Fintech / Banking",
+    "url": "https://www.zopa.com/careers"
+  },
+  {
+    "id": "company-246",
+    "name": "OakNorth",
+    "base": "United Kingdom",
+    "sector": "Fintech / Banking",
+    "url": "https://www.oaknorth.com/careers/"
+  },
+  {
+    "id": "company-247",
+    "name": "Tide",
+    "base": "United Kingdom",
+    "sector": "Fintech",
+    "url": "https://www.tide.co/careers/"
+  },
+  {
+    "id": "company-248",
+    "name": "Funding Circle",
+    "base": "United Kingdom",
+    "sector": "Fintech",
+    "url": "https://www.fundingcircle.com/uk/careers/"
+  },
+  {
+    "id": "company-249",
+    "name": "IG Group",
+    "base": "United Kingdom",
+    "sector": "Trading Technology",
+    "url": "https://www.iggroup.com/careers"
+  },
+  {
+    "id": "company-250",
+    "name": "CMC Markets",
+    "base": "United Kingdom",
+    "sector": "Trading Technology",
+    "url": "https://www.cmcmarkets.com/group/careers"
+  },
+  {
+    "id": "company-251",
+    "name": "LSEG",
+    "base": "United Kingdom",
+    "sector": "Financial Markets Tech",
+    "url": "https://www.lseg.com/en/careers"
+  },
+  {
+    "id": "company-252",
+    "name": "Barclays",
+    "base": "United Kingdom",
+    "sector": "Banking / Technology",
+    "url": "https://home.barclays/careers/"
+  },
+  {
+    "id": "company-253",
+    "name": "HSBC",
+    "base": "United Kingdom",
+    "sector": "Banking / Technology",
+    "url": "https://www.hsbc.com/careers"
+  },
+  {
+    "id": "company-254",
+    "name": "Lloyds Banking Group",
+    "base": "United Kingdom",
+    "sector": "Banking / Technology",
+    "url": "https://www.lloydsbankinggroup.com/careers.html"
+  },
+  {
+    "id": "company-255",
+    "name": "NatWest Group",
+    "base": "United Kingdom",
+    "sector": "Banking / Technology",
+    "url": "https://jobs.natwestgroup.com/"
+  },
+  {
+    "id": "company-256",
+    "name": "Standard Chartered",
+    "base": "United Kingdom",
+    "sector": "Banking / Technology",
+    "url": "https://www.sc.com/en/global-careers/"
+  },
+  {
+    "id": "company-257",
+    "name": "Schroders",
+    "base": "United Kingdom",
+    "sector": "Asset Management / Tech",
+    "url": "https://www.schroders.com/en/global/careers/"
+  },
+  {
+    "id": "company-258",
+    "name": "Legal & General",
+    "base": "United Kingdom",
+    "sector": "Financial Services / Tech",
+    "url": "https://careers.legalandgeneral.com/"
+  },
+  {
+    "id": "company-259",
+    "name": "Aviva",
+    "base": "United Kingdom",
+    "sector": "Insurance / Technology",
+    "url": "https://careers.aviva.co.uk/"
+  },
+  {
+    "id": "company-260",
+    "name": "Admiral Group",
+    "base": "United Kingdom",
+    "sector": "Insurance / Technology",
+    "url": "https://www.admiraljobs.co.uk/"
+  },
+  {
+    "id": "company-261",
+    "name": "M&G",
+    "base": "United Kingdom",
+    "sector": "Asset Management / Tech",
+    "url": "https://careers.mandg.com/"
+  },
+  {
+    "id": "company-262",
+    "name": "Hargreaves Lansdown",
+    "base": "United Kingdom",
+    "sector": "Fintech / Wealth",
+    "url": "https://www.hl.co.uk/careers"
+  },
+  {
+    "id": "company-263",
+    "name": "AJ Bell",
+    "base": "United Kingdom",
+    "sector": "Fintech / Wealth",
+    "url": "https://www.ajbell.co.uk/careers"
+  },
+  {
+    "id": "company-264",
+    "name": "Man Group",
+    "base": "United Kingdom",
+    "sector": "Investment / Technology",
+    "url": "https://www.man.com/careers"
+  },
+  {
+    "id": "company-265",
+    "name": "TP ICAP",
+    "base": "United Kingdom",
+    "sector": "Markets / Technology",
+    "url": "https://careers.tpicap.com/"
+  },
+  {
+    "id": "company-266",
+    "name": "BT Group",
+    "base": "United Kingdom",
+    "sector": "Telecom / Technology",
+    "url": "https://www.bt.com/careers"
+  },
+  {
+    "id": "company-267",
+    "name": "Vodafone",
+    "base": "United Kingdom",
+    "sector": "Telecom / Technology",
+    "url": "https://careers.vodafone.com/"
+  },
+  {
+    "id": "company-268",
+    "name": "Virgin Media O2",
+    "base": "United Kingdom",
+    "sector": "Telecom / Technology",
+    "url": "https://jobs.virginmediao2.co.uk/"
+  },
+  {
+    "id": "company-269",
+    "name": "Sky",
+    "base": "United Kingdom",
+    "sector": "Media / Technology",
+    "url": "https://careers.sky.com/"
+  },
+  {
+    "id": "company-270",
+    "name": "BBC",
+    "base": "United Kingdom",
+    "sector": "Media / Technology",
+    "url": "https://careers.bbc.co.uk/"
+  },
+  {
+    "id": "company-271",
+    "name": "ITV",
+    "base": "United Kingdom",
+    "sector": "Media / Technology",
+    "url": "https://careers.itv.com/"
+  },
+  {
+    "id": "company-272",
+    "name": "Channel 4",
+    "base": "United Kingdom",
+    "sector": "Media / Technology",
+    "url": "https://careers.channel4.com/"
+  },
+  {
+    "id": "company-273",
+    "name": "Pearson",
+    "base": "United Kingdom",
+    "sector": "EdTech / Publishing",
+    "url": "https://pearson.jobs/"
+  },
+  {
+    "id": "company-274",
+    "name": "RELX",
+    "base": "United Kingdom",
+    "sector": "Data / Analytics",
+    "url": "https://www.relx.com/careers"
+  },
+  {
+    "id": "company-275",
+    "name": "LexisNexis Risk Solutions",
+    "base": "United Kingdom",
+    "sector": "Data / Analytics",
+    "url": "https://risk.lexisnexis.com/careers"
+  },
+  {
+    "id": "company-276",
+    "name": "Elsevier",
+    "base": "United Kingdom",
+    "sector": "Data / Publishing Tech",
+    "url": "https://www.elsevier.com/about/careers"
+  },
+  {
+    "id": "company-277",
+    "name": "Endava",
+    "base": "United Kingdom",
+    "sector": "IT Services",
+    "url": "https://www.endava.com/careers"
+  },
+  {
+    "id": "company-278",
+    "name": "Kainos",
+    "base": "United Kingdom",
+    "sector": "Digital Services",
+    "url": "https://www.kainos.com/careers"
+  },
+  {
+    "id": "company-279",
+    "name": "Softcat",
+    "base": "United Kingdom",
+    "sector": "IT Services",
+    "url": "https://www.softcat.com/careers"
+  },
+  {
+    "id": "company-280",
+    "name": "Computacenter",
+    "base": "United Kingdom",
+    "sector": "IT Services",
+    "url": "https://www.computacenter.com/en-gb/careers"
+  },
+  {
+    "id": "company-281",
+    "name": "Bytes Technology Group",
+    "base": "United Kingdom",
+    "sector": "IT Services",
+    "url": "https://www.bytes.co.uk/careers"
+  },
+  {
+    "id": "company-282",
+    "name": "NCC Group",
+    "base": "United Kingdom",
+    "sector": "Cybersecurity",
+    "url": "https://www.nccgroup.com/uk/careers/"
+  },
+  {
+    "id": "company-283",
+    "name": "BJSS",
+    "base": "United Kingdom",
+    "sector": "IT Consulting",
+    "url": "https://www.bjss.com/careers/"
+  },
+  {
+    "id": "company-284",
+    "name": "AND Digital",
+    "base": "United Kingdom",
+    "sector": "Digital Consulting",
+    "url": "https://www.and.digital/join-us"
+  },
+  {
+    "id": "company-285",
+    "name": "Capita",
+    "base": "United Kingdom",
+    "sector": "Business Services / Tech",
+    "url": "https://www.capita.com/careers"
+  },
+  {
+    "id": "company-286",
+    "name": "Serco",
+    "base": "United Kingdom",
+    "sector": "Services / Technology",
+    "url": "https://careers.serco.com/"
+  },
+  {
+    "id": "company-287",
+    "name": "Experian UK",
+    "base": "United Kingdom",
+    "sector": "Data / Technology",
+    "url": "https://www.experianplc.com/careers/"
+  },
+  {
+    "id": "company-288",
+    "name": "Ocado Group",
+    "base": "United Kingdom",
+    "sector": "Retail Technology",
+    "url": "https://careers.ocadogroup.com/"
+  },
+  {
+    "id": "company-289",
+    "name": "Deliveroo",
+    "base": "United Kingdom",
+    "sector": "Delivery Tech",
+    "url": "https://careers.deliveroo.co.uk/"
+  },
+  {
+    "id": "company-290",
+    "name": "Trainline",
+    "base": "United Kingdom",
+    "sector": "Travel Tech",
+    "url": "https://careers.thetrainline.com/"
+  },
+  {
+    "id": "company-291",
+    "name": "Skyscanner",
+    "base": "United Kingdom",
+    "sector": "Travel Tech",
+    "url": "https://www.skyscanner.net/jobs"
+  },
+  {
+    "id": "company-292",
+    "name": "Rightmove",
+    "base": "United Kingdom",
+    "sector": "PropTech",
+    "url": "https://careers.rightmove.co.uk/"
+  },
+  {
+    "id": "company-293",
+    "name": "Auto Trader Group",
+    "base": "United Kingdom",
+    "sector": "Automotive Marketplace",
+    "url": "https://careers.autotrader.co.uk/"
+  },
+  {
+    "id": "company-294",
+    "name": "Zoopla",
+    "base": "United Kingdom",
+    "sector": "PropTech",
+    "url": "https://careers.zoopla.co.uk/"
+  },
+  {
+    "id": "company-295",
+    "name": "MoneySuperMarket Group",
+    "base": "United Kingdom",
+    "sector": "Fintech / Comparison",
+    "url": "https://www.moneysupermarketgroup.com/careers/"
+  },
+  {
+    "id": "company-296",
+    "name": "Future plc",
+    "base": "United Kingdom",
+    "sector": "Digital Media / Tech",
+    "url": "https://futureplc.com/careers/"
+  },
+  {
+    "id": "company-297",
+    "name": "ASOS",
+    "base": "United Kingdom",
+    "sector": "E-commerce",
+    "url": "https://www.asoscareers.com/"
+  },
+  {
+    "id": "company-298",
+    "name": "Boohoo Group",
+    "base": "United Kingdom",
+    "sector": "E-commerce",
+    "url": "https://www.boohoocareers.com/"
+  },
+  {
+    "id": "company-299",
+    "name": "Tesco",
+    "base": "United Kingdom",
+    "sector": "Retail / Technology",
+    "url": "https://www.tesco-careers.com/"
+  },
+  {
+    "id": "company-300",
+    "name": "Sainsbury's",
+    "base": "United Kingdom",
+    "sector": "Retail / Technology",
+    "url": "https://sainsburys.jobs/"
+  },
+  {
+    "id": "company-301",
+    "name": "Marks & Spencer",
+    "base": "United Kingdom",
+    "sector": "Retail / Technology",
+    "url": "https://jobs.marksandspencer.com/"
+  },
+  {
+    "id": "company-302",
+    "name": "Kingfisher",
+    "base": "United Kingdom",
+    "sector": "Retail / Technology",
+    "url": "https://careers.kingfisher.com/"
+  },
+  {
+    "id": "company-303",
+    "name": "Currys",
+    "base": "United Kingdom",
+    "sector": "Retail / Technology",
+    "url": "https://curryscareers.co.uk/"
+  },
+  {
+    "id": "company-304",
+    "name": "JD Sports",
+    "base": "United Kingdom",
+    "sector": "Retail / Digital",
+    "url": "https://careers.jdplc.com/"
+  },
+  {
+    "id": "company-305",
+    "name": "Next",
+    "base": "United Kingdom",
+    "sector": "Retail / Technology",
+    "url": "https://careers.next.co.uk/"
+  },
+  {
+    "id": "company-306",
+    "name": "John Lewis Partnership",
+    "base": "United Kingdom",
+    "sector": "Retail / Technology",
+    "url": "https://www.jlpjobs.com/"
+  },
+  {
+    "id": "company-307",
+    "name": "BAE Systems",
+    "base": "United Kingdom",
+    "sector": "Aerospace / Technology",
+    "url": "https://www.baesystems.com/en/careers"
+  },
+  {
+    "id": "company-308",
+    "name": "Rolls-Royce",
+    "base": "United Kingdom",
+    "sector": "Engineering / Digital",
+    "url": "https://careers.rolls-royce.com/"
+  },
+  {
+    "id": "company-309",
+    "name": "Dyson",
+    "base": "United Kingdom",
+    "sector": "Consumer Technology",
+    "url": "https://careers.dyson.com/"
+  },
+  {
+    "id": "company-310",
+    "name": "Jaguar Land Rover",
+    "base": "United Kingdom",
+    "sector": "Automotive / Software",
+    "url": "https://www.jaguarlandrovercareers.com/"
+  },
+  {
+    "id": "company-311",
+    "name": "McLaren Automotive",
+    "base": "United Kingdom",
+    "sector": "Automotive / Technology",
+    "url": "https://cars.mclaren.com/en/careers"
+  },
+  {
+    "id": "company-312",
+    "name": "Aston Martin",
+    "base": "United Kingdom",
+    "sector": "Automotive / Technology",
+    "url": "https://www.astonmartin.com/en/careers"
+  },
+  {
+    "id": "company-313",
+    "name": "BP",
+    "base": "United Kingdom",
+    "sector": "Energy / Digital",
+    "url": "https://www.bp.com/en/global/corporate/careers.html"
+  },
+  {
+    "id": "company-314",
+    "name": "Shell",
+    "base": "United Kingdom",
+    "sector": "Energy / Digital",
+    "url": "https://www.shell.com/careers.html"
+  },
+  {
+    "id": "company-315",
+    "name": "National Grid",
+    "base": "United Kingdom",
+    "sector": "Energy / Digital",
+    "url": "https://jobs.nationalgrid.com/"
+  },
+  {
+    "id": "company-316",
+    "name": "Centrica",
+    "base": "United Kingdom",
+    "sector": "Energy / Technology",
+    "url": "https://careers.centrica.com/"
+  },
+  {
+    "id": "company-317",
+    "name": "Octopus Energy",
+    "base": "United Kingdom",
+    "sector": "Energy Tech",
+    "url": "https://octopusenergy.group/careers/"
+  },
+  {
+    "id": "company-318",
+    "name": "OVO Energy",
+    "base": "United Kingdom",
+    "sector": "Energy Tech",
+    "url": "https://careers.ovo.com/"
+  },
+  {
+    "id": "company-319",
+    "name": "AstraZeneca",
+    "base": "United Kingdom",
+    "sector": "Life Sciences / Digital",
+    "url": "https://careers.astrazeneca.com/"
+  },
+  {
+    "id": "company-320",
+    "name": "GSK",
+    "base": "United Kingdom",
+    "sector": "Life Sciences / Digital",
+    "url": "https://jobs.gsk.com/"
+  },
+  {
+    "id": "company-321",
+    "name": "Unilever",
+    "base": "United Kingdom",
+    "sector": "Consumer / Digital",
+    "url": "https://careers.unilever.com/"
+  },
+  {
+    "id": "company-322",
+    "name": "Diageo",
+    "base": "United Kingdom",
+    "sector": "Consumer / Digital",
+    "url": "https://www.diageo.com/en/careers"
+  },
+  {
+    "id": "company-323",
+    "name": "Reckitt",
+    "base": "United Kingdom",
+    "sector": "Consumer / Digital",
+    "url": "https://careers.reckitt.com/"
+  },
+  {
+    "id": "company-324",
+    "name": "Ocado Technology",
+    "base": "United Kingdom",
+    "sector": "Robotics / Software",
+    "url": "https://careers.ocadogroup.com/"
+  },
+  {
+    "id": "company-325",
+    "name": "Games Workshop",
+    "base": "United Kingdom",
+    "sector": "Gaming / Digital",
+    "url": "https://jobs.games-workshop.com/"
+  },
+  {
+    "id": "company-326",
+    "name": "Frontier Developments",
+    "base": "United Kingdom",
+    "sector": "Gaming",
+    "url": "https://www.frontier.co.uk/careers"
+  },
+  {
+    "id": "company-327",
+    "name": "Jagex",
+    "base": "United Kingdom",
+    "sector": "Gaming",
+    "url": "https://www.jagex.com/en-GB/careers"
+  },
+  {
+    "id": "company-328",
+    "name": "Sumo Digital",
+    "base": "United Kingdom",
+    "sector": "Gaming",
+    "url": "https://www.sumo-digital.com/careers/"
+  },
+  {
+    "id": "company-329",
+    "name": "Keywords Studios",
+    "base": "United Kingdom",
+    "sector": "Gaming Services",
+    "url": "https://www.keywordsstudios.com/en/careers/"
+  },
+  {
+    "id": "company-330",
+    "name": "Improbable",
+    "base": "United Kingdom",
+    "sector": "Virtual Worlds / Tech",
+    "url": "https://www.improbable.io/careers"
+  },
+  {
+    "id": "company-331",
+    "name": "Graphcore",
+    "base": "United Kingdom",
+    "sector": "AI Hardware",
+    "url": "https://www.graphcore.ai/careers"
+  },
+  {
+    "id": "company-332",
+    "name": "Paddle",
+    "base": "United Kingdom",
+    "sector": "SaaS / Payments",
+    "url": "https://www.paddle.com/careers"
+  },
+  {
+    "id": "company-333",
+    "name": "Matillion",
+    "base": "United Kingdom",
+    "sector": "Data Software",
+    "url": "https://www.matillion.com/careers"
+  },
+  {
+    "id": "company-334",
+    "name": "Cleo",
+    "base": "United Kingdom",
+    "sector": "Fintech",
+    "url": "https://web.meetcleo.com/careers"
+  },
+  {
+    "id": "company-335",
+    "name": "Marshmallow",
+    "base": "United Kingdom",
+    "sector": "Insurtech",
+    "url": "https://www.marshmallow.com/careers"
+  },
+  {
+    "id": "company-336",
+    "name": "Motorway",
+    "base": "United Kingdom",
+    "sector": "Auto Marketplace",
+    "url": "https://motorway.co.uk/careers"
+  },
+  {
+    "id": "company-337",
+    "name": "Faculty",
+    "base": "United Kingdom",
+    "sector": "AI",
+    "url": "https://faculty.ai/careers"
+  },
+  {
+    "id": "company-338",
+    "name": "Wayve",
+    "base": "United Kingdom",
+    "sector": "Autonomous Driving",
+    "url": "https://wayve.ai/careers/"
+  },
+  {
+    "id": "company-339",
+    "name": "Synthesia",
+    "base": "United Kingdom",
+    "sector": "AI Video",
+    "url": "https://www.synthesia.io/careers"
+  },
+  {
+    "id": "company-340",
+    "name": "ElevenLabs",
+    "base": "United Kingdom",
+    "sector": "AI Audio",
+    "url": "https://elevenlabs.io/careers"
+  },
+  {
+    "id": "company-341",
+    "name": "Raspberry Pi",
+    "base": "United Kingdom",
+    "sector": "Computing / Education",
+    "url": "https://www.raspberrypi.com/jobs/"
+  },
+  {
+    "id": "company-342",
+    "name": "Cambridge Consultants",
+    "base": "United Kingdom",
+    "sector": "Engineering / Technology",
+    "url": "https://www.cambridgeconsultants.com/careers/"
+  },
+  {
+    "id": "company-343",
+    "name": "PA Consulting",
+    "base": "United Kingdom",
+    "sector": "Technology Consulting",
+    "url": "https://www.paconsulting.com/careers"
+  },
+  {
+    "id": "company-344",
+    "name": "Babcock International",
+    "base": "United Kingdom",
+    "sector": "Engineering / Technology",
+    "url": "https://jobs.babcockinternational.com/"
+  },
+  {
+    "id": "company-345",
+    "name": "QinetiQ",
+    "base": "United Kingdom",
+    "sector": "Defense Technology",
+    "url": "https://careers.qinetiq.com/"
+  },
+  {
+    "id": "company-346",
+    "name": "Oxford Nanopore Technologies",
+    "base": "United Kingdom",
+    "sector": "Biotech / Data",
+    "url": "https://nanoporetech.com/careers"
+  },
+  {
+    "id": "company-347",
+    "name": "SAP",
+    "base": "Germany",
+    "sector": "Enterprise Software",
+    "url": "https://jobs.sap.com/"
+  },
+  {
+    "id": "company-348",
+    "name": "Siemens",
+    "base": "Germany",
+    "sector": "Industrial Technology",
+    "url": "https://jobs.siemens.com/"
+  },
+  {
+    "id": "company-349",
+    "name": "Bosch",
+    "base": "Germany",
+    "sector": "Engineering / Software",
+    "url": "https://www.bosch.com/careers/"
+  },
+  {
+    "id": "company-350",
+    "name": "Deutsche Telekom",
+    "base": "Germany",
+    "sector": "Telecom / Technology",
+    "url": "https://www.telekom.com/en/careers"
+  },
+  {
+    "id": "company-351",
+    "name": "Zalando",
+    "base": "Germany",
+    "sector": "E-commerce Tech",
+    "url": "https://jobs.zalando.com/"
+  },
+  {
+    "id": "company-352",
+    "name": "Celonis",
+    "base": "Germany",
+    "sector": "Process Mining / SaaS",
+    "url": "https://www.celonis.com/careers/"
+  },
+  {
+    "id": "company-353",
+    "name": "TeamViewer",
+    "base": "Germany",
+    "sector": "Remote Software",
+    "url": "https://www.teamviewer.com/en/company/careers/"
+  },
+  {
+    "id": "company-354",
+    "name": "Delivery Hero",
+    "base": "Germany",
+    "sector": "Delivery Tech",
+    "url": "https://careers.deliveryhero.com/"
+  },
+  {
+    "id": "company-355",
+    "name": "HelloFresh",
+    "base": "Germany",
+    "sector": "Food Tech",
+    "url": "https://careers.hellofresh.com/"
+  },
+  {
+    "id": "company-356",
+    "name": "AUTO1 Group",
+    "base": "Germany",
+    "sector": "Auto Marketplace",
+    "url": "https://www.auto1-group.com/jobs/"
+  },
+  {
+    "id": "company-357",
+    "name": "N26",
+    "base": "Germany",
+    "sector": "Fintech",
+    "url": "https://n26.com/en-eu/careers"
+  },
+  {
+    "id": "company-358",
+    "name": "Personio",
+    "base": "Germany",
+    "sector": "HR Tech",
+    "url": "https://www.personio.com/about-personio/careers/"
+  },
+  {
+    "id": "company-359",
+    "name": "DeepL",
+    "base": "Germany",
+    "sector": "AI / Translation",
+    "url": "https://www.deepl.com/en/jobs"
+  },
+  {
+    "id": "company-360",
+    "name": "Aleph Alpha",
+    "base": "Germany",
+    "sector": "AI",
+    "url": "https://www.aleph-alpha.com/careers"
+  },
+  {
+    "id": "company-361",
+    "name": "Infineon Technologies",
+    "base": "Germany",
+    "sector": "Semiconductors",
+    "url": "https://www.infineon.com/cms/en/careers/"
+  },
+  {
+    "id": "company-362",
+    "name": "BMW Group",
+    "base": "Germany",
+    "sector": "Automotive / Software",
+    "url": "https://www.bmwgroup.jobs/"
+  },
+  {
+    "id": "company-363",
+    "name": "Mercedes-Benz",
+    "base": "Germany",
+    "sector": "Automotive / Software",
+    "url": "https://group.mercedes-benz.com/careers/"
+  },
+  {
+    "id": "company-364",
+    "name": "Volkswagen Group",
+    "base": "Germany",
+    "sector": "Automotive / Software",
+    "url": "https://www.volkswagen-group.com/en/careers-16037"
+  },
+  {
+    "id": "company-365",
+    "name": "Allianz",
+    "base": "Germany",
+    "sector": "Insurance / Technology",
+    "url": "https://careers.allianz.com/"
+  },
+  {
+    "id": "company-366",
+    "name": "Deutsche Bank",
+    "base": "Germany",
+    "sector": "Banking / Technology",
+    "url": "https://careers.db.com/"
+  },
+  {
+    "id": "company-367",
+    "name": "Capgemini",
+    "base": "France",
+    "sector": "IT Services",
+    "url": "https://www.capgemini.com/careers/"
+  },
+  {
+    "id": "company-368",
+    "name": "Dassault Systemes",
+    "base": "France",
+    "sector": "Engineering Software",
+    "url": "https://www.3ds.com/careers"
+  },
+  {
+    "id": "company-369",
+    "name": "Ubisoft",
+    "base": "France",
+    "sector": "Gaming",
+    "url": "https://www.ubisoft.com/en-us/company/careers"
+  },
+  {
+    "id": "company-370",
+    "name": "Orange",
+    "base": "France",
+    "sector": "Telecom / Technology",
+    "url": "https://orange.jobs/"
+  },
+  {
+    "id": "company-371",
+    "name": "Thales",
+    "base": "France",
+    "sector": "Defense / Technology",
+    "url": "https://careers.thalesgroup.com/"
+  },
+  {
+    "id": "company-372",
+    "name": "Sopra Steria",
+    "base": "France",
+    "sector": "IT Services",
+    "url": "https://careers.soprasteria.com/"
+  },
+  {
+    "id": "company-373",
+    "name": "OVHcloud",
+    "base": "France",
+    "sector": "Cloud",
+    "url": "https://careers.ovhcloud.com/"
+  },
+  {
+    "id": "company-374",
+    "name": "Mistral AI",
+    "base": "France",
+    "sector": "AI",
+    "url": "https://jobs.lever.co/mistral"
+  },
+  {
+    "id": "company-375",
+    "name": "BlaBlaCar",
+    "base": "France",
+    "sector": "Mobility Tech",
+    "url": "https://jobs.blablacar.com/"
+  },
+  {
+    "id": "company-376",
+    "name": "Doctolib",
+    "base": "France",
+    "sector": "HealthTech",
+    "url": "https://careers.doctolib.com/"
+  },
+  {
+    "id": "company-377",
+    "name": "Criteo",
+    "base": "France",
+    "sector": "AdTech",
+    "url": "https://careers.criteo.com/"
+  },
+  {
+    "id": "company-378",
+    "name": "Deezer",
+    "base": "France",
+    "sector": "Streaming Tech",
+    "url": "https://www.deezerjobs.com/"
+  },
+  {
+    "id": "company-379",
+    "name": "Schneider Electric",
+    "base": "France",
+    "sector": "Industrial Technology",
+    "url": "https://www.se.com/ww/en/about-us/careers/"
+  },
+  {
+    "id": "company-380",
+    "name": "Airbus",
+    "base": "France/Europe",
+    "sector": "Aerospace Technology",
+    "url": "https://www.airbus.com/en/careers"
+  },
+  {
+    "id": "company-381",
+    "name": "BNP Paribas",
+    "base": "France",
+    "sector": "Banking / Technology",
+    "url": "https://group.bnpparibas/en/careers"
+  },
+  {
+    "id": "company-382",
+    "name": "Societe Generale",
+    "base": "France",
+    "sector": "Banking / Technology",
+    "url": "https://careers.societegenerale.com/"
+  },
+  {
+    "id": "company-383",
+    "name": "AXA",
+    "base": "France",
+    "sector": "Insurance / Technology",
+    "url": "https://careers.axa.com/"
+  },
+  {
+    "id": "company-384",
+    "name": "ASML",
+    "base": "Netherlands",
+    "sector": "Semiconductor Equipment",
+    "url": "https://www.asml.com/en/careers"
+  },
+  {
+    "id": "company-385",
+    "name": "Booking.com",
+    "base": "Netherlands",
+    "sector": "Travel Tech",
+    "url": "https://careers.booking.com/"
+  },
+  {
+    "id": "company-386",
+    "name": "Adyen",
+    "base": "Netherlands",
+    "sector": "Fintech",
+    "url": "https://careers.adyen.com/"
+  },
+  {
+    "id": "company-387",
+    "name": "Philips",
+    "base": "Netherlands",
+    "sector": "Health Technology",
+    "url": "https://www.careers.philips.com/"
+  },
+  {
+    "id": "company-388",
+    "name": "NXP Semiconductors",
+    "base": "Netherlands",
+    "sector": "Semiconductors",
+    "url": "https://www.nxp.com/company/about-nxp/careers:CAREERS"
+  },
+  {
+    "id": "company-389",
+    "name": "ING",
+    "base": "Netherlands",
+    "sector": "Banking / Technology",
+    "url": "https://www.ing.jobs/"
+  },
+  {
+    "id": "company-390",
+    "name": "TomTom",
+    "base": "Netherlands",
+    "sector": "Maps / Automotive Tech",
+    "url": "https://www.tomtom.com/careers/"
+  },
+  {
+    "id": "company-391",
+    "name": "Mollie",
+    "base": "Netherlands",
+    "sector": "Fintech",
+    "url": "https://www.mollie.com/careers"
+  },
+  {
+    "id": "company-392",
+    "name": "ASM International",
+    "base": "Netherlands",
+    "sector": "Semiconductor Equipment",
+    "url": "https://www.asm.com/careers/"
+  },
+  {
+    "id": "company-393",
+    "name": "Ericsson",
+    "base": "Sweden",
+    "sector": "Telecom Technology",
+    "url": "https://www.ericsson.com/en/careers"
+  },
+  {
+    "id": "company-394",
+    "name": "Spotify",
+    "base": "Sweden",
+    "sector": "Streaming Tech",
+    "url": "https://www.lifeatspotify.com/jobs"
+  },
+  {
+    "id": "company-395",
+    "name": "Klarna",
+    "base": "Sweden",
+    "sector": "Fintech",
+    "url": "https://www.klarna.com/careers/"
+  },
+  {
+    "id": "company-396",
+    "name": "Volvo Cars",
+    "base": "Sweden",
+    "sector": "Automotive / Software",
+    "url": "https://www.volvocars.com/intl/v/careers"
+  },
+  {
+    "id": "company-397",
+    "name": "Scania",
+    "base": "Sweden",
+    "sector": "Automotive / Software",
+    "url": "https://www.scania.com/group/en/home/career.html"
+  },
+  {
+    "id": "company-398",
+    "name": "Nokia",
+    "base": "Finland",
+    "sector": "Telecom Technology",
+    "url": "https://www.nokia.com/about-us/careers/"
+  },
+  {
+    "id": "company-399",
+    "name": "KONE",
+    "base": "Finland",
+    "sector": "Industrial Technology",
+    "url": "https://www.kone.com/en/careers/"
+  },
+  {
+    "id": "company-400",
+    "name": "Supercell",
+    "base": "Finland",
+    "sector": "Gaming",
+    "url": "https://supercell.com/en/careers/"
+  },
+  {
+    "id": "company-401",
+    "name": "ABB",
+    "base": "Switzerland",
+    "sector": "Industrial Technology",
+    "url": "https://careers.abb/global/en"
+  },
+  {
+    "id": "company-402",
+    "name": "Logitech",
+    "base": "Switzerland",
+    "sector": "Consumer Technology",
+    "url": "https://jobs.jobvite.com/logitech/"
+  },
+  {
+    "id": "company-403",
+    "name": "Swisscom",
+    "base": "Switzerland",
+    "sector": "Telecom / Technology",
+    "url": "https://www.swisscom.ch/en/about/career.html"
+  },
+  {
+    "id": "company-404",
+    "name": "UBS",
+    "base": "Switzerland",
+    "sector": "Banking / Technology",
+    "url": "https://www.ubs.com/global/en/careers.html"
+  },
+  {
+    "id": "company-405",
+    "name": "Zurich Insurance",
+    "base": "Switzerland",
+    "sector": "Insurance / Technology",
+    "url": "https://www.zurich.com/careers"
+  },
+  {
+    "id": "company-406",
+    "name": "Roche",
+    "base": "Switzerland",
+    "sector": "Life Sciences / Digital",
+    "url": "https://careers.roche.com/"
+  },
+  {
+    "id": "company-407",
+    "name": "Novartis",
+    "base": "Switzerland",
+    "sector": "Life Sciences / Digital",
+    "url": "https://www.novartis.com/careers"
+  },
+  {
+    "id": "company-408",
+    "name": "Shopify",
+    "base": "Canada",
+    "sector": "E-commerce Software",
+    "url": "https://www.shopify.com/careers"
+  },
+  {
+    "id": "company-409",
+    "name": "OpenText",
+    "base": "Canada",
+    "sector": "Enterprise Software",
+    "url": "https://careers.opentext.com/"
+  },
+  {
+    "id": "company-410",
+    "name": "CGI",
+    "base": "Canada",
+    "sector": "IT Services",
+    "url": "https://www.cgi.com/en/careers"
+  },
+  {
+    "id": "company-411",
+    "name": "Thomson Reuters",
+    "base": "Canada",
+    "sector": "Information / Technology",
+    "url": "https://careers.thomsonreuters.com/"
+  },
+  {
+    "id": "company-412",
+    "name": "Lightspeed Commerce",
+    "base": "Canada",
+    "sector": "Commerce Software",
+    "url": "https://www.lightspeedhq.com/careers/"
+  },
+  {
+    "id": "company-413",
+    "name": "1Password",
+    "base": "Canada",
+    "sector": "Security Software",
+    "url": "https://1password.com/careers"
+  },
+  {
+    "id": "company-414",
+    "name": "Wealthsimple",
+    "base": "Canada",
+    "sector": "Fintech",
+    "url": "https://www.wealthsimple.com/en-ca/careers"
+  },
+  {
+    "id": "company-415",
+    "name": "Cohere",
+    "base": "Canada",
+    "sector": "AI",
+    "url": "https://cohere.com/careers"
+  },
+  {
+    "id": "company-416",
+    "name": "BlackBerry",
+    "base": "Canada",
+    "sector": "Cybersecurity / Automotive",
+    "url": "https://www.blackberry.com/us/en/company/careers"
+  },
+  {
+    "id": "company-417",
+    "name": "Clio",
+    "base": "Canada",
+    "sector": "LegalTech",
+    "url": "https://www.clio.com/about/careers/"
+  },
+  {
+    "id": "company-418",
+    "name": "Hootsuite",
+    "base": "Canada",
+    "sector": "Social Media Software",
+    "url": "https://careers.hootsuite.com/"
+  },
+  {
+    "id": "company-419",
+    "name": "PointClickCare",
+    "base": "Canada",
+    "sector": "HealthTech",
+    "url": "https://careers.pointclickcare.com/"
+  },
+  {
+    "id": "company-420",
+    "name": "Kinaxis",
+    "base": "Canada",
+    "sector": "Supply Chain Software",
+    "url": "https://www.kinaxis.com/en/careers"
+  },
+  {
+    "id": "company-421",
+    "name": "Canva",
+    "base": "Australia",
+    "sector": "Design Software",
+    "url": "https://www.canva.com/careers/"
+  },
+  {
+    "id": "company-422",
+    "name": "SEEK",
+    "base": "Australia",
+    "sector": "HR Tech",
+    "url": "https://www.seek.com.au/about/careers/"
+  },
+  {
+    "id": "company-423",
+    "name": "REA Group",
+    "base": "Australia",
+    "sector": "PropTech",
+    "url": "https://www.rea-group.com/careers/"
+  },
+  {
+    "id": "company-424",
+    "name": "WiseTech Global",
+    "base": "Australia",
+    "sector": "Logistics Software",
+    "url": "https://www.wisetechglobal.com/careers/"
+  },
+  {
+    "id": "company-425",
+    "name": "Telstra",
+    "base": "Australia",
+    "sector": "Telecom / Technology",
+    "url": "https://careers.telstra.com/"
+  },
+  {
+    "id": "company-426",
+    "name": "Commonwealth Bank",
+    "base": "Australia",
+    "sector": "Banking / Technology",
+    "url": "https://www.commbank.com.au/about-us/careers.html"
+  },
+  {
+    "id": "company-427",
+    "name": "ANZ",
+    "base": "Australia",
+    "sector": "Banking / Technology",
+    "url": "https://www.anz.com.au/careers/"
+  },
+  {
+    "id": "company-428",
+    "name": "NAB",
+    "base": "Australia",
+    "sector": "Banking / Technology",
+    "url": "https://www.nab.com.au/about-us/careers"
+  },
+  {
+    "id": "company-429",
+    "name": "Westpac",
+    "base": "Australia",
+    "sector": "Banking / Technology",
+    "url": "https://www.westpac.com.au/about-westpac/careers/"
+  },
+  {
+    "id": "company-430",
+    "name": "Macquarie Group",
+    "base": "Australia",
+    "sector": "Finance / Technology",
+    "url": "https://www.macquarie.com/au/en/careers.html"
+  },
+  {
+    "id": "company-431",
+    "name": "Xero",
+    "base": "New Zealand",
+    "sector": "Cloud Accounting",
+    "url": "https://www.xero.com/about/careers/"
+  },
+  {
+    "id": "company-432",
+    "name": "Sony",
+    "base": "Japan",
+    "sector": "Consumer Technology",
+    "url": "https://www.sony.com/en/SonyInfo/Careers/"
+  },
+  {
+    "id": "company-433",
+    "name": "Rakuten",
+    "base": "Japan",
+    "sector": "Internet / E-commerce",
+    "url": "https://global.rakuten.com/corp/careers/"
+  },
+  {
+    "id": "company-434",
+    "name": "SoftBank Group",
+    "base": "Japan",
+    "sector": "Technology / Telecom",
+    "url": "https://group.softbank/en/careers"
+  },
+  {
+    "id": "company-435",
+    "name": "Fujitsu",
+    "base": "Japan",
+    "sector": "IT Services / Technology",
+    "url": "https://www.fujitsu.com/global/about/careers/"
+  },
+  {
+    "id": "company-436",
+    "name": "NEC",
+    "base": "Japan",
+    "sector": "Enterprise Technology",
+    "url": "https://www.nec.com/en/global/career/"
+  },
+  {
+    "id": "company-437",
+    "name": "NTT DATA",
+    "base": "Japan",
+    "sector": "IT Services",
+    "url": "https://www.nttdata.com/global/en/careers"
+  },
+  {
+    "id": "company-438",
+    "name": "Hitachi",
+    "base": "Japan",
+    "sector": "Industrial / Digital",
+    "url": "https://www.hitachi.com/recruit/"
+  },
+  {
+    "id": "company-439",
+    "name": "Canon",
+    "base": "Japan",
+    "sector": "Imaging / Technology",
+    "url": "https://global.canon/en/employ/"
+  },
+  {
+    "id": "company-440",
+    "name": "Toyota",
+    "base": "Japan",
+    "sector": "Automotive / Software",
+    "url": "https://global.toyota/en/company/profile/recruitment/"
+  },
+  {
+    "id": "company-441",
+    "name": "Honda",
+    "base": "Japan",
+    "sector": "Automotive / Software",
+    "url": "https://global.honda/en/career/"
+  },
+  {
+    "id": "company-442",
+    "name": "Samsung",
+    "base": "South Korea",
+    "sector": "Electronics / Technology",
+    "url": "https://www.samsungcareers.com/"
+  },
+  {
+    "id": "company-443",
+    "name": "LG Electronics",
+    "base": "South Korea",
+    "sector": "Electronics / Technology",
+    "url": "https://www.lg.com/global/careers"
+  },
+  {
+    "id": "company-444",
+    "name": "SK hynix",
+    "base": "South Korea",
+    "sector": "Semiconductors",
+    "url": "https://recruit.skhynix.com/"
+  },
+  {
+    "id": "company-445",
+    "name": "NAVER",
+    "base": "South Korea",
+    "sector": "Internet / AI",
+    "url": "https://recruit.navercorp.com/"
+  },
+  {
+    "id": "company-446",
+    "name": "Kakao",
+    "base": "South Korea",
+    "sector": "Internet / Platforms",
+    "url": "https://careers.kakao.com/"
+  },
+  {
+    "id": "company-447",
+    "name": "Alibaba Group",
+    "base": "China",
+    "sector": "E-commerce / Cloud",
+    "url": "https://talent.alibaba.com/"
+  },
+  {
+    "id": "company-448",
+    "name": "Tencent",
+    "base": "China",
+    "sector": "Internet / Gaming",
+    "url": "https://careers.tencent.com/"
+  },
+  {
+    "id": "company-449",
+    "name": "ByteDance",
+    "base": "China",
+    "sector": "Internet / AI",
+    "url": "https://jobs.bytedance.com/en/"
+  },
+  {
+    "id": "company-450",
+    "name": "Baidu",
+    "base": "China",
+    "sector": "Internet / AI",
+    "url": "https://talent.baidu.com/"
+  },
+  {
+    "id": "company-451",
+    "name": "Xiaomi",
+    "base": "China",
+    "sector": "Consumer Technology",
+    "url": "https://hr.xiaomi.com/"
+  },
+  {
+    "id": "company-452",
+    "name": "Huawei",
+    "base": "China",
+    "sector": "Telecom / Technology",
+    "url": "https://career.huawei.com/"
+  },
+  {
+    "id": "company-453",
+    "name": "Lenovo",
+    "base": "Hong Kong / China",
+    "sector": "Computing Technology",
+    "url": "https://jobs.lenovo.com/"
+  },
+  {
+    "id": "company-454",
+    "name": "JD.com",
+    "base": "China",
+    "sector": "E-commerce / Logistics Tech",
+    "url": "https://zhaopin.jd.com/"
+  },
+  {
+    "id": "company-455",
+    "name": "Grab",
+    "base": "Singapore",
+    "sector": "Mobility / Fintech",
+    "url": "https://www.grab.careers/"
+  },
+  {
+    "id": "company-456",
+    "name": "Sea Group",
+    "base": "Singapore",
+    "sector": "Internet / Gaming / E-commerce",
+    "url": "https://www.sea.com/careers"
+  },
+  {
+    "id": "company-457",
+    "name": "ST Engineering",
+    "base": "Singapore",
+    "sector": "Engineering / Technology",
+    "url": "https://www.stengg.com/en/careers/"
+  },
+  {
+    "id": "company-458",
+    "name": "GovTech Singapore",
+    "base": "Singapore",
+    "sector": "Public Sector Technology",
+    "url": "https://www.tech.gov.sg/careers/"
+  },
+  {
+    "id": "company-459",
+    "name": "Singtel",
+    "base": "Singapore",
+    "sector": "Telecom / Technology",
+    "url": "https://groupcareers.singtel.com/"
+  },
+  {
+    "id": "company-460",
+    "name": "Check Point Software",
+    "base": "Israel",
+    "sector": "Cybersecurity",
+    "url": "https://careers.checkpoint.com/"
+  },
+  {
+    "id": "company-461",
+    "name": "Wix",
+    "base": "Israel",
+    "sector": "Web Software",
+    "url": "https://www.wix.com/jobs/home"
+  },
+  {
+    "id": "company-462",
+    "name": "monday.com",
+    "base": "Israel",
+    "sector": "Work Management SaaS",
+    "url": "https://monday.com/careers"
+  },
+  {
+    "id": "company-463",
+    "name": "NICE",
+    "base": "Israel",
+    "sector": "Enterprise Software / AI",
+    "url": "https://www.nice.com/careers"
+  },
+  {
+    "id": "company-464",
+    "name": "Mobileye",
+    "base": "Israel",
+    "sector": "Autonomous Driving",
+    "url": "https://careers.mobileye.com/"
+  },
+  {
+    "id": "company-465",
+    "name": "Taboola",
+    "base": "Israel",
+    "sector": "AdTech",
+    "url": "https://www.taboola.com/careers"
+  },
+  {
+    "id": "company-466",
+    "name": "Mercado Libre",
+    "base": "Argentina / Latin America",
+    "sector": "E-commerce / Fintech",
+    "url": "https://careers-meli.mercadolibre.com/"
+  },
+  {
+    "id": "company-467",
+    "name": "Nubank",
+    "base": "Brazil",
+    "sector": "Fintech",
+    "url": "https://international.nubank.com.br/careers/"
+  },
+  {
+    "id": "company-468",
+    "name": "TOTVS",
+    "base": "Brazil",
+    "sector": "Enterprise Software",
+    "url": "https://www.totvs.com/carreiras/"
+  },
+  {
+    "id": "company-469",
+    "name": "Globant",
+    "base": "Argentina",
+    "sector": "Digital Engineering",
+    "url": "https://www.globant.com/careers"
+  },
+  {
+    "id": "company-470",
+    "name": "dLocal",
+    "base": "Uruguay",
+    "sector": "Fintech",
+    "url": "https://www.dlocal.com/careers/"
+  }
+]
