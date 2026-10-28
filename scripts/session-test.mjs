@@ -1,6 +1,6 @@
 import {Miniflare,convertV4MiniflareOptions} from 'miniflare';
 import {readFileSync} from 'node:fs';
-import {SignJWT} from 'jose';
+import {SignJWT,decodeJwt} from 'jose';
 import assert from 'node:assert/strict';
 import {PDFDocument,StandardFonts} from 'pdf-lib';
 import {storageRequest} from '../server/mongo-storage.mjs';
@@ -23,6 +23,7 @@ try{
  assert.equal((await login('fixture-password','https://attacker.test')).status,403);pass('login rejects cross-site requests');
  assert.equal((await login('wrong-password')).status,401);pass('wrong owner password is rejected');
  const signedIn=await login();assert.equal(signedIn.status,303);const cookie=signedIn.headers.get('Set-Cookie');assert.match(cookie,/HttpOnly; Secure; SameSite=Strict/);pass('correct owner password establishes a secure session');
+ assert.match(cookie,/Max-Age=31536000(?:;|$)/);const claims=decodeJwt(cookie.split(';')[0].split('=')[1]);assert.equal(claims.exp-claims.iat,365*24*60*60);pass('browser cookie and signed session both last exactly one year');
  const headers={Cookie:cookie.split(';')[0]};assert.equal((await call('/api/v1/health',{headers})).status,200);pass('authenticated owner can use the deployed API');
  const profile=await(await call('/api/v1/profile',{headers})).json();assert.equal(profile.data.email,'owner@example.test');pass('production initializes a real empty owner profile without samples');
  const pdf=await PDFDocument.create();const font=await pdf.embedFont(StandardFonts.Helvetica);pdf.addPage().drawText('Test Candidate - Backend Engineer',{font,x:50,y:700});const bytes=await pdf.save();

@@ -4,6 +4,7 @@ import type { Env } from './env';
 import { hash } from './store';
 
 const cookieName='__Host-shortlist_session';
+const sessionSeconds=365*24*60*60;
 const encoder=new TextEncoder();
 const sessionKey=(env:Env)=>encoder.encode(env.OWNER_SESSION_SECRET!);
 async function equalSecret(a:string,b:string){
@@ -11,7 +12,7 @@ async function equalSecret(a:string,b:string){
   let difference=0;for(let i=0;i<x.length;i++)difference|=x.charCodeAt(i)^y.charCodeAt(i);
   return difference===0;
 }
-const loginPage=`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign in — Shortlist</title><style>body{font:16px system-ui;background:#f7f8f6;color:#203129;margin:0;display:grid;min-height:100vh;place-items:center}main{background:white;border:1px solid #dde4dc;border-radius:20px;padding:36px;max-width:380px;margin:20px}h1{font-size:28px}input,button{box-sizing:border-box;width:100%;padding:14px;border-radius:8px;margin-top:12px}input{border:1px solid #a9b8aa}button{background:#24583d;color:white;border:0;font:inherit;cursor:pointer}p{line-height:1.6;color:#536158}</style><main><h1>Your private workspace.</h1><p>Enter your owner password to open Shortlist. Your session expires after eight hours.</p><form method="post" action="/api/auth/login"><label>Owner password<input name="password" type="password" autocomplete="current-password" required maxlength="200"></label><button type="submit">Sign in</button></form></main></html>`;
+const loginPage=`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign in — Shortlist</title><style>body{font:16px system-ui;background:#f7f8f6;color:#203129;margin:0;display:grid;min-height:100vh;place-items:center}main{background:white;border:1px solid #dde4dc;border-radius:20px;padding:36px;max-width:380px;margin:20px}h1{font-size:28px}input,button{box-sizing:border-box;width:100%;padding:14px;border-radius:8px;margin-top:12px}input{border:1px solid #a9b8aa}button{background:#24583d;color:white;border:0;font:inherit;cursor:pointer}p{line-height:1.6;color:#536158}</style><main><h1>Your private workspace.</h1><p>Enter your owner password to open Shortlist. You stay signed in for one year unless you sign out or clear your browser cookies.</p><form method="post" action="/api/auth/login"><label>Owner password<input name="password" type="password" autocomplete="current-password" required maxlength="200"></label><button type="submit">Sign in</button></form></main></html>`;
 
 // This mode is opt-in. Access JWT authentication remains available when no proxy
 // secret is configured. The transport secret never grants an owner session.
@@ -38,8 +39,9 @@ export async function ownerSession(c:Context<{Bindings:Env;Variables:{requestId:
     const body=await c.req.text();if(body.length>2048)return c.text('Login form is too large.',413);
     const password=new URLSearchParams(body).get('password')??'';
     if(!password||!await equalSecret(await hash(password),env.OWNER_PASSWORD_HASH))return c.html(loginPage.replace('<form','<p role="alert">Incorrect password. Please try again.</p><form'),401);
-    const token=await new SignJWT({email:env.OWNER_EMAIL}).setProtectedHeader({alg:'HS256'}).setSubject('primary-owner').setIssuer('shortlist-owner').setAudience('shortlist-api').setIssuedAt().setExpirationTime('8h').sign(sessionKey(env));
-    c.header('Set-Cookie',`${cookieName}=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=28800`);
+    const issuedAt=Math.floor(Date.now()/1000);
+    const token=await new SignJWT({email:env.OWNER_EMAIL}).setProtectedHeader({alg:'HS256'}).setSubject('primary-owner').setIssuer('shortlist-owner').setAudience('shortlist-api').setIssuedAt(issuedAt).setExpirationTime(issuedAt+sessionSeconds).sign(sessionKey(env));
+    c.header('Set-Cookie',`${cookieName}=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${sessionSeconds}`);
     return c.redirect('/',303);
   }
   const token=c.req.header('Cookie')?.split(';').map(value=>value.trim()).find(value=>value.startsWith(cookieName+'='))?.slice(cookieName.length+1)??'';
@@ -57,3 +59,4 @@ export async function ownerSession(c:Context<{Bindings:Env;Variables:{requestId:
     return c.json({error:{code:'AUTH_REQUIRED',message:'Sign in to your private Shortlist workspace.'}},401);
   }
 }
+

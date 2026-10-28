@@ -4,7 +4,7 @@ Shortlist runs at https://shortlist-six-gold.vercel.app. The React frontend and 
 
 ## Owner access
 
-Open `/api/auth/login` on the Vercel site. The deployment's generated owner password is saved locally in the ignored `work/shortlist-owner-login.txt`. Keep this file private. A successful login creates an eight-hour signed cookie with HttpOnly, Secure and SameSite=Strict. Mutations require the configured frontend origin. Password guessing is limited atomically in D1. Direct Worker requests require the server-only proxy secret as well as an owner session. To rotate credentials, update the Worker secrets and clear existing sessions by rotating OWNER_SESSION_SECRET.
+Open `/api/auth/login` on the Vercel site. The deployment's owner password is saved locally in the ignored `work/shortlist-owner-login.txt`. Keep this file private. A successful login creates a one-year signed cookie with HttpOnly, Secure and SameSite=Strict. Mutations require the configured frontend origin. Password guessing is limited atomically in D1. Direct Worker requests require the server-only proxy secret as well as an owner session. To rotate credentials, update the Worker secrets and clear existing sessions by rotating OWNER_SESSION_SECRET.
 
 ## MongoDB
 
@@ -20,7 +20,7 @@ Set these Vercel production environment variables through the CLI or dashboard:
 
 Atlas network access must allow the deployed Vercel functions to connect. A local successful connection alone does not prove that the hosted connection is permitted; verify a hosted upload and download before considering setup complete.
 
-Worker secrets are OWNER_EMAIL, OWNER_PASSWORD_HASH (SHA-256 of the generated high-entropy password), OWNER_SESSION_SECRET, DEPLOYMENT_PROXY_SECRET and MONGO_STORAGE_SECRET. Production MONGO_STORAGE_URL points at the Vercel site's `/api/storage`. The raw MongoDB URI stays on Vercel, not in the Worker or browser bundle.
+Worker secrets are OWNER_EMAIL, OWNER_PASSWORD_HASH (SHA-256 of the owner password), OWNER_SESSION_SECRET, DEPLOYMENT_PROXY_SECRET and MONGO_STORAGE_SECRET. Production MONGO_STORAGE_URL points at the Vercel site's `/api/storage`. The raw MongoDB URI stays on Vercel, not in the Worker or browser bundle.
 
 The private storage endpoint authenticates before opening a database connection. It exposes no public read URL and never returns driver errors or connection strings. Existing Cloudflare Access authentication remains supported for deployments without the proxy mode.
 
@@ -40,4 +40,6 @@ npm run deploy:worker
 Hosted MongoDB writes, reads, deletes and private resume uploads/downloads have been verified. The Worker sync schedule runs every 15 minutes; individual providers retain their own backoff and polling intervals. Large JSON board caches are gzip-compressed before transport to stay within hosted request limits. FreeHire resumes through the queue in batches of 20. Verify real source sync, PDF/DOCX uploads, profile verification, generated resume downloads and owner/non-owner requests. Telegram and Google remain optional integrations requiring their own secrets.
 
 Do not upload `work`, `.wrangler`, `.vercel`, `.dev.vars`, `.env`, raw resumes, local databases or login credentials to GitHub. The private URI input file is `work/mongodb-uri.txt`; it is never part of source deployments.
+
+
 
