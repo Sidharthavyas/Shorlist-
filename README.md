@@ -92,3 +92,8 @@ Apply `migrations/0005_company_sources.sql` before deploying this release. The m
 Share the website and let each person create an account at `/api/auth/signup`. They receive a private profile, preferences, resume library and application tracker. The existing owner remains the administrator for shared sources. MongoDB stores account credentials; D1 stores workspace data and shared jobs. New-account secrets are server-only Vercel variables, and the Worker enables `MULTI_USER`. Email verification and email password recovery are not configured.
 
 The 28 October database read incident, code findings, indexes, polling reductions, reset handling and account-isolation tests are documented in [read-budget-and-accounts.md](docs/read-budget-and-accounts.md). Discovery resumes at the configured reset time; do not remove the pause merely to retry a blocked database. The first successful initialization automatically applies the pending workspace/index schema. No paid plan is required or activated by this release.
+
+
+## Optional AI resume writing
+
+Generate resume now opens a writing-mode and preview dialog. The optional Gemini/Grok writer returns fact-linked JSON; the existing renderer keeps the reference PDF/DOCX format. AI changes require explicit processing consent and review before file generation. Cached drafts, request limits and factual fallbacks bound usage. See [resume-ai.md](docs/resume-ai.md) for server-only key/model configuration and provider data-policy requirements. Live AI is disabled until those settings are supplied.

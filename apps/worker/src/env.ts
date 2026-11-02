@@ -10,6 +10,8 @@ export interface Env {
   USER_ID?:string; MULTI_USER?:string; DISCOVERY_PAUSED?:string; DISCOVERY_RESUME_AT?:string;
   FREEHIRE_API_KEY?:string; TELEGRAM_BOT_TOKEN?:string; TELEGRAM_CHAT_ID?:string;
   GOOGLE_CLIENT_ID?:string; GOOGLE_CLIENT_SECRET?:string; GOOGLE_TOKEN_ENCRYPTION_KEY?:string;
+  GEMINI_API_KEY?:string; XAI_API_KEY?:string; RESUME_AI_PROVIDER?:string; RESUME_AI_MODEL?:string;
+  RESUME_AI_DATA_POLICY?:string; RESUME_AI_DAILY_LIMIT?:string;
 }
 export const OWNER = 'primary-owner';
 export const owner=(env:Env)=>env.USER_ID??OWNER;

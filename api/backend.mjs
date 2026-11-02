@@ -3,7 +3,7 @@ import {catalogRequest} from '../server/job-catalog.mjs';
 let blockedUntil=0,blockedError;
 export default {
   async fetch(request,context) {
-    if(Date.now()<blockedUntil){
+    if(Date.now()<blockedUntil&&!(request.method==='GET'&&/^\/api\/v1\/(?:resume-ai\/status|resume-previews\/[^/]+(?:\/pdf)?)$/.test(new URL(request.url).pathname))){
       const catalog=await catalogRequest(request);if(catalog)return catalog;
       return Response.json({error:blockedError},{status:503,headers:{'Cache-Control':'private, no-store','Retry-After':String(Math.ceil((blockedUntil-Date.now())/1000))}});
     }

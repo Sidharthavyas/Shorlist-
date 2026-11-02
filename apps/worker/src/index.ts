@@ -19,6 +19,7 @@ import {queueEnv,drainWork,type TaskMessage} from './durable-work';
 import companyCatalog from '../../../config/company-catalog.json';
 import companyCoverage from '../../../config/company-coverage.json';
 import {personalize} from './personalization';
+import {resumePreviews,isPreviewRead} from './resume-previews';
 let databaseBlockedUntil=0;
 
 export const app = new Hono<{Bindings:Env;Variables:{requestId:string}}>();
@@ -51,6 +52,7 @@ app.use('*',async(c,next)=>{
     if(!allowed.includes(c.req.header('Origin') ?? '')) return c.json({error:{code:'ORIGIN_REJECTED',message:'Request origin is not allowed.'}},403);
   }
   c.env={...c.env,USER_ID:session?.subject??OWNER};
+  if(isPreviewRead(c.req.method,c.req.url)){await next();return;}
   if(c.env.MULTI_USER==='enabled'&&owner(c.env)!==OWNER&&!['GET','HEAD','OPTIONS'].includes(c.req.method)&&(/^\/api\/v1\/sources(?:\/|$)/.test(c.req.path)||/^\/api\/v1\/jobs(?:$|\/[^/]+\/(?:review|correction))/.test(c.req.path)))return c.json({error:{code:'ADMIN_REQUIRED',message:'Only the site owner can change shared job sources or listings.'}},403);
   await initialize(c.env,subject,email);
   if(c.env.MULTI_USER==='enabled'&&owner(c.env)!==OWNER){
@@ -174,6 +176,7 @@ app.get('/api/v1/exports/applications.csv',async c=>{
   const csv=(v:unknown)=>'"'+String(v ?? '').replace(/^[=+@-]/,"'$&").replace(/"/g,'""')+'"';
   return new Response(['Company,Role,URL,Status,Applied,Notes',...rows.results.map(r=>Object.values(r).map(csv).join(','))].join('\r\n'),{headers:{'Content-Type':'text/csv; charset=utf-8','Content-Disposition':'attachment; filename="applications.csv"','Cache-Control':'private, no-store'}});
 });
+app.route('/api/v1',resumePreviews);
 app.route('/api/v1',resumes);
 app.route('/api/v1',extras);
 app.route('/api/v1',google);
@@ -194,7 +197,7 @@ async function processTask(env:Env,body:TaskMessage){
 }
 export default {
   async fetch(request:Request,bindings:Env,ctx:ExecutionContext){
-    if(Date.now()<databaseBlockedUntil)return Response.json({error:{code:'DATABASE_LIMIT',message:'The daily database read allowance is exhausted. Stored data is safe. Service resumes at '+new Date(databaseBlockedUntil).toLocaleString('en-IN',{timeZone:'Asia/Kolkata'})+' IST.',reset_at:new Date(databaseBlockedUntil).toISOString()}},{status:503,headers:{'Cache-Control':'private, no-store','Retry-After':String(Math.ceil((databaseBlockedUntil-Date.now())/1000))}});
+    if(Date.now()<databaseBlockedUntil&&!isPreviewRead(request.method,request.url))return Response.json({error:{code:'DATABASE_LIMIT',message:'The daily database read allowance is exhausted. Stored data is safe. Service resumes at '+new Date(databaseBlockedUntil).toLocaleString('en-IN',{timeZone:'Asia/Kolkata'})+' IST.',reset_at:new Date(databaseBlockedUntil).toISOString()}},{status:503,headers:{'Cache-Control':'private, no-store','Retry-After':String(Math.ceil((databaseBlockedUntil-Date.now())/1000))}});
     const env=queueEnv(storageEnv(bindings));
     if(new URL(request.url).pathname==='/api/internal/drain'){
       if(request.method!=='POST'||!await proxyAuthorized(request,env))return Response.json({error:{code:'UNAUTHORIZED'}},{status:401});

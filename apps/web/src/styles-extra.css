@@ -9,3 +9,5 @@
 .source-entry p { margin:5px 0; }
 .source-entry small { color:#777; }
 @media(max-width:640px) { .source-entry { align-items:flex-start; flex-direction:column; } }
+
+.resume-preview-modal{width:760px}.resume-preview-modal label{display:block;margin-top:18px}.resume-preview-modal select{display:block;width:100%;margin-top:8px}.resume-preview-modal .resume-review-check{display:flex;align-items:flex-start;gap:10px;line-height:1.6}.resume-review-check input{width:auto;margin-top:5px}.resume-text-preview{margin:20px 0;padding:20px;border:1px solid #dde4dc;border-radius:10px;max-height:360px;overflow:auto}.resume-text-preview section{margin-top:18px}.resume-text-preview p{color:#36433b;margin:8px 0}.resume-wording-changes article{padding:12px 0;border-bottom:1px solid #e4e8e4}.resume-preview-warning{margin-top:14px;padding:12px;border-radius:8px;background:#fff3dd;color:#735117}

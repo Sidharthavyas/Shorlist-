@@ -8,6 +8,9 @@ import { owner, discoveryPaused } from './env';
 import { hash, now } from './store';
 import { skills } from './domain';
 import { resumeDraft, mergeResumeDraft } from './profile-import';
+import {z} from 'zod';
+import {applyRewrites,AI_WRITER_VERSION} from './resume-ai';
+import type {ResumePreview} from './resume-previews';
 
 export interface Profile {name:string;email:string;phone?:string;location?:string;linkedin?:string;github?:string;portfolio?:string;headline?:string;professional_summary?:string;skill_groups?:string[];skills:string[];education:string[];experience:string[];projects:string[];verified_bullets:string[];}
 export function tailor(profile:Profile, jobSkills:string[]) {
@@ -30,16 +33,18 @@ export async function generateResume(env:Env,taskId:string) {
   const task=await env.DB.prepare("UPDATE tasks SET state='RUNNING',lease_until=?,attempts=attempts+1 WHERE id=? AND (state='PENDING' OR (state='RUNNING' AND lease_until<?)) RETURNING *").bind(new Date(Date.now()+120000).toISOString(),taskId,now()).first<{entity_id:string;entity_revision:number;idempotency_key:string;attempts:number}>();
   if(!task)return;
   try {
-    const version=await env.DB.prepare('SELECT * FROM resume_versions WHERE idempotency_key=? AND user_id=?').bind(task.idempotency_key,owner(env)).first<{id:string;profile_revision:number;job_revision:number}>();
+    const version=await env.DB.prepare('SELECT * FROM resume_versions WHERE idempotency_key=? AND user_id=?').bind(task.idempotency_key,owner(env)).first<{id:string;profile_revision:number;job_revision:number;content_json:string|null}>();
     const job=await env.DB.prepare('SELECT * FROM jobs WHERE id=?').bind(task.entity_id).first<{normalized_json:string;company:string;title:string;revision:number}>();
     const p=await env.DB.prepare('SELECT * FROM profiles WHERE user_id=?').bind(owner(env)).first<{data_json:string;revision:number}>();
     if(!job||!version||!p||p.revision!==version.profile_revision||job.revision!==version.job_revision)throw new Error('STALE_INPUT');
-    const profile=JSON.parse(p.data_json) as Profile;const content=tailor(profile,JSON.parse(job.normalized_json).skills ?? []);
+    const profile=JSON.parse(p.data_json) as Profile,baseline=tailor(profile,JSON.parse(job.normalized_json).skills ?? []),approved=JSON.parse(version.content_json??'{}').approved_preview as ResumePreview|undefined;
+    if(approved&&approved.writer_version!==AI_WRITER_VERSION)throw Error('STALE_INPUT');
+    const content=approved?applyRewrites(baseline,{rewrites:approved.rewrites}).content:baseline;
     const pdf=await renderPdf(content),docx=renderDocx(content);
     const path=`resumes/${new Date().getUTCFullYear()}/${String(new Date().getUTCMonth()+1).padStart(2,'0')}/${job.company.replace(/[^a-z0-9-]/gi,'-')}/${version.id}`;
     await Promise.all([env.FILES.put(`${path}.pdf`,pdf,{httpMetadata:{contentType:'application/pdf'}}),env.FILES.put(`${path}.docx`,docx,{httpMetadata:{contentType:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}})]);
     const original:Record<string,string[]>={'Professional Summary':profile.professional_summary?[profile.professional_summary]:[],'Technical Skills':profile.skill_groups?.length?profile.skill_groups:[profile.skills.join(', ')],Skills:profile.skills,Experience:groupedEntries(profile.experience ?? []),Projects:groupedEntries(profile.projects ?? []),'Selected Achievements':profile.verified_bullets,Education:profile.education};
-    const diff={strategy:'Selection and ordering of verified facts only',sections:content.sections.map(s=>({title:s.title,before:original[s.title] ?? [],after:s.lines,reordered:JSON.stringify(original[s.title])!==JSON.stringify(s.lines)})),fabricated_claims:0};
+    const diff={strategy:approved?.origin==='ai'?'User-reviewed AI wording linked to verified facts':'Selection and ordering of verified facts only',sections:content.sections.map(s=>({title:s.title,before:original[s.title] ?? [],after:s.lines,reordered:JSON.stringify(original[s.title])!==JSON.stringify(s.lines)})),fabricated_claims:approved?.origin==='ai'?null:0,writer:approved?{origin:approved.origin,provider:approved.provider,model:approved.model,version:approved.writer_version,preview_id:approved.id,validation:'Automated checks plus user review; semantic accuracy is not guaranteed.'}:null};
     await env.DB.batch([
       env.DB.prepare("UPDATE resume_versions SET state='READY',pdf_key=?,docx_key=?,content_hash=?,content_json=?,changes_json=? WHERE id=?").bind(`${path}.pdf`,`${path}.docx`,await hash(JSON.stringify(content)),JSON.stringify(content),JSON.stringify(diff),version.id),
       env.DB.prepare("UPDATE tasks SET state='READY',updated_at=?,result_json=? WHERE id=?").bind(now(),JSON.stringify({resume_version_id:version.id}),taskId),
@@ -101,13 +106,21 @@ resumes.post('/profile/uploads',async c=>{
   return c.json({data:{id,resume_version_id:v,extracted_text:extracted,verification_required:true,message:pdf?'PDF stored. Enter and verify facts in your profile before tailoring.':'DOCX text extracted. Verify facts in your profile before tailoring.'}},201);
 });
 resumes.post('/jobs/:id/resume-tasks',async c=>{
+  const body=await c.req.text(),input=z.object({preview_id:z.uuid().optional(),reviewed:z.boolean().default(false)}).strict().parse(body?JSON.parse(body):{});
   // Recommendation eligibility controls discovery, not owner-requested tailoring.
   // The background renderer uses the same catalog lookup and revision checks.
   const job=await c.env.DB.prepare('SELECT id,revision FROM jobs WHERE id=?').bind(c.req.param('id')).first<{id:string;revision:number}>();
   if(!job)return c.json({error:{code:'NOT_FOUND',message:'Job not found.'}},404);
   const profile=await c.env.DB.prepare('SELECT data_json,revision FROM profiles WHERE user_id=?').bind(owner(c.env)).first<{data_json:string;revision:number}>();
   try{tailor(JSON.parse(profile?.data_json ?? '{}'),[]);}catch{return c.json({error:{code:'PROFILE_INCOMPLETE',message:'Add your name, email and verified projects, experience, or achievements in Settings first.'}},422);}
-  const key=`tailor:${owner(c.env)}:${job.id}:${job.revision}:${profile!.revision}:${RESUME_TEMPLATE}`;
+  let approved:ResumePreview|null=null;
+  if(input.preview_id){
+    const file=await c.env.FILES.get(`resumes/ai-previews/${owner(c.env)}/${input.preview_id}.json`);if(file)approved=JSON.parse(await file.text());
+    if(!approved||approved.user_id!==owner(c.env)||approved.job_id!==job.id||approved.job_revision!==job.revision||approved.profile_revision!==profile!.revision||approved.writer_version!==AI_WRITER_VERSION||Date.parse(approved.expires_at)<=Date.now())return c.json({error:{code:'STALE_PREVIEW',message:'Prepare a new preview; the job, profile or preview has changed.'}},409);
+    if(approved.origin==='ai'&&!input.reviewed)return c.json({error:{code:'REVIEW_REQUIRED',message:'Review the proposed wording before generating files.'}},422);
+    const originalJob=await c.env.DB.prepare('SELECT normalized_json FROM jobs WHERE id=?').bind(job.id).first<{normalized_json:string}>();applyRewrites(tailor(JSON.parse(profile!.data_json),JSON.parse(originalJob!.normalized_json).skills??[]),{rewrites:approved.rewrites});
+  }
+  const key=`tailor:${owner(c.env)}:${job.id}:${job.revision}:${profile!.revision}:${RESUME_TEMPLATE}`+(approved?`:preview:${approved.id}`:'');
   const prior=await c.env.DB.prepare('SELECT * FROM tasks WHERE user_id=? AND idempotency_key=?').bind(owner(c.env),key).first<{id:string;state:string}>();
   if(prior) {
     if(prior.state==='FAILED'){await c.env.DB.prepare("UPDATE tasks SET state='PENDING',error_code=NULL WHERE id=?").bind(prior.id).run();c.executionCtx.waitUntil(generateResume(c.env,prior.id));}
@@ -116,7 +129,7 @@ resumes.post('/jobs/:id/resume-tasks',async c=>{
   const id=await hash(`resume:${key}`),v=await hash(`version:${key}`),task=await hash(`task:${key}`),t=now();
   await c.env.DB.batch([
     c.env.DB.prepare("INSERT OR IGNORE INTO resumes(id,user_id,job_id,kind,created_at) VALUES(?,?,?,'TAILORED',?)").bind(id,owner(c.env),job.id,t),
-    c.env.DB.prepare("INSERT OR IGNORE INTO resume_versions(id,resume_id,user_id,version,state,profile_revision,job_revision,template_version,idempotency_key,created_at) VALUES(?,?,?,1,'PENDING',?,?,?,?,?)").bind(v,id,owner(c.env),profile!.revision,job.revision,RESUME_TEMPLATE,key,t),
+    c.env.DB.prepare("INSERT OR IGNORE INTO resume_versions(id,resume_id,user_id,version,state,profile_revision,job_revision,template_version,idempotency_key,created_at,content_json) VALUES(?,?,?,1,'PENDING',?,?,?,?,?,?)").bind(v,id,owner(c.env),profile!.revision,job.revision,RESUME_TEMPLATE,key,t,JSON.stringify(approved?{approved_preview:approved}:{})),
     c.env.DB.prepare("INSERT OR IGNORE INTO tasks(id,user_id,kind,entity_id,entity_revision,idempotency_key,state,created_at,updated_at) VALUES(?,?,'TAILOR_RESUME',?,?,?,'PENDING',?,?)").bind(task,owner(c.env),job.id,job.revision,key,t,t),
     c.env.DB.prepare('INSERT OR IGNORE INTO outbox(id,task_id,payload_json,available_at) VALUES(?,?,?,?)').bind(task,task,JSON.stringify({kind:'TAILOR_RESUME',task_id:task,entity_id:job.id,entity_revision:job.revision,settings_revision:1}),t)
   ]);

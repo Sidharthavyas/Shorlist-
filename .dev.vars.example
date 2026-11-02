@@ -1,0 +1,8 @@
+
+# Optional server-only AI writer. Use an account whose data terms permit resume facts.
+# RESUME_AI_PROVIDER=gemini
+# GEMINI_API_KEY=
+# XAI_API_KEY=
+# RESUME_AI_MODEL=
+# RESUME_AI_DATA_POLICY=approved
+# RESUME_AI_DAILY_LIMIT=10
