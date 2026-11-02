@@ -34,3 +34,15 @@ test('quota errors and incomplete responses never become usable AI content',asyn
 test('Grok uses server-side authentication and the same strict output validation',async()=>{
  const result=await requestWriting({...env,RESUME_AI_PROVIDER:'grok',XAI_API_KEY:'fixture-grok-key'},baseline,{title:'Backend',description:'Python'},async(url,options)=>{assert.equal(String(url),'https://api.x.ai/v1/chat/completions');const body=JSON.parse(String(options?.body));assert.equal(body.response_format.type,'json_schema');return Response.json({choices:[{finish_reason:'stop',message:{content:JSON.stringify({rewrites:[]})}}]});});assert.equal(result.provider,'grok');
 });
+
+test('Groq uses its own key, endpoint and namespaced model with strict output validation',async()=>{
+ const config={...env,RESUME_AI_PROVIDER:'groq',RESUME_AI_MODEL:'openai/gpt-oss-20b',GROQ_API_KEY:'fixture-groq-key'};
+ assert.equal(aiStatus({...config,GROQ_API_KEY:undefined}).reason,'API_KEY_MISSING');
+ const result=await requestWriting(config,baseline,{title:'Backend',description:'Python'},async(url,options)=>{
+  assert.equal(String(url),'https://api.groq.com/openai/v1/chat/completions');assert.equal(new Headers(options?.headers).get('Authorization'),'Bearer fixture-groq-key');
+  const body=JSON.parse(String(options?.body));assert.equal(body.model,'openai/gpt-oss-20b');assert.equal(body.response_format.json_schema.strict,true);assert.equal(body.max_completion_tokens,4096);assert.equal(body.max_tokens,undefined);
+  return Response.json({choices:[{finish_reason:'stop',message:{content:JSON.stringify({rewrites:[{fact_id:'s0.e0.l0',text:'Developed Python APIs.'}]})}}]});
+ });assert.equal(result.provider,'groq');assert.equal(result.rewrites.length,1);
+ await assert.rejects(requestWriting(config,baseline,{title:'Backend',description:'Python'},async()=>Response.json({choices:[{finish_reason:'stop',message:{content:JSON.stringify({rewrites:[{fact_id:'s0.e0.l0',text:'Built Python APIs using AWS.'}]})}}]})),/UNSUPPORTED_SKILL/);
+ await assert.rejects(requestWriting({...config,RESUME_AI_MODEL:'../bad/model'},baseline,{title:'Backend',description:'Python'}),/INVALID_MODEL/);
+});

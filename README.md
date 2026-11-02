@@ -96,4 +96,4 @@ The 28 October database read incident, code findings, indexes, polling reduction
 
 ## Optional AI resume writing
 
-Generate resume now opens a writing-mode and preview dialog. The optional Gemini/Grok writer returns fact-linked JSON; the existing renderer keeps the reference PDF/DOCX format. AI changes require explicit processing consent and review before file generation. Cached drafts, request limits and factual fallbacks bound usage. See [resume-ai.md](docs/resume-ai.md) for server-only key/model configuration and provider data-policy requirements. Live AI is disabled until those settings are supplied.
+Generate resume now opens a writing-mode and preview dialog. The optional Gemini/Groq/Grok writer returns fact-linked JSON; the existing renderer keeps the reference PDF/DOCX format. AI changes require explicit processing consent and review before file generation. Cached drafts, request limits and factual fallbacks bound usage. See [resume-ai.md](docs/resume-ai.md) for server-only key/model configuration and provider data-policy requirements. Live AI is disabled until those settings are supplied.

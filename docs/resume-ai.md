@@ -8,8 +8,8 @@ Set the following **server-only** Worker secrets/variables. These are not Vite v
 
 Prefer Worker secrets for all these settings, including the model and data-policy confirmation: this project's deployment preserves secret bindings. If you choose plaintext variables instead, manage those non-key values in `wrangler.jsonc` so a later deployment does not replace them. API keys must always be secrets.
 
-- `RESUME_AI_PROVIDER`: `gemini` (default) or `grok`.
-- `GEMINI_API_KEY` or `XAI_API_KEY`: the corresponding provider key, stored as a Worker secret.
+- `RESUME_AI_PROVIDER`: `gemini` (default), `groq` or `grok`.
+- `GEMINI_API_KEY`, `GROQ_API_KEY` or `XAI_API_KEY`: the corresponding provider key, stored as a Worker secret.
 - `RESUME_AI_MODEL`: a model ID supported by that account and the provider's structured-output endpoint. There is deliberately no silently selected, potentially paid model.
 - `RESUME_AI_DATA_POLICY=approved`: an administrator's confirmation that the chosen account's terms and data handling permit processing users' personal resume facts. **This flag does not change the provider's data practices.** Leave it unset until the actual provider/account setup has been checked. Google's unpaid-service terms prohibit submitting personal or confidential information; removing contact headers alone does not make work history anonymous. No billing account is created or upgraded by this integration.
 - Optional `RESUME_AI_DAILY_LIMIT`: per-user daily attempts, default 10, clamped to 1–50. A separate fixed global cap permits at most 50 attempted model requests per UTC day.
@@ -30,4 +30,8 @@ Migration `0008_resume_ai_usage.sql` creates the small indexed usage-counter tab
 
 ## Current operational limitation
 
-Profile facts and final resume metadata still live in D1. The public-job MongoDB fallback cannot supply a verified personal profile. AI status can be read without D1, but preparing/finalizing a resume still needs the profile database to be available. A missing provider key/model or unconfirmed data policy leaves AI writing disabled; factual previews remain available when profile access works. This release was tested with mocked provider responses, not a live Gemini/Grok key.
+Profile facts and final resume metadata still live in D1. The public-job MongoDB fallback cannot supply a verified personal profile. AI status can be read without D1, but preparing/finalizing a resume still needs the profile database to be available. A missing provider key/model or unconfirmed data policy leaves AI writing disabled; factual previews remain available when profile access works. This release was tested with mocked provider responses, not a live Gemini/Groq/Grok key.
+
+## Groq setup
+
+Use `RESUME_AI_PROVIDER=groq`, a server-only `GROQ_API_KEY`, and a supported strict-output model such as `openai/gpt-oss-20b`. Groq and xAI Grok are separate providers with separate keys. The adapter calls `https://api.groq.com/openai/v1/chat/completions` with strict JSON schema and keeps the same application validation, consent, quotas and factual fallback. Check the account data controls before setting `RESUME_AI_DATA_POLICY=approved`. See [Groq structured outputs](https://console.groq.com/docs/structured-outputs) and [Groq data handling](https://console.groq.com/docs/your-data). No billing upgrade is performed.
