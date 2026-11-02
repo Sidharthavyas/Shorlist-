@@ -1,5 +1,7 @@
 import { MongoClient, Binary } from 'mongodb';
 import { createHash, timingSafeEqual } from 'node:crypto';
+import {gunzipSync} from 'node:zlib';
+import {catalogCollection,mirrorCatalog} from './job-catalog.mjs';
 
 let connection;
 async function objects(){
@@ -20,7 +22,7 @@ function authorized(request){
 }
 const reply=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'private, no-store'}});
 
-export async function storageRequest(request, getObjects=objects){
+export async function storageRequest(request, getObjects=objects,getCatalog=catalogCollection){
   if(!authorized(request))return reply({error:'Unauthorized'},401);
   const key=new URL(request.url).searchParams.get('key')||'';
   if(key.length>1024||!key.match(/^(profile|resumes|jobs)\/[\w./:@-]+$/)||key.split('/').includes('..'))return reply({error:'Invalid object key'},400);
@@ -34,6 +36,10 @@ export async function storageRequest(request, getObjects=objects){
       const bytes=Buffer.from(await request.arrayBuffer());
       if(bytes.length>4*1024*1024)return reply({error:'Object exceeds 4 MB'},413);
       await collection.updateOne({_id:id},{$set:{key,data:new Binary(bytes),contentType:request.headers.get('Content-Type')||'application/octet-stream',updatedAt:new Date()},$setOnInsert:{createdAt:new Date()}},{upsert:true});
+      if(/^jobs\/snapshots\/(?!manual\/).+-raw\.json$/.test(key)){
+        const json=JSON.parse((request.headers.get('Content-Type')==='application/vnd.shortlist.gzip+json'?gunzipSync(bytes):bytes).toString('utf8'));
+        if(json._shortlist_catalog)await mirrorCatalog(json._shortlist_catalog,await getCatalog());
+      }
       return reply({ok:true});
     }
     if(request.method==='DELETE'){await collection.deleteOne({_id:id});return reply({ok:true});}

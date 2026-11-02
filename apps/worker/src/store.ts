@@ -43,11 +43,13 @@ export async function saveJob(env:Env, job:NormalizedJob, config:{data:Settings;
     if(specific)master=await env.DB.prepare('SELECT id,revision,content_hash,first_seen_at FROM jobs WHERE canonical_apply_url=? LIMIT 1').bind(canonical).first();
   }
   const id=master?.id ?? crypto.randomUUID(), revision=(master?.revision ?? 0)+1;
-  if (existing && existing.source_content_hash===contentHash) { await env.DB.batch([env.DB.prepare('UPDATE jobs SET last_seen_at=?,last_verified_at=?,availability=? WHERE id=?').bind(t,t,job.availability,id),env.DB.prepare('UPDATE job_source_refs SET last_seen_at=? WHERE source_id=? AND external_id=?').bind(t,job.source,job.external_id)]); return {id,duplicate:true}; }
   job.first_seen_at=master?.first_seen_at ?? job.first_seen_at;
-  const snapshotKey=`jobs/snapshots/${job.source}/${id}-${revision}-raw.json`;
-  await env.FILES.put(snapshotKey,JSON.stringify(raw ?? job),{httpMetadata:{contentType:'application/json'}});
+  const snapshotRevision=existing&&existing.source_content_hash===contentHash?master!.revision:revision;
+  const snapshotKey=`jobs/snapshots/${job.source}/${id}-${snapshotRevision}-raw.json`;
   const e=experience(job,config.data.maximum_experience,config.data), l=location(job,config.data), eligibleRole=roleAllowed(job.title,config.data);
+  const catalog={...job,id,revision:snapshotRevision,experience_status:e.classification,experience_min:e.min_years,experience_max:e.max_years,location_status:l.status,location_reason:l.reason,role_status:eligibleRole?'ELIGIBLE':'NOT_ELIGIBLE',experience:e,normalized_json:JSON.stringify(job),is_sample:sample?1:0};
+  await env.FILES.put(snapshotKey,JSON.stringify({raw:raw??job,_shortlist_catalog:catalog}),{httpMetadata:{contentType:'application/json'}});
+  if (existing && existing.source_content_hash===contentHash) { await env.DB.batch([env.DB.prepare('UPDATE jobs SET last_seen_at=?,last_verified_at=?,availability=? WHERE id=?').bind(t,t,job.availability,id),env.DB.prepare('UPDATE job_source_refs SET last_seen_at=? WHERE source_id=? AND external_id=?').bind(t,job.source,job.external_id)]); return {id,duplicate:true}; }
   const task=crypto.randomUUID(), key=`analyze:${id}:${revision}:${config.revision}`;
   const payload={task_id:task,kind:'ANALYZE_JOB',entity_id:id,entity_revision:revision,settings_revision:config.revision};
   await env.DB.batch([
@@ -69,5 +71,9 @@ export async function dispatch(env:Env) {
   try{for(const row of rows.results){
     await env.TASKS.send(JSON.parse(row.payload_json));
     await env.DB.prepare('UPDATE outbox SET dispatched_at=?,attempts=attempts+1,dispatch_token=NULL,dispatch_until=NULL WHERE id=? AND dispatch_token=?').bind(now(),row.id,token).run();
-  }}finally{await env.DB.prepare('UPDATE outbox SET dispatch_token=NULL,dispatch_until=NULL WHERE dispatch_token=?').bind(token).run();}
+  }}finally{
+    // Release only rows claimed by this dispatch. A token-only UPDATE scans all
+    // completed history on every invocation, including otherwise empty drains.
+    if(rows.results.length)await env.DB.batch(rows.results.map(row=>env.DB.prepare('UPDATE outbox SET dispatch_token=NULL,dispatch_until=NULL WHERE id=? AND dispatch_token=?').bind(row.id,token)));
+  }
 }

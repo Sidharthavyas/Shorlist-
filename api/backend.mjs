@@ -1,6 +1,12 @@
 import {pumpWork} from '../server/work-pump.mjs';
+import {catalogRequest} from '../server/job-catalog.mjs';
+let blockedUntil=0,blockedError;
 export default {
   async fetch(request,context) {
+    if(Date.now()<blockedUntil){
+      const catalog=await catalogRequest(request);if(catalog)return catalog;
+      return Response.json({error:blockedError},{status:503,headers:{'Cache-Control':'private, no-store','Retry-After':String(Math.ceil((blockedUntil-Date.now())/1000))}});
+    }
     const backend=process.env.SHORTLIST_BACKEND_URL;
     const secret=process.env.DEPLOYMENT_PROXY_SECRET;
     if(!backend||!secret)return Response.json({error:{code:'BACKEND_NOT_CONFIGURED',message:'The production backend is not connected yet.'}},{status:503});
@@ -30,6 +36,13 @@ export default {
       // length also lets clients finish reading while background work continues.
       const empty=request.method==='HEAD'||[204,205,304].includes(result.status);
       const bytes=empty?null:await result.arrayBuffer();
+      if(result.status===503&&bytes){
+        let error;try{error=JSON.parse(new TextDecoder().decode(bytes)).error;}catch{}
+        if(error?.code==='DATABASE_LIMIT'){
+          const reset=Date.parse(error.reset_at);blockedUntil=Number.isFinite(reset)?reset:Date.now()+60000;blockedError=error;
+          const catalog=await catalogRequest(request);if(catalog)return catalog;
+        }
+      }
       if(bytes)outgoing.set('Content-Length',String(bytes.byteLength));
       // Reading a page must never fan out into database scans and queue drains.
       const wakesWork=request.method==='POST'&&/^\/api\/v1\/(?:sources(?:\/[^/]+)?\/sync|jobs\/[^/]+\/resume-tasks)$/.test(incoming.pathname);

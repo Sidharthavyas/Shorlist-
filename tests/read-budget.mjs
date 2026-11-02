@@ -16,3 +16,7 @@ console.log('PASS personal recommendations start from indexed user decisions ins
 const auth=readFileSync('api/backend.mjs','utf8');assert.ok(auth.includes("request.method==='POST'"));
 const sourceUI=readFileSync('apps/web/src/source-manager.tsx','utf8');assert.ok(!sourceUI.includes('setInterval('));
 console.log('PASS source settings have no idle polling loop and page reads cannot wake queue processing');
+const oldCleanup=db.prepare('EXPLAIN QUERY PLAN UPDATE outbox SET dispatch_token=NULL,dispatch_until=NULL WHERE dispatch_token=?').all('unused').map(r=>r.detail).join(' ');
+const boundedCleanup=db.prepare('EXPLAIN QUERY PLAN UPDATE outbox SET dispatch_token=NULL,dispatch_until=NULL WHERE id=? AND dispatch_token=?').all('claimed-id','unused').map(r=>r.detail).join(' ');
+assert.match(oldCleanup,/SCAN outbox/);assert.match(boundedCleanup,/SEARCH outbox USING INDEX sqlite_autoindex_outbox_1/);
+console.log('PASS lease cleanup uses a primary-key lookup instead of scanning completed task history');
